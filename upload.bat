@@ -7,3 +7,4 @@ git push
 
 echo.
 echo  上传完成！
+pause
