@@ -1,5 +1,4 @@
-**THIS README IS ENTIRELY AI GENERATED. JUST FOR A TEST.
-**
+**THIS README IS ENTIRELY AI GENERATED. JUST FOR A TEST.**
 
 Welcome!
 This repository contains the source code and documentation for the project. Below you will find information on how to get started, contribute, and find additional resources.
