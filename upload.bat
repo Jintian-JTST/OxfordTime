@@ -1,19 +1,30 @@
 @echo off
-chcp 65001 >nul
+chcp 437 >nul
+:: --- Auto push script (ASCII only) ---
 cd /d "C:\Users\JTST\OxfordTime"
 
-set /p msg=What did you update? Press Enter to escape: 
+:: Commit current changes
+git add .
+git commit -m "auto update" 2>nul
 
-if "%msg%"=="" (
-    echo No commit, no update.
+:: Pull remote updates before pushing
+echo Pulling latest changes from remote...
+git pull --rebase origin main
+if errorlevel 1 (
+    echo Rebase failed or conflicts detected.
+    echo Please fix conflicts manually, then run:
+    echo   git add <file>
+    echo   git rebase --continue
+    echo Or cancel with:
+    echo   git rebase --abort
     pause
-    exit /b
+    exit /b 1
 )
 
-git add .
-git commit -m "%msg%"
-git push
+:: Push local commits
+echo Pushing to remote...
+git push origin main
 
 echo.
-echo Uploaded!
+echo Upload completed.
 pause
