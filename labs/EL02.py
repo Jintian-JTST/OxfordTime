@@ -39,3 +39,4 @@ print('a: ' +str(popt[0])+' c: '+str(popt[1]))
 print('Errors(a,c): '+ str(np.sqrt(np.diag(pcov))))
 print(popt+1.959964*np.sqrt(pcov.diagonal()))
 print(popt-1.959964*np.sqrt(pcov.diagonal()))
+ 
