@@ -1,8 +1,0 @@
-Conclusion:
-1. R is small, use proportional model. R is big, use square model.
-2. Another set of data at 8<8<8.5cm is necessary to obtain.
-3. R big conditions, should conclude the result from formal experiments.
-4. R small conditions, both are OK.
-5. When consider the calculating time factors, mention the difficulties not only in deriving the formula but also time needed to calculate the period of time. Square roots, differential equations, etc.
-
-Henry 24.02.27
