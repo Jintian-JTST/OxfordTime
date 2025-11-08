@@ -1,0 +1,24 @@
+探究液体阻尼对复摆运动周期的影响
+The Effects on the Period of Compound Pendulum due to liquid damping
+
+Pendulum plays an important role in our daily lives, especially in physics area. From the current coursebooks, I studied about the simple pendulum and its swaping period, which is interesting and amazing. But as I prepared to go deeper in this direction, I found that in the real world, most of the pendulum are not simple, which means compound ones. Even though, previous physists have found out several ways to predict the motion of compound pendulum, but without damping, which means no friction and damping. In order to make everthing be applicable, different dampings should be considered into the situations, this includes liquid damping.
+
+In the long history of physics, many of them have deduced the formula of the period of compound pendulum, and lots of them know the formula of the friction of liquid, but few of them consist those two things together. My objective is by theoretical calculation and experiments to verify the formula I deduced, to draw a whole conculsion of the period of the Compound Pendulum, based on the effects of liquid damping. 
+I've made some junior process: by reading various papers I knew that (liqiud friction), and that (compound pendulum period), and maybe it can make non linear change in period due to those two things, But this is still up in the air and needs to be studied later.
+
+The research has several assumptions: 
+that Cross-sectional area of the pendulum should be a square, 
+that g value can be considered into a constant, 
+that the pendulum cannot be extended under the centrifugal force,
+that the whole pendulum should be soaked in liquid,
+that there is no rolling friction on the bearing.
+
+
+My whole research process is going to be divieded into (5) parts: 
+1. Read different papers, broaden the knowledge in the pendulum area.
+2. Deduce the formula of period through serious calculations, and substitute different values, including extreme values, normal values, and boundaries to see if it works correctly.
+3. Design experiment. List all the cautions and attentions to avoid mistakes and errors, then choose a fortunate day to finish the whole experiment, by using control variates method, then collect quantitative data..
+4. Analyze data. Use computing method to plot the data on the screen, and draw another graph by calculating the formula, then compare them together, to see whether they are the same or not.
+5. Conclude all the answers, from how I deduce the formula to how to complete the experiment in order to verify it, end with where is the mistakes that I didn't expected, and how to improve the whole process.
+
+timeline. see ppt.

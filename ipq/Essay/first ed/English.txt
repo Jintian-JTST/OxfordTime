@@ -1,0 +1,200 @@
+
+2.3 Checking and Verifications
+
+In the culmination of our preceding computations, both methodologies have adeptly provided theoretical insights into the period of a compound pendulum influenced by liquid damping under distinct conditions. It is noteworthy that the utilization of approximations in both approaches serves the purpose of streamlining the differential equation into a second-order form. The judicious expansion of the exponential function, specifically aimed at obtaining an integrable function featuring a periodic component, such as the sin function.
+
+In a general sense, we express the periods T as follows:
+1. For the assumption where f=-kv=-kRω:
+T=4π/√((4(m-ρV)gRI-k^2 R^4)/I^2 )
+
+2. For the assumption where f=-kv^2=-kR^2 ω^2:
+T=2π/√((m-ρV)gR(I-2kR^3 θ_0 )/(I^2-2kR^3 Iθ_0+2k^2 R^6 θ_0^2 ))
+
+To assess the accuracy of both formulations, we evaluate the scenarios where k = 0 and ρgV = 0, signifying a scenario where the compound pendulum remains devoid of any liquid submersion and friction. Remarkably, in both cases, the derived periods converge to T=2π√(I/mgR), aligning with the theoretical period for ideal non-energy loss oscillations. This consistency reinforces the validity of our methodology.
+
+An additional scrutiny is applied to the small angle approximation. Both approaches assert that for θ≪5°,sin⁡θ≈θ. However, a critical inquiry arises: can small angles be pertinent in the presence of substantial damping, as encountered in mediums like water, oil, or ethanol? Esteemed researchers (Alciatore & Histand, 2007) introduce a physical quantity δ, signifying the damping ratio where δ = (actual damping)/(critical damping). And over damping conditions occur when δ>1, leading to the absence of observable periodic swings. To avert such scenarios and ascertain the suitability of liquid damping for most pendulums, experiments must be conducted to determine the feasibility of assuming small angles. This empirical validation is essential for refining our models and ensuring their accuracy under real-world conditions.
+
+Moreover, while the two mentioned approximation methods provide distinct approaches for determining the period of a compound pendulum, they do not offer guidance on the preferred choice for predicting the pendulum's motion. For a more comprehensive understanding, additional experiments are imperative. These experiments serve to assess and compare the accuracy of both methods, thereby enabling the formulation of well-founded conclusions through a meticulous analysis of the experimental outcomes.
+	Experiments
+3.1 Rough Experiments
+
+The preceding discussion emphasized the importance of experimental verification, prompting the need to assess the validity of assuming small angles. To tackle this, a rough experiment was carefully designed.
+
+In the experiment, a long screw with a textured surface was chosen to simulate a compound pendulum. The textured surface was intentionally picked to highlight the impact of liquid damping on the pendulum's motion. It is noteworthy that a hole was carefully drilled through the screw to accommodate the axes for support. An iron support was strategically positioned to provide a stable horizontal foundation for the entire system. Copper wire served as the rotation axes, and though occasional loosening could appear, it was expected to have a minimal effect on the pendulum's period. 
+
+To enhance measurement precision, the incorporation of cameras and slow-motion technology was employed. Video editing tools were subsequently utilized to tally the frames encompassing a complete oscillation period. Variable control was not implemented since this is an initial stage of validation, resulted that only a singular set of data was amassed. The experimental procedure was repeated for four times, with the computation of an average value.
+ 
+3.2 Formal Experiments
+
+In the formal experiments, a cubic apparatus was designed to serve as a container for masses with diverse weights and densities. This arrangement aimed to alter the compound pendulum's inertia by adjusting the mass center's position. Through this method, the investigation delves into the connection between the oscillation period and the rotational radius of the mass center. Additionally, it enables a comparison of the precision achieved by both approaches.
+
+The creation of this apparatus, requiring qualities of lightness, strength, and waterproofing, involves the utilization of a 3D printer for model fabrication. The chosen materials possess enhanced strength, the ability to adapt shape freely, and the capacity to generate noticeable friction on the pendulum. 
+ 
+The design of the experimental container has been carefully crafted to ensure the ease of inserting and exchanging masses during experimental procedures. A paramount consideration in this design is the necessity for waterproofing, aiming to prevent water ingress that might otherwise induce changes in mass and inertia, thereby potentially impacting the period of the pendulum. A lid is securely affixed at the container's base. Its position is reinforced by two nails and sealing with waterproof paper.
+
+To maintain a balanced mass distribution, the container's main body is divided into two approximate equal halves. A long-threaded M8 rod passes through strategically placed holes on both sides of the walls, serving as the rotational axis. The tight securing of this axis is achieved through the use of nuts and rubber silicone gaskets, and rubber bands are positioned around the slit between the two container halves. Tapes and fasteners are placed to improve the friction between the rotating axis and its supports. 
+
+Arranged vertically, three iron stands support a horizontal beam, each standing in a different direction to ensure a stable foundation. Two clamps extend downward from the horizontal beam, firmly securing two bearings. Submerged in liquid, both the container and the axes create an environment of complete fluid damping. This condition is maintained by placing a substantial water bucket beneath the clamps, ensuring a consistent immersion. The accompanying pictures represent a complete view of the setup, prepared for experiments. 
+  
+
+A set of precisely tailored masses is strategically chosen to maintain balance within the container. This decision ensures constancy across all variables throughout the experiments. A mobile phone, equipped with slow-motion video capabilities, aids in capturing convenient calculations of the pendulum's oscillation period.
+ 
+
+Over ten experiments are conducted, introducing varying masses for diverse rotational settings. Adobe Effect (AE) is utilized for meticulous frame count tallying, with data systematically logged into a structured table. The experimental equipment is visually depicted in the accompanying figure and detailed in the concise table below for clarity.
+
+	Analyzation
+In this segment, unless explicitly specified otherwise, g=9.81m s^(-2). 
+
+4.1 Analyze of Rough Experiment 
+
+ 
+No.	Frame/f	10T/s	T/s
+1	740	6.167	0.614
+2	736	6.133	
+3	732	6.100	
+ 4	738.5	6.154	
+
+Variable	Value	Unit
+k 	16.0±0.4 	g s^(-1) 
+I  	0.070±0.003 	g m^2    
+m 	36.0±0.5  	g 
+V 	5.00±0.05 	ml 
+R 	25.7±0.1 	mm 
+ 
+Table 3. Data of rough experiment 
+The obtained results were organized in a data table to determine the average outcome. However, special consideration was given to the performance during extended continuous swings. Over 60 periods were observed until the pendulum came to a halt, taking more than 40 seconds to complete. Theoretical calculations can also examine the result. The physical quantity δ can be calculated by δ=C/2m where mx+Cx+kx=0 (Zhen, Jia, & Fang, 2004). In (4) we have assumed that θ ̈+r_1 θ ̇+r_2 θ=0, leads to δ=r_1/2=(kR^2)/2I. Take the data below into it, δ=0.15<1, which is not over damped. As a result, both observation and theories supported the notion that small angles could be reliably used as an approximation under conditions of liquid damping.
+
+
+
+
+
+
+ 
+	θ/° about t/s from 0s to 30s
+	θ/° about t/s from 0s to 5s
+ 
+Fig 7. Curves of θ about t [python]
+While the primary goal of this rudimentary experiment was to confirm assumptions regarding small angle considerations, there is potential for additional calculations to be conducted. Taking all the variables, throughout the first method can get T_1=0.60±0.04 s. Simultaneously, the outcome of the second method is T_2=0.58±0.06 s. Notably, the results exhibit only a ±5% deviation from the actual value, affirming the accuracy of both formulas concurrently.
+
+4.2 Analyze of Formal Experiment 
+ 
+
+With a total mass of 110.70 grams and a volumetric capacity of 185.0 millimeters, the container stands at an overall height of 20.55 centimeters. Its halves, each measuring 10 centimeters in length, feature square-shaped cross-sections with sides of 3 centimeters. Within each half, a confined space unfolds, defined by square cross-sections, each side measuring 2 centimeters.
+
+The following table presents fundamental data concerning nine distinct masses distributed across three different materials. It is important to note that the provided information is derived from measurements rather than predetermined parameters.
+No.	material	A/cm^2	h/cm	V/ml	m/g
+1	plastic	2.00	2.82	5.64	7.77
+2		2.00	4.00	8.00	10.99
+3		2.00	4.68	9.36	11.47
+4	Al	2.00	3.34	6.68	16.63
+5		2.00	4.32	8.64	22.09
+6		2.00	5.34	10.68	27.63
+7	Fe	2.00	3.14	6.28	46.26
+8		2.00	4.48	8.96	61.90
+9		2.00	5.28	10.56	77.94
+Table 4. Table of masses
+Furthermore, four blocks are selected for placement within the container, each positioned strategically to alter the rotational radius. The recorded periods are listed below.
+
+
+
+
+
+
+
+
+Table 5. Table of Recordings
+Consider the quantitative aspect by employing Python and the Matplotlib library to generate a graphical representation. This graph will assist the comparison of the divergences between experimental outcomes and the two methods employed. Additionally, a more precise analysis can be achieved by extending the comparison to various friction constants.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fig 8. Curves of t about R [python]
+Based on the experimental data, it is evident that two sets out of the ten recorded exhibit substantial discrepancies, prompting their exclusion from subsequent calculations. Employing the functionalities of the numpy and scipy libraries, curve fitting in Python becomes an accessible task. The computation yields a value for k of 0.5 kg s^(-1), aligning seamlessly with the data obtained during experimentation. Simultaneously, by employing programming tools to assess the variance between experimental and theoretical values, we gain valuable insights into the most appropriate methodology to adopt.
+
+
+Organizing the initial four datasets in ascending order, the var() function efficiently computes the variance across various models and data. Notably, the proportional model demonstrates a slightly reduced variance, underscoring its heightened reliability.
+ 
+Fig 9. Log of the program using the first four sets of data[python]
+Applying the same analytical approach to the latter four datasets, the program unveils a similar trend. Specifically, the square model showcases a marginally smaller variance.
+ 
+Fig 10. Log of the program using the last four sets of data[python]
+In the initial set of four datasets, the rotational radius is relatively small, whereas the subsequent four datasets depict the opposite scenario. The observation reveals that when the suspension point of the compound pendulum is in close proximity to the center of mass, employing a first-order model effectively corrects the oscillation period. Conversely, when the distance between the suspension point and the center of mass is larger, adopting a second-order model is more suitable for correction.
+
+
+
+
+4.3 Theoratical anaylse
+
+While conclusions have been drawn, the slight disparity in variance does not strongly support the adoption of the proportional model. Consequently, additional simulations are essential to assess the requisite application of models for stabilizing the oscillation period of a compound pendulum affected by liquid damping. This necessitates exploring variations in the friction constant.
+
+From the previous experiments, k=0.5kg s^(-1). Keep other variables constant, where V=184.95ml, m=258.82g, θ=5°, only changing k from 0 to 2.5.
+  
+ 
+	Proportional model
+	Squared model
+	Legend
+ 
+Fig 11. Effects of k on the period about radius [python]
+The picture illustrates theoretical simulations depicting different reistant constants. Notably, in the square model, as the radius increases, the period extends infinitely. This implies unreliability when both the constant and radius are large. Furthermore, in situations characterized by low damping (k<0.5kg s^(-1)), there is a lack of pronounced disparities between the two methods when compared to the ideal scenario. Specifically, when k=0.05kg s^(-1), its curve closely aligns with the ideal curve. This emphasizes the subtle impact of damping on the oscillatory behavior of the system.
+
+Generally, although in some conditions, particularly when dealing with small friction and a large radius, the squared model may exhibit higher precision. However, the proportional model consistently yields more reliable results. Considering factors such as the complexity of formula derivations and the time required for calculations in environments without computer assistance, it is recommended to opt for the proportional model when estimating the period of oscillation. 
+
+
+
+4.4 Error and Accuracy Analysis
+
+Throughout the course of the experiments, deviations leading to altered outcomes may manifest. While such discrepancies may be permissible in preliminary experiments designed to substantiate specific hypotheses, they warrant scrutiny and caution in more formalized research endeavors. Notably, inadvertent human errors have significantly impacted the integrity of the data, prominently evidenced by the divergence in two sets of unusable experimental data.
+Within the subset of results exhibiting a lower magnitude, the oversight of neglecting to secure a rubber band proved pivotal. This oversight allowed water to infiltrate the inner walls of the container, augmenting its mass and consequently reducing the measured rotational period. Conversely, the set of results displaying a higher magnitude is directly attributable to a miscalibrated weighting mechanism. In this instance, the misplacement of a plastic block instead of an aluminum block led to a decrease in mass. Consequently, the gravitational force became insufficient to counterbalance buoyancy, resulting in a naturally inclined state, as illustrated in the accompanying diagram.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fig 12. Bouyance higher than weight
+In the realm of experimentation, uncertainties persist despite special circumstances. A notable instance arises from the rotation of an excessively large radius axis, exemplified by the M8 screw, inducing fluid resistance during its motion. Although the screw's grooves mitigate resistance compared to a simple rod, the ensuing impact remains nearly incalculable. Simultaneously, assessing the lateral sliding resistance of the compound pendulum proves challenging, given its divergent calculation methodology from that of frontal force reception.
+
+Furthermore, the fluidity and viscosity of water is relatively large. Consequently, our approach resorts to the imprecise determination of resistance constants through practical measurements rather than achieving precise control over this physical quantity.
+
+
+ 
+	Conclusion and Reflection
+5.1 Conclusion
+
+Drawing upon the insights garnered from prior research and essays, two distinct methodologies have been identified for calculating and correcting the vibrational period of a compound pendulum under the influence of liquid resistance. Through theoretical derivation, we have formulated an expression to compute the corrected period.
+
+In consideration of the feasibility of observing small angles, a rudimentary experiment was devised. Employing a simple apparatus, it was observed that small-angle oscillations were perceptible to the naked eye and exhibited sustained motion over an extended duration. This substantiates the viability of small-angle oscillations of the compound pendulum under liquid resistance, leading to the conclusion that theta can be employed as a direct approximation for sin theta. Subsequent calculations further indicated that, under liquid resistance, the compound pendulum's small-angle periodic motion does not experience over-damping, which aligning with experimental expectations.
+
+Subsequently, a formal experiment was conducted, providing a preliminary comparison and discussion of the accuracy of the two correction models. Considering the malleability of 3D-printed materials and the influence of observable friction, a cuboid container was designed. This facilitated the manipulation of variables by altering internal mass and its positioning to control the center of gravity, allowing for an exploration of the relationship between rotational radius and period. Python, Excel, and demos were utilized for data analysis, fitting, computation, and graphical representation. Leveraging these tools enabled a nuanced evaluation of the precision in period calculations between the two models, leading to the conclusion that a linear model should be adopted for smaller radii, while a quadratic model is more suitable for larger radii.
+
+Finally, numerical calculations were performed using programming, and observations were made through graphical analysis. Gradually increasing the resistance constant revealed that, for k < 0.5 kg s^(-1), the corrected results closely align with the ideal scenario, indicating minimal damping effects on the compound pendulum. Consequently, calculations can be directly executed using the ideal formula. As resistance approaches realistic conditions, the quadratic model demonstrates superior accuracy, with the linear model exhibiting slight roughness but negligible differences. However, in scenarios of significant resistance, the linear model appears more reliable, as the quadratic model yields period values approaching infinity for large radii. In summary, considering the complexity of computational duration and formula derivation, although the linear model may introduce slight deviations, this essay recommends its use for approximations and estimations.
+ 
+5.2 Reflection
+
+Upon reflecting on my entire research, I noticed some areas that could be improved in my first independent scientific exploration.
+
+Firstly, I faced challenges in the theoretical calculation part due to a lack of solid mathematical groundwork. This resulted in repeated deviations and issues during the deduction process, causing delays in my research plan and progress. The use of differential equations, which involves some advanced math, exceeded my current abilities and took up nearly a month for confirmation.
+
+Secondly, the experimental design fell short of achieving the desired goals. Originally, I intended to explore the relationship between periodicity and resistance coefficients, along with rotational radius. However, due to equipment shortages, I had to omit experimenting with different liquids and only conducted experiments in water. When analyzing changes in resistance coefficients, I relied solely on software for feasibility assessments, lacking empirical evidence. Consequently, the conclusions drawn in this paper are preliminary and should be viewed as initial insights.
+
+Thirdly, there were notable errors during experimentation. While not explicitly reflected in the data, this paper simplifies the calculation of resistance coefficients, introducing imprecision. Mistakes during experimentation rendered two out of ten sets of data unusable. Moreover, the limited data sets fail to sufficiently support the drawn conclusions.
+
+In conclusion, this research project served as a valuable learning experience, guiding me through the scientific inquiry process—from initial curiosity to literature review, theoretical calculations, rough and formal experiment design, execution, learning and using modeling and programming software, to data analysis, synthesis, and reflection. I extend sincere thanks to my mentor for guidance, the physics faculty for encouragement, the school laboratory for support, and my parents for their valuable advice.
