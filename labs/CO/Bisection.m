@@ -1,6 +1,3 @@
-%Bisection Method
-
-
 f = @(x)   3 * exp(-x) - x + 3;
 
 x0 = 3;
