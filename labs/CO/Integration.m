@@ -1,0 +1,38 @@
+f = @(t) exp(-t .^2);
+
+n = 100;
+x_list = [0.2, 0.4, 0.6, 0.8, 1.0];
+n_list = [1, 10, 100];
+C = 2/sqrt(pi);
+
+for x = x_list
+    fprintf('x = %.1f\n',x)
+    res=(x/2)*( f(0) +  f(x) );
+    fprintf('result = %.10f\n', res*C);
+
+
+
+    h = x / 10;
+    i = linspace(1, 9, 9);
+    m = linspace(1, 10, 10);
+    first_term = sum(f(i * h));  
+    second_term = sum(f((m - 1/2) * h));
+    res = (f(0) + f(10 * h) + 2 * first_term + 4 * second_term) * (h / 6);
+    fprintf('result = %.10f\n',res*C);
+
+
+
+    h = x / 100;
+    i = linspace(1, 99, 99);
+    m = linspace(1, 100, 100);
+    first_term = sum(f(i * h));    
+    second_term = sum(f((m - 1/2) * h));
+    res = (f(0) + f(100 * h) + 2 * first_term + 4 * second_term) * (h / 6);
+    fprintf('result = %.10f\n',res*C);
+
+
+
+    true_val   = erf(x);
+    fprintf('true val = %.10f\n',true_val)
+
+end

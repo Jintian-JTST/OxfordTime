@@ -1,5 +1,3 @@
-%Newton Raphson Method
-
 f = @(x)   3 * exp(-x) - x + 3;
 df = @(x)   -3 * exp(-x) - 1;
 
