@@ -39,6 +39,10 @@ e = input('Enter experimental rms value e: ');
 data=curvefit_generate(n,m,a_true,e);
 
 
+
+
+
+
 coe=Linear_Fit(data);
 
 fprintf('coefficient a = %.6f, b = %.6f\n', coe(1), coe(2));
