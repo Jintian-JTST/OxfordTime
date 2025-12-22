@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # ===== 1. 模拟一个市场 =====
-np.random.seed(0)
+#np.random.seed(0)
 
 T = 200
 sigma = 0.02
@@ -17,6 +17,7 @@ entry_price = None    # 买入价
 
 lookback = 5          # 看过去 5 天
 stop_loss = 0.9       # 跌到买入价的 90% 就卖
+quantitity=[]
 
 # ===== 3. 交易循环 =====
 for t in range(lookback, T):
@@ -37,6 +38,9 @@ for t in range(lookback, T):
         entry_price = None
         print(f"止损卖出 @ {today_price:.2f}")
 
+
+    quantitity.append(cash+position*today_price)
+
 # ===== 4. 最终结果 =====
 final_value = cash + position * price[-1]
 profit = final_value - 10000
@@ -49,4 +53,11 @@ plt.plot(price)
 plt.title("Simulated Price")
 plt.xlabel("Time")
 plt.ylabel("Price")
+plt.show()
+
+
+plt.plot(quantitity)
+plt.title("Portfolio Value Over Time")
+plt.xlabel("Time")
+plt.ylabel("Portfolio Value")
 plt.show()
