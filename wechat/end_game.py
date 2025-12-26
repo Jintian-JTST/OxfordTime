@@ -4,46 +4,63 @@ import pandas as pd
 import os
 import time
 
-# 这里对应刚才 wxdump 生成的文件名
-db_file = "final.db"
+# 目标还是那个 60MB 的解密文件
+target_db = "de_MSG0.db"
 
-if not os.path.exists(db_file):
-    print(f"❌ 没找到 {db_file}，请确认上一步 wxdump decrypt 命令执行成功！")
+print(f"🚀 正在启动透视模式，读取: {target_db}")
+
+if not os.path.exists(target_db):
+    print(f"❌ 找不到 {target_db}，请确认文件在当前目录下！")
 else:
     try:
-        # 连接数据库
-        conn = sqlite3.connect(db_file)
+        conn = sqlite3.connect(target_db)
         
-        # SQL语句：提取时间、发送者、内容
-        # 并且只提取 Type=1 (文本消息)，过滤掉图片/系统消息等乱码
+        # SQL升级：增加了 StrTalker 字段
+        print("📊 正在分类提取聊天记录（包含群聊ID）...")
         query = """
         SELECT 
+            StrTalker as ChatID,
             datetime(CreateTime, 'unixepoch', 'localtime') as Time,
-            CASE IsSender WHEN 1 THEN '我' ELSE '对方' END as Sender,
+            CASE IsSender 
+                WHEN 1 THEN '我' 
+                ELSE '对方/群友' 
+            END as Sender,
             StrContent as Content
         FROM MSG
         WHERE Type = 1
-        ORDER BY CreateTime ASC
+        ORDER BY StrTalker, CreateTime ASC
         """
         
-        # 读取数据
-        print("📊 正在提取聊天记录...")
         df = pd.read_sql_query(query, conn)
         
         if df.empty:
-            print("⚠️ 数据库打开了，但是没有读到文本消息。")
+            print("⚠️ 没有找到消息。")
         else:
-            # 导出 CSV (Excel可打开)
-            csv_name = f"聊天记录_最终版_{int(time.time())}.csv"
+            # 简单处理一下，把群聊和私聊标记出来
+            def get_type(chat_id):
+                if str(chat_id).endswith('@chatroom'):
+                    return '[群聊]'
+                elif str(chat_id).startswith('gh_'):
+                    return '[公众号]'
+                else:
+                    return '[私聊]'
+
+            df['Type'] = df['ChatID'].apply(get_type)
+            
+            # 调整列顺序，把类型放最前面
+            df = df[['Type', 'ChatID', 'Time', 'Sender', 'Content']]
+            
+            csv_name = f"微信聊天记录_透视版_{int(time.time())}.csv"
             df.to_csv(csv_name, index=False, encoding='utf-8-sig')
             
-            print("\n" + "="*40)
-            print(f"🎉 成功！聊天记录已导出！")
-            print(f"📄 文件名: {csv_name}")
-            print(f"🔢 共 {len(df)} 条消息")
-            print("="*40)
+            print("\n" + "🎉"*15)
+            print(f" 导出成功！")
+            print(f" 📅 共 {len(df)} 条记录")
+            print(f" 💾 文件名: {csv_name}")
+            print(" 💡 使用技巧：打开Excel后，使用'筛选'功能，在 ChatID 一列勾选你想看的群ID。")
+            print("🎉"*15)
             
         conn.close()
         
     except Exception as e:
-        print(f"❌ 出错啦: {e}")
+        print(f"❌ 错误: {e}")
