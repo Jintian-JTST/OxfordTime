@@ -1,59 +1,31 @@
 # -*- coding: utf-8 -*-
-import os
-import sys
+import subprocess
+import re
 
-# 忽略 protobuf 警告
-os.environ["PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION"] = "python"
+# 你的工具路径
+WXDUMP_EXE = r"C:\Python311\Scripts\wxdump.exe"
 
-def main():
-    print("正在尝试读取微信信息，请保持微信窗口在前台...")
+print("🔍 正在尝试从微信内存抓取 Key...")
+print("⚠️ 请确保微信已经登录并在运行中！\n")
+
+try:
+    # 尝试多种常用的获取信息指令
+    cmd = [WXDUMP_EXE, "info"]
+    result = subprocess.run(cmd, capture_output=True, text=True, encoding='gbk', errors='ignore')
     
-    try:
-        from pywxdump import get_wx_info
-        
-        # 获取信息
-        infos = get_wx_info()
-        
-        if not infos:
-            print("\n❌ 未检测到微信，请确认微信已登录。")
-            return
+    output = result.stdout + result.stderr
+    print("--------------------------------------------------")
+    print(output)
+    print("--------------------------------------------------")
+    
+    # 尝试自动帮你找 Key
+    # 常见的 Key 格式是 64位 16进制字符串
+    keys = re.findall(r'[a-f0-9]{64}', output)
+    if keys:
+        print(f"\n✅ 找到疑似 Key: {keys[0]}")
+        print("👉 请复制上面这个 Key，替换掉之前脚本里的旧 Key！")
+    else:
+        print("\n❌ 没自动提取到。请人工看上面打印的信息，找 'key': 'xxxx' 这一行。")
 
-        print(f"\n🔎 检测到 {len(infos)} 个微信进程。")
-        
-        found_key = False
-        
-        for i, info in enumerate(infos):
-            print(f"\n-------- 进程 {i+1} --------")
-            pid = info.get('pid', '未知')
-            name = info.get('name', '未知')
-            key = info.get('key')
-            db_path = info.get('db_path', '未找到')
-            
-            print(f"PID (进程ID): {pid}")
-            print(f"昵称: {name}")
-            print(f"数据库路径: {db_path}")
-            
-            if key:
-                print(f"✅ 【密钥 (Key)】: {key}")
-                found_key = True
-                # 保存 Key 到文件
-                with open("key.txt", "w", encoding="utf-8") as f:
-                    f.write(key)
-                print("   (密钥已保存到 key.txt)")
-            else:
-                print("❌ 此进程未读取到密钥 (可能是僵尸进程或权限不足)")
-                
-        print("\n-----------------------------")
-        if found_key:
-            print("🎉 成功！请使用上面的 Key 修改您的导出脚本。")
-        else:
-            print("⚠️ 依然没有拿到 Key？")
-            print("请尝试：右键点击 PowerShell -> 以管理员身份运行，再次执行本脚本。")
-
-    except ImportError:
-        print("未安装 pywxdump")
-    except Exception as e:
-        print(f"发生错误: {e}")
-
-if __name__ == "__main__":
-    main()
+except Exception as e:
+    print(f"运行出错: {e}")
