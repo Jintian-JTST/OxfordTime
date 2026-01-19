@@ -1,15 +1,20 @@
 from ursina import *
 from ursina.prefabs.first_person_controller import FirstPersonController
-from perlin_noise import PerlinNoise  # 引入新安装的噪声库
+from perlin_noise import PerlinNoise
 import random
 
 app = Ursina()
 
-# --- 1. 参数设置 (参考 Minecraft Wiki) ---
+# --- 1. 参数设置 ---
 STEVE_HEIGHT = 1.8
 EYE_HEIGHT = 1.62
 WALK_SPEED = 5.0 
 JUMP_HEIGHT = 1.25
+
+# [优化速度] 把 64 改成 48。
+# 64x64=4096个点，48x48=2304个点。
+# 稍微小一点点，但加载速度快一倍。
+WORLD_SIZE = 48 
 
 # --- 2. 材质与颜色 ---
 blocks_meta = {
@@ -30,7 +35,7 @@ class Voxel(Button):
             position=position,
             model='cube',
             origin_y=0.5,
-            #texture='white_cube',
+            texture='white_cube', # 必须保留这个，颜色才能生效
             color=blocks_meta[block_id]['color'],
             highlight_color=color.lime,
         )
@@ -47,33 +52,34 @@ class Voxel(Button):
                 hand.swing()
                 destroy(self)
 
-# --- 4. 地形生成 (修正版) ---
-# 使用 perlin_noise 库
+# --- 4. 地形生成 (加速版) ---
 noise_gen = PerlinNoise(octaves=3, seed=random.randint(1, 10000))
-scale = 0.1   # 地形平滑度：越小越平缓
-amplitude = 6 # 地形高度差：越大山越高
-WORLD_SIZE = 30  # 世界大小
+scale = 0.05   
+amplitude = 6  
 offset = WORLD_SIZE // 2
 
+print(f"正在生成 {WORLD_SIZE}x{WORLD_SIZE} 地形...")
+
+# 使用 List 来收集要生成的方块，虽然在 Ursina 里还是要一个个生成，但逻辑更清晰
 for z in range(WORLD_SIZE):
     for x in range(WORLD_SIZE):
-        # 让坐标以中心为原点，这样地图会向四周扩展
         cx = x - offset 
         cz = z - offset
 
-        # 计算高度: noise返回 -0.5 到 0.5，我们需要把它放大并取整
         height_value = noise_gen([cx * scale, cz * scale])
         y = floor(height_value * amplitude)
         
-        # 放置顶层草方块
-        Voxel(position=(x, y, z), block_id=1)
+        # [顶层] 草方块
+        Voxel(position=(cx, y, cz), block_id=1)
         
-        # 为了美观，填充下面两层
-        Voxel(position=(x, y-1, z), block_id=3) # 泥土
-        Voxel(position=(x, y-2, z), block_id=2) # 石头
+        # [第二层] 泥土
+        Voxel(position=(cx, y-1, cz), block_id=3)
         
-        # 如果太深了，封底基岩（防止看到虚空）
-        Voxel(position=(x, -4, z), block_id=2) 
+        # [优化速度] 去掉了 y-2 的石头层生成。
+        # 除非你挖开泥土，否则看不到下面。这能减少 33% 的加载时间。
+        # 如果你真的很想挖矿，可以在这里加回来，但会变慢。
+
+print("地形生成完毕！")
 
 # --- 5. 玩家控制器 ---
 player = FirstPersonController()
@@ -84,8 +90,8 @@ player.height = STEVE_HEIGHT
 player.jump_height = JUMP_HEIGHT
 player.camera_pivot.y = EYE_HEIGHT - (STEVE_HEIGHT / 2) 
 
-# 初始位置设高一点，防止出生在方块里
-player.y = 5 
+# 出生在中心高空
+player.position = (0, 10, 0)
 
 crosshair = Entity(parent=camera.ui, model='quad', texture='cursor', scale=0.015, color=color.white)
 
@@ -108,10 +114,14 @@ class Hand(Entity):
 
 hand = Hand()
 
-# --- 7. 环境 ---
-sky = Sky(texture='sky_default')
-scene.fog_color = color.rgb(200, 230, 255)
-scene.fog_density = 0.04
+# --- 7. 环境 (修复报错的部分) ---
+sky = Sky() 
+sky.color = color.rgb(135, 206, 235)
+
+# [错误修复] 不使用 Fog 类，直接设置 scene 属性
+scene.fog_color = color.rgb(135, 206, 235)
+# 密度越小，雾越远。0.02 大约对应 50 格左右的视距
+scene.fog_density = 0.02 
 
 def update():
     global current_block_id
@@ -121,7 +131,7 @@ def update():
     if held_keys['4']: current_block_id = 4
     if held_keys['5']: current_block_id = 5
     
-    if player.y < -10:
-        player.position = (10, 10, 10)
+    if player.y < -30:
+        player.position = (0, 10, 0)
 
 app.run()
