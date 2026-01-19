@@ -30,7 +30,7 @@ class Voxel(Button):
             position=position,
             model='cube',
             origin_y=0.5,
-            texture='white_cube',
+            #texture='white_cube',
             color=blocks_meta[block_id]['color'],
             highlight_color=color.lime,
         )
@@ -52,11 +52,17 @@ class Voxel(Button):
 noise_gen = PerlinNoise(octaves=3, seed=random.randint(1, 10000))
 scale = 0.1   # 地形平滑度：越小越平缓
 amplitude = 6 # 地形高度差：越大山越高
+WORLD_SIZE = 30  # 世界大小
+offset = WORLD_SIZE // 2
 
-for z in range(20):
-    for x in range(20):
+for z in range(WORLD_SIZE):
+    for x in range(WORLD_SIZE):
+        # 让坐标以中心为原点，这样地图会向四周扩展
+        cx = x - offset 
+        cz = z - offset
+
         # 计算高度: noise返回 -0.5 到 0.5，我们需要把它放大并取整
-        height_value = noise_gen([x * scale, z * scale])
+        height_value = noise_gen([cx * scale, cz * scale])
         y = floor(height_value * amplitude)
         
         # 放置顶层草方块
