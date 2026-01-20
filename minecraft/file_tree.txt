@@ -1,0 +1,18 @@
+minecraft
+├── __init__.py
+├── main.py
+├── app
+│   ├── __init__.py
+│   └── game.py
+├── config
+│   ├── __init__.py
+│   ├── blocks.py
+│   └── settings.py
+├── core
+│   ├── __init__.py
+│   ├── player.py
+│   └── voxel.py
+└── systems
+    ├── __init__.py
+    ├── ui.py
+    └── world.py
