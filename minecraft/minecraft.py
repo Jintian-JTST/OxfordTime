@@ -3,12 +3,16 @@ from ursina.prefabs.first_person_controller import FirstPersonController
 from perlin_noise import PerlinNoise
 import random
 import math
+from ursina.shaders import basic_lighting_shader
+from ursina.shaders import unlit_shader
+from ursina import application
+application.lighting = False
 
 app = Ursina()
 
 # ==================== Game Configuration ====================
 class Config:
-    WORLD_SIZE = 50
+    WORLD_SIZE = 20
     RENDER_DISTANCE = 30
     CHUNK_SIZE = 16
     
@@ -86,9 +90,11 @@ class Voxel(Button):
             position=position,
             model='cube',
             origin_y=0.5,
-            texture='white_cube',
+            texture=None,              # 1. 必须是 None
             color=block_info['color'],
+            shader=unlit_shader,       # 2. 强制使用 unlit_shader
             highlight_color=color.lime if block_info['breakable'] else color.red,
+            # 删掉 unlit=False 或 unlit=True，因为我们要直接控制 shader
         )
         
         # Semi-transparent blocks
@@ -221,7 +227,10 @@ class Hand(Entity):
         super().__init__(
             parent=camera.ui,
             model='cube',
-            texture='white_cube',
+            # ========== 修改开始：修复手臂显示 ==========
+            texture=None,          # 1. 不要纹理
+            shader=unlit_shader,   # 2. 强制无光照着色器
+            # =========================================
             color=BLOCKS[BlockType.GRASS]['color'],
             scale=(0.2, 0.2, 0.8),
             position=(0.4, -0.4, 0.8),
@@ -274,6 +283,10 @@ class GameUI:
             preview = Entity(
                 parent=slot,
                 model='cube',
+                # ========== 修改开始：修复UI图标显示 ==========
+                texture=None,          # 1. 不要纹理
+                shader=unlit_shader,   # 2. 强制无光照着色器
+                # ==========================================
                 color=BLOCKS[block_type]['color'],
                 scale=0.5,
                 rotation=(20, 20, 0)
@@ -329,7 +342,7 @@ player.speed = Config.WALK_SPEED
 player.height = Config.STEVE_HEIGHT
 player.jump_height = Config.JUMP_HEIGHT
 player.camera_pivot.y = Config.EYE_HEIGHT - (Config.STEVE_HEIGHT / 2)
-player.position = (0, 15, 0)
+player.position = (0, 50, 0)
 
 # Create hand
 game_manager.hand = Hand()
@@ -338,14 +351,11 @@ game_manager.hand = Hand()
 game_manager.ui = GameUI(game_manager)
 
 # Setup environment
-sky = Sky()
-sky.color = color.rgb(135, 206, 235)
-scene.fog_color = color.rgb(135, 206, 235)
-scene.fog_density = 0.015
-
-# Lighting
-AmbientLight(color=color.rgba(255, 255, 255, 0.8))
-DirectionalLight(y=2, z=3, shadows=True)
+# Setup environment
+# sky = Sky()  <-- 必须删掉/注释
+scene.fog_density = 0  # <-- 必须设置为 0，防止远处的白色雾遮挡
+scene.fog_color = color.white # 即使有雾也是白的，容易误导，干脆不管它
+window.color = color.rgb(135, 206, 235)
 
 # ==================== Input Handling ====================
 def input(key):
@@ -405,11 +415,9 @@ def update():
     # Simple day/night cycle
     cycle_speed = 0.02
     brightness = (math.sin(time_passed * cycle_speed) + 1) / 2 * 0.5 + 0.5
-    sky.color = color.rgb(
-        135 * brightness,
-        206 * brightness,
-        235 * brightness
-    )
+    # window.color = ...  <--- 这一行删掉，改成下面这行：
+    window.color = color.rgb(135, 206, 235)
+
 
 # Run game
 print("\n" + "="*50)
