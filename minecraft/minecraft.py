@@ -6,7 +6,7 @@ import math
 
 app = Ursina()
 
-# ==================== 游戏配置 ====================
+# ==================== Game Configuration ====================
 class Config:
     WORLD_SIZE = 50
     RENDER_DISTANCE = 30
@@ -21,7 +21,7 @@ class Config:
     TERRAIN_AMPLITUDE = 8
     TERRAIN_OCTAVES = 3
 
-# ==================== 方块材质定义 ====================
+# ==================== Block Type Definitions ====================
 class BlockType:
     GRASS = 1
     STONE = 2
@@ -35,47 +35,47 @@ class BlockType:
 BLOCKS = {
     BlockType.GRASS: {
         'color': color.rgb(124, 189, 107),
-        'name': '草方块',
+        'name': 'Grass',
         'breakable': True
     },
     BlockType.STONE: {
         'color': color.rgb(125, 125, 125),
-        'name': '石头',
+        'name': 'Stone',
         'breakable': True
     },
     BlockType.DIRT: {
         'color': color.rgb(155, 108, 76),
-        'name': '泥土',
+        'name': 'Dirt',
         'breakable': True
     },
     BlockType.OBSIDIAN: {
         'color': color.rgb(20, 20, 200),
-        'name': '黑曜石',
+        'name': 'Obsidian',
         'breakable': False
     },
     BlockType.WOOD: {
         'color': color.rgb(150, 110, 70),
-        'name': '木头',
+        'name': 'Wood',
         'breakable': True
     },
     BlockType.SAND: {
         'color': color.rgb(230, 220, 170),
-        'name': '沙子',
+        'name': 'Sand',
         'breakable': True
     },
     BlockType.WATER: {
         'color': color.rgba(50, 100, 200, 150),
-        'name': '水',
+        'name': 'Water',
         'breakable': False
     },
     BlockType.LEAVES: {
         'color': color.rgb(50, 150, 50),
-        'name': '树叶',
+        'name': 'Leaves',
         'breakable': True
     },
 }
 
-# ==================== 方块类 ====================
+# ==================== Voxel Class ====================
 class Voxel(Button):
     def __init__(self, position=(0, 0, 0), block_type=BlockType.GRASS):
         self.block_type = block_type
@@ -91,21 +91,21 @@ class Voxel(Button):
             highlight_color=color.lime if block_info['breakable'] else color.red,
         )
         
-        # 半透明方块设置
+        # Semi-transparent blocks
         if block_type == BlockType.WATER:
             self.alpha = 0.6
 
     def input(self, key):
         if self.hovered:
-            # 右键放置方块
+            # Right click to place block
             if key == 'right mouse down':
                 game_manager.place_block(self.position + mouse.normal)
             
-            # 左键破坏方块
+            # Left click to break block
             if key == 'left mouse down':
                 game_manager.break_block(self)
 
-# ==================== 地形生成器 ====================
+# ==================== Terrain Generator ====================
 class TerrainGenerator:
     def __init__(self):
         self.noise = PerlinNoise(
@@ -115,13 +115,13 @@ class TerrainGenerator:
         self.offset = Config.WORLD_SIZE // 2
     
     def get_height(self, x, z):
-        """获取指定坐标的地形高度"""
+        """Get terrain height at specified coordinates"""
         noise_value = self.noise([x * Config.TERRAIN_SCALE, z * Config.TERRAIN_SCALE])
         return floor(noise_value * Config.TERRAIN_AMPLITUDE)
     
     def generate_world(self):
-        """生成整个世界"""
-        print(f"正在生成 {Config.WORLD_SIZE}x{Config.WORLD_SIZE} 世界...")
+        """Generate the entire world"""
+        print(f"Generating {Config.WORLD_SIZE}x{Config.WORLD_SIZE} world...")
         blocks = []
         
         for z in range(Config.WORLD_SIZE):
@@ -131,33 +131,33 @@ class TerrainGenerator:
                 
                 y = self.get_height(cx, cz)
                 
-                # 生成草方块层
+                # Generate grass layer
                 blocks.append(Voxel(position=(cx, y, cz), block_type=BlockType.GRASS))
                 
-                # 生成泥土层 (2层)
+                # Generate dirt layers (2 layers)
                 for i in range(1, 3):
                     blocks.append(Voxel(position=(cx, y - i, cz), block_type=BlockType.DIRT))
                 
-                # 生成石头层 (3层)
+                # Generate stone layers (3 layers)
                 for i in range(3, 6):
                     blocks.append(Voxel(position=(cx, y - i, cz), block_type=BlockType.STONE))
                 
-                # 随机生成树
+                # Randomly generate trees
                 if random.random() < 0.02 and y > 0:
                     self.generate_tree(cx, y + 1, cz, blocks)
         
-        print(f"世界生成完成！共 {len(blocks)} 个方块")
+        print(f"World generation complete! Total blocks: {len(blocks)}")
         return blocks
     
     def generate_tree(self, x, y, z, blocks):
-        """生成一棵树"""
+        """Generate a tree"""
         tree_height = random.randint(4, 6)
         
-        # 树干
+        # Tree trunk
         for i in range(tree_height):
             blocks.append(Voxel(position=(x, y + i, z), block_type=BlockType.WOOD))
         
-        # 树叶 (简单的球形)
+        # Leaves (simple sphere shape)
         leaf_y = y + tree_height - 1
         for lx in range(-2, 3):
             for lz in range(-2, 3):
@@ -169,7 +169,7 @@ class TerrainGenerator:
                                 block_type=BlockType.LEAVES
                             ))
 
-# ==================== 游戏管理器 ====================
+# ==================== Game Manager ====================
 class GameManager:
     def __init__(self):
         self.current_block = BlockType.GRASS
@@ -178,39 +178,44 @@ class GameManager:
         self.ui = None
         
     def place_block(self, position):
-        """放置方块"""
-        # 边界检查
+        """Place a block"""
+        # Boundary check
         if abs(position.x) >= Config.WORLD_SIZE or abs(position.z) >= Config.WORLD_SIZE:
             return
         
-        # 不能放置在玩家位置
+        # Cannot place at player position
         if distance(position, player.position) < 1.5:
             return
         
-        # 创建方块
+        # Create block
         new_block = Voxel(position=position, block_type=self.current_block)
         self.blocks.append(new_block)
         self.hand.swing()
+        
+        # Print to console instead of UI
+        print(f"Placed {BLOCKS[self.current_block]['name']}")
     
     def break_block(self, block):
-        """破坏方块"""
+        """Break a block"""
         if not BLOCKS[block.block_type]['breakable']:
-            print(f"{BLOCKS[block.block_type]['name']} 无法破坏！")
+            print(f"{BLOCKS[block.block_type]['name']} cannot be destroyed!")
             return
         
         self.hand.swing()
         if block in self.blocks:
             self.blocks.remove(block)
         destroy(block)
+        print(f"Broke {BLOCKS[block.block_type]['name']}")
     
     def select_block(self, block_type):
-        """选择方块类型"""
+        """Select block type"""
         if block_type in BLOCKS:
             self.current_block = block_type
             self.ui.update_selection()
             self.hand.color = BLOCKS[block_type]['color']
+            print(f"Selected: {BLOCKS[block_type]['name']}")
 
-# ==================== 玩家手部 ====================
+# ==================== Player Hand ====================
 class Hand(Entity):
     def __init__(self):
         super().__init__(
@@ -224,11 +229,11 @@ class Hand(Entity):
         )
     
     def swing(self):
-        """挥手动画"""
+        """Hand swing animation"""
         self.animate_rotation((30, -20, 0), duration=0.1)
         self.animate_rotation((10, -10, 0), duration=0.1, delay=0.1)
 
-# ==================== UI界面 ====================
+# ==================== Game UI ====================
 class GameUI:
     def __init__(self, game_manager):
         self.game_manager = game_manager
@@ -237,17 +242,16 @@ class GameUI:
         self.setup_ui()
     
     def setup_ui(self):
-        """设置UI"""
-        # 准星
+        """Setup UI - Pure graphical, no text"""
+        # Crosshair
         Entity(
             parent=camera.ui,
             model='quad',
-            texture='cursor',
             scale=0.015,
             color=color.white
         )
         
-        # 快捷栏
+        # Hotbar
         block_types = [
             BlockType.GRASS,
             BlockType.STONE,
@@ -257,7 +261,7 @@ class GameUI:
         ]
         
         for i, block_type in enumerate(block_types):
-            # 槽位背景
+            # Slot background
             slot = Entity(
                 parent=camera.ui,
                 model='quad',
@@ -266,7 +270,7 @@ class GameUI:
                 scale=(0.1, 0.1)
             )
             
-            # 方块预览
+            # Block preview (3D cube)
             preview = Entity(
                 parent=slot,
                 model='cube',
@@ -275,61 +279,49 @@ class GameUI:
                 rotation=(20, 20, 0)
             )
             
-            # 数字标签
-            Entity(
-                parent=slot,
-                model='quad',
-                text=str(i + 1),
-                color=color.white,
-                scale=0.5,
-                position=(0, 0.6, -0.1)
-            )
-            
             self.hotbar_slots.append({
                 'slot': slot,
                 'preview': preview,
                 'block_type': block_type
             })
         
-        # 选择指示器
+        # Selection indicator (yellow border)
         self.selection_indicator = Entity(
             parent=camera.ui,
             model='quad',
-            color=color.clear,
-            outline_color=color.yellow,
-            outline_thickness=3,
-            scale=(0.11, 0.11),
-            position=self.hotbar_slots[0]['slot'].position
+            color=color.yellow,
+            scale=(0.12, 0.12),
+            position=self.hotbar_slots[0]['slot'].position,
+            z=-0.01
         )
         
-        # 方块名称显示
-        self.block_name = Text(
-            text=BLOCKS[BlockType.GRASS]['name'],
-            origin=(0, 1),
-            position=(-0.85, 0.45),
-            scale=2,
-            color=color.white
+        # Inner dark square to create border effect
+        Entity(
+            parent=self.selection_indicator,
+            model='quad',
+            color=color.rgb(60, 60, 60),
+            scale=0.85,
+            z=0.01
         )
     
     def update_selection(self):
-        """更新选择指示器位置"""
+        """Update selection indicator position"""
         for i, slot_info in enumerate(self.hotbar_slots):
             if slot_info['block_type'] == self.game_manager.current_block:
                 self.selection_indicator.position = slot_info['slot'].position
-                self.block_name.text = BLOCKS[self.game_manager.current_block]['name']
                 slot_info['slot'].color = color.rgb(100, 100, 100)
             else:
                 slot_info['slot'].color = color.rgb(60, 60, 60)
 
-# ==================== 初始化游戏 ====================
-# 创建游戏管理器
+# ==================== Initialize Game ====================
+# Create game manager
 game_manager = GameManager()
 
-# 生成地形
+# Generate terrain
 terrain_gen = TerrainGenerator()
 game_manager.blocks = terrain_gen.generate_world()
 
-# 创建玩家
+# Create player
 player = FirstPersonController()
 player.cursor.visible = False
 player.gravity = 0.5
@@ -339,33 +331,33 @@ player.jump_height = Config.JUMP_HEIGHT
 player.camera_pivot.y = Config.EYE_HEIGHT - (Config.STEVE_HEIGHT / 2)
 player.position = (0, 15, 0)
 
-# 创建手部
+# Create hand
 game_manager.hand = Hand()
 
-# 创建UI
+# Create UI
 game_manager.ui = GameUI(game_manager)
 
-# 设置环境
+# Setup environment
 sky = Sky()
 sky.color = color.rgb(135, 206, 235)
 scene.fog_color = color.rgb(135, 206, 235)
 scene.fog_density = 0.015
 
-# 环境光
+# Lighting
 AmbientLight(color=color.rgba(255, 255, 255, 0.8))
 DirectionalLight(y=2, z=3, shadows=True)
 
-# ==================== 输入处理 ====================
+# ==================== Input Handling ====================
 def input(key):
-    """全局输入处理"""
-    # 数字键选择方块
+    """Global input handling"""
+    # Number keys to select blocks
     if key in '12345':
         index = int(key) - 1
         if index < len(game_manager.ui.hotbar_slots):
             block_type = game_manager.ui.hotbar_slots[index]['block_type']
             game_manager.select_block(block_type)
     
-    # 鼠标滚轮切换方块
+    # Mouse wheel to switch blocks
     elif key == 'scroll up':
         current_index = next(
             (i for i, s in enumerate(game_manager.ui.hotbar_slots) 
@@ -384,24 +376,33 @@ def input(key):
         new_index = (current_index + 1) % len(game_manager.ui.hotbar_slots)
         game_manager.select_block(game_manager.ui.hotbar_slots[new_index]['block_type'])
     
-    # ESC 退出游戏
+    # ESC to quit
     elif key == 'escape':
         application.quit()
+    
+    # F3 for debug info
+    elif key == 'f3':
+        print(f"\n=== Debug Info ===")
+        print(f"Player Position: {player.position}")
+        print(f"Current Block: {BLOCKS[game_manager.current_block]['name']}")
+        print(f"Total Blocks: {len(game_manager.blocks)}")
+        print(f"==================\n")
 
-# ==================== 游戏循环 ====================
+# ==================== Game Loop ====================
 time_passed = 0
 
 def update():
-    """每帧更新"""
+    """Update every frame"""
     global time_passed
     time_passed += time.dt
     
-    # 玩家掉出世界重生
+    # Player respawn if fallen out of world
     if player.y < -30:
         player.position = (0, 15, 0)
         player.velocity = Vec3(0, 0, 0)
+        print("Respawned!")
     
-    # 简单的昼夜循环
+    # Simple day/night cycle
     cycle_speed = 0.02
     brightness = (math.sin(time_passed * cycle_speed) + 1) / 2 * 0.5 + 0.5
     sky.color = color.rgb(
@@ -410,16 +411,27 @@ def update():
         235 * brightness
     )
 
-# 运行游戏
-print("\n=== Minecraft 游戏控制 ===")
-print("WASD - 移动")
-print("空格 - 跳跃")
-print("鼠标 - 视角")
-print("左键 - 破坏方块")
-print("右键 - 放置方块")
-print("1-5 - 选择方块")
-print("滚轮 - 切换方块")
-print("ESC - 退出游戏")
-print("========================\n")
+# Run game
+print("\n" + "="*50)
+print("    MINECRAFT-STYLE GAME")
+print("="*50)
+print("\nCONTROLS:")
+print("  WASD       - Move")
+print("  Space      - Jump")
+print("  Mouse      - Look around")
+print("  Left Click - Break block")
+print("  Right Click- Place block")
+print("  1-5        - Select block type")
+print("  Scroll     - Switch block type")
+print("  F3         - Debug info")
+print("  ESC        - Quit game")
+print("\nBLOCK TYPES:")
+print("  1 = Grass (green)")
+print("  2 = Stone (gray)")
+print("  3 = Dirt (brown)")
+print("  4 = Wood (wood color)")
+print("  5 = Sand (yellow)")
+print("\nNOTE: Block selection feedback in console")
+print("="*50 + "\n")
 
 app.run()
