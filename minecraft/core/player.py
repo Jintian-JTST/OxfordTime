@@ -16,7 +16,8 @@ class PlayerController(FirstPersonController):
         self.jump_height = Settings.JUMP_HEIGHT
         self.height = Settings.PLAYER_HEIGHT
         self.gravity = 0.6
-        self.position = (0, 20, 0)
+        # 确保改成 (0, 30, 0)，给一点高度让你掉下来
+        self.position = (0, 30, 0)
 
         self.hand = Entity(
             parent=self.camera_pivot,
