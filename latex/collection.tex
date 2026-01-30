@@ -77,13 +77,16 @@
     backgroundcolor=black!10,roundcorner=8pt,hidealllines=true,nobreak
 }
 
+\title{\textbf{Answers for Collection of Mathematics Methods}}
+\author{JTST}
+\date{\today}
 \newcommand{\se}{\subseteq}
 
 \begin{document}
-
+\maketitle
 \lhead{Mathematics Methods}
 \rhead{Collection}
-
+\section*{Section A}
 \begin{enumerate}
     \setcounter{enumi}{0}
     \item \textbf{Complex Numbers} [7]
@@ -303,6 +306,7 @@ where $x$ is a real variable and $n$ is a real constant.
     \[ y(x) = A x^n + B x^{-(n+1)},\]
     where $A$ and $B$ are arbitrary constants.
 
+    \newpage
     \item \textbf{Matrix and properties} [7]
     \begin{mdframed}[style=exercise]
 Let $A$ and $B$ be $n\times n$ Hermitian matrices and $U$ an $n\times n$ unitary matrix.
@@ -318,13 +322,20 @@ Let $A$ and $B$ be $n\times n$ Hermitian matrices and $U$ an $n\times n$ unitary
     \end{mdframed}
 
     \begin{enumerate}
-        \item [(a)] Let $\lambda$ be an eigenvalue of $U$ with corresponding eigenvector $\mathbf{v}$, so that $U\mathbf{v}=\lambda \mathbf{v}$. Taking the norm on both sides, we have
-        \[ \|U\mathbf{v}\| = \|\lambda \mathbf{v}\|.\]
-        Since $U$ is unitary, it preserves the norm, so $\|U\mathbf{v}\| = \|\mathbf{v}\|$. Also, $\|\lambda \mathbf{v}\| = |\lambda| \|\mathbf{v}\|$. Therefore,
-        \[ \|\mathbf{v}\| = |\lambda| \|\mathbf{v}\|.\]
-        Since $\mathbf{v}$ is a non-zero eigenvector, $\|\mathbf{v}\| \neq 0$, we can divide both sides by $\|\mathbf{v}\|$ to get
-        \[ 1 = |\lambda|.\]
-        Thus, the modulus of each eigenvalue of $U$ is equal to one.
+        \item [(a)] Let $\lambda$ be an eigenvalue of $U$ with corresponding eigenvector $\mathbf{v}$, so that $U\mathbf{v}=\lambda \mathbf{v}$. Taking the conjugate transpose of both sides, we have
+        \[ \mathbf{v}^\dagger U^\dagger = \lambda^* \mathbf{v}^\dagger.\]
+        \[ \mathbf{v}^\dagger U^\dagger U=\mathbf{v}^\dagger = \lambda^* \mathbf{v}^\dagger U.\]
+        Multiplying both sides by $U\mathbf{v}$ from the right, we get
+        \[ \mathbf{v}^\dagger U\mathbf{v} = \lambda^* \mathbf{v}^\dagger U U\mathbf{v} = \lambda^* \mathbf{v}^\dagger \mathbf{v}.\]
+        On the other hand, from the original eigenvalue equation,
+        \[ \mathbf{v}^\dagger U\mathbf{v} = \lambda \mathbf{v}^\dagger\mathbf{v}.\]
+        Equating the two expressions for $\mathbf{v}^\dagger U\mathbf{v}$, we have 
+        \[ \lambda \mathbf{v}^\dagger\mathbf{v} = \lambda^* \mathbf{v}^\dagger\mathbf{v}.\]
+        Since $\mathbf{v}$ is a non-zero eigenvector, $\mathbf{v}^\dagger\mathbf{v} \neq 0$, we can divide both sides by $\mathbf{v}^\dagger\mathbf{v}$ to get
+        \[ \lambda = \lambda^*.\]
+        Thus, we have
+        \[ |\lambda|^2 = \lambda \lambda^* = 1.\]
+        \hfill Q.E.D.
 
         \item [(b)] Let $\mu$ be an eigenvalue of $A$ with corresponding eigenvector $\mathbf{w}$, so that $A\mathbf{w}=\mu \mathbf{w}$. Taking the conjugate transpose of both sides, we have
         \[ \mathbf{w}^\dagger A^\dagger = \mu^* \mathbf{w}^\dagger.\]
@@ -338,7 +349,7 @@ Let $A$ and $B$ be $n\times n$ Hermitian matrices and $U$ an $n\times n$ unitary
         \[ \mu \mathbf{w}^\dagger\mathbf{w} = \mu^* \mathbf{w}^\dagger\mathbf{w}.\]
         Since $\mathbf{w}$ is a non-zero eigenvector, $\mathbf{w}^\dagger\mathbf{w} \neq 0$, we can divide both sides by $\mathbf{w}^\dagger\mathbf{w}$ to get
         \[ \mu = \mu^*.\]
-        Thus, the eigenvalues of $A$ are real.
+        \hfill Q.E.D.
 
 
         \item [(c)] Given that $U=A+iB$ is unitary, we have
@@ -347,13 +358,7 @@ Let $A$ and $B$ be $n\times n$ Hermitian matrices and $U$ an $n\times n$ unitary
         \[ (A - iB)(A + iB) = A^2 + iAB - iBA + B^2 = A^2 + B^2 + i(AB - BA).\]
         Setting this equal to the identity matrix $I$, we have
         \[ A^2 + B^2 + i(AB - BA) = I.\]
-        Equating the real and imaginary parts, we obtain the two equations:
-        \begin{enumerate}
-            \item[(i)] Real part: 
-            \[ A^2 + B^2 = I.\]
-            \item[(ii)] Imaginary part: 
-            \[ AB - BA = 0.\]
-        \end{enumerate}
+        \hfill Q.E.D.
         \end{enumerate}
 
 
