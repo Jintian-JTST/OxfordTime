@@ -364,10 +364,77 @@ Let $A$ and $B$ be $n\times n$ Hermitian matrices and $U$ an $n\times n$ unitary
 
 
 
+    \newpage
+    \item \textbf{Matrix and geometry} [8]
+    \begin{mdframed}[style=exercise]
+        The rotation matrix $A$ in $\mathbb{R}^3$ is given by
+        \[
+        A=\frac12
+        \begin{pmatrix}
+        \sqrt2 & -1 & -1\\
+        0 & \sqrt2 & -\sqrt2\\
+        \sqrt2 & 1 & 1
+        \end{pmatrix}.
+        \]
+        \begin{enumerate}
+        \item[(a)] Show that the matrix $A$ is orthogonal.
+        \item[(b)] Calculate $\cos\theta$, where $\theta$ is the angle of rotation, and find a unit vector in the direction of the axis of rotation.
+        \end{enumerate}
+    \end{mdframed}
 
-    \item 
+    \begin{enumerate}
+        \item [(a)] To show that $A$ is orthogonal, we need to verify that $A^TA=I$. Calculating $A^T$,
+        \[
+        A^T=\frac12
+        \begin{pmatrix}
+        \sqrt2 & 0 & \sqrt2\\
+        -1 & \sqrt2 & 1\\
+        -1 & -\sqrt2 & 1
+        \end{pmatrix}.
+        \]
+        Now, calculating $A^TA$,
+        \[
+        A^TA = \frac14
+        \begin{pmatrix}
+        2 + 0 + 2 & -\sqrt2 + 0 - \sqrt2 & -\sqrt2 + 0 - \sqrt2\\
+        -\sqrt2 + 0 - \sqrt2 & 1 + 2 + 1 & 1 - 2 + 1\\
+        -\sqrt2 + 0 - \sqrt2 & 1 - 2 + 1 & 1 + 2 + 1
+        \end{pmatrix} = 
+        \begin{pmatrix}
+        1 & 0 & 0\\
+        0 & 1 & 0\\
+        0 & 0 & 1
+        \end{pmatrix} = I.
+        \]
+        Thus, $A$ is orthogonal.
+
+        \item [(b)]
+        For an orthogonal matrix representing a rotation in $\mathbb{R}^3$, in 2D dimensions, the matrix can be represented by
+        \[\begin{pmatrix}
+        \cos\theta & -\sin\theta & 0\\
+        \sin\theta & \cos\theta & 0\\
+        0 & 0 & 1
+        \end{pmatrix}.\]
+        Thus Trace can be used to find the angle of rotation.
+        For a rotation matrix in $\mathbb{R}^3$,
+        \[\operatorname{tr}(A)=1+2\cos\theta.\]
+        Here
+        \[\operatorname{tr}(A)=\frac12(\sqrt2+\sqrt2+1)=\sqrt2+\frac12,\]
+        so
+        \[\cos\theta=\frac{\operatorname{tr}(A)-1}{2}=\frac{\left(\sqrt2+\frac12\right)-1}{2}=\frac{\sqrt2}{2}-\frac14.\]
+        This gives
+        \[\theta=\cos^{-1}\left(\frac{\sqrt2}{2}-\frac14\right)\approx \boxed{62.8^{\circ}}.\]
+
+        The rotation axis is the eigenspace for eigenvalue $1$, i.e. solutions of
+        \[(A-I)\mathbf{v}=0.\]
+        A nonzero solution is
+        \[\mathbf{v}=\begin{pmatrix}1+\sqrt2\\-(1+\sqrt2)\\1\end{pmatrix},\]
+        so a unit vector along the axis is
+        \[\hat{\mathbf{v}}=\frac{1}{\sqrt{(1+\sqrt2)^2+(1+\sqrt2)^2+1}}\begin{pmatrix}1+\sqrt2\\-(1+\sqrt2)\\1\end{pmatrix}=\boxed{\frac{1}{\sqrt{7+4\sqrt2}}\begin{pmatrix}1+\sqrt2\\-(1+\sqrt2)\\1\end{pmatrix}}.\]
+    \end{enumerate}
 \end{enumerate}
 
+\section*{Section B}
 
 
 
