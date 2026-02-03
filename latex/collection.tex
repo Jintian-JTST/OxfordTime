@@ -406,7 +406,7 @@ Let $A$ and $B$ be $n\times n$ Hermitian matrices and $U$ an $n\times n$ unitary
         0 & 0 & 1
         \end{pmatrix} = I.
         \]
-        Thus, $A$ is orthogonal.
+        Thus $A$ is orthogonal.
 
         \item [(b)]
         For an orthogonal matrix representing a rotation in $\mathbb{R}^3$, in 2D dimensions, the matrix can be represented by
@@ -434,7 +434,178 @@ Let $A$ and $B$ be $n\times n$ Hermitian matrices and $U$ an $n\times n$ unitary
     \end{enumerate}
 \end{enumerate}
 
+\newpage
 \section*{Section B}
+
+\section*{Section B}
+
+% =========================
+% Q7
+% =========================
+\begin{mdframed}[style=exercise]
+\noindent\textbf{7.}
+
+\noindent\textbf{(a)} State de Moivre's theorem and show that
+\begin{enumerate}
+\item[(i)]
+\[
+\sum_{n=0}^{N-1}\cos n\theta
+=
+\frac{\sin(N\theta/2)}{\sin(\theta/2)}
+\cos\frac{(N-1)\theta}{2},
+\]
+\item[(ii)]
+\[
+\cos5\theta
+=
+16\cos^5\theta-20\cos^3\theta+5\cos\theta,
+\]
+\end{enumerate}
+where $n,N$ are integers and $\theta$ is a complex variable. \hfill [8]
+
+\noindent\textbf{(b)} Find all the roots for the equation
+\[
+\left(\frac{z-1}{z+1}\right)^n=-1.
+\tag{$\dagger$}
+\]
+Verify your solution for the special case $n=3$, by finding the roots of the resulting
+third order equation.
+
+\medskip
+Use the general solution to $(\dagger)$ to calculate the product
+\[
+\prod_{r=1}^n
+\cot\left(\frac{(2r+1)\pi}{2n}\right),
+\]
+where $r$ is an integer, for both odd and even values of $n$. \hfill [8]
+
+\noindent\textbf{(c)} Show that if the complex numbers $z$ and $u$ satisfy the relation
+\[
+\left|\frac{z+u}{z+u^*}\right|=1,
+\]
+then either $u$ or $z$ must be real.
+
+\medskip
+\noindent [The $(*)$ stands for the complex conjugate.] \hfill [4]
+\end{mdframed}
+
+% =========================
+% Q8
+% =========================
+\begin{mdframed}[style=exercise]
+\noindent\textbf{8.}
+The differential equation for the displacement $y(t)$ of a particle executing forced
+and damped harmonic oscillations with damping factor $\gamma$ and natural frequency
+$\omega_0$ may be written as
+\[
+\frac{d^2y}{dt^2}+2\gamma\frac{dy}{dt}+\omega_0^2 y
+=F\cos\omega t,
+\]
+where $F$ and $\omega$ are the amplitude and frequency of the driving force respectively.
+
+\noindent\textbf{(a)} Assuming that $F=0$, find the displacements $y(t)$ of the particle for the
+cases $\omega_0<\gamma$ and $\omega_0=\gamma$. Sketch and compare the two displacements.
+\hfill [6]
+
+\noindent\textbf{(b)} Assume now that $F=F_0\neq0$ and $\gamma<\omega_0$. Explain what is meant
+by a steady state solution of the differential equation and find an expression for the steady
+state amplitude and phase of the displacement.
+
+\medskip
+For a given value of the natural frequency $\omega_0$, which value of the driving force
+frequency $\omega$ maximises the displacement? For what value of $\omega$ is the velocity
+a maximum? \hfill [6]
+
+\noindent\textbf{(c)} Explain what is meant by the width of the oscillator resonance. Calculate the
+width of the resonance for the case $\gamma\ll\omega_0$. \hfill [4]
+\end{mdframed}
+
+% =========================
+% Q9
+% =========================
+\begin{mdframed}[style=exercise]
+\noindent\textbf{9.}
+The matrix
+\[
+A=
+\begin{pmatrix}
+1 & -1 & \alpha\\
+\alpha-3 & 0 & 1\\
+2 & -1 & \alpha+1
+\end{pmatrix}
+\]
+defines the linear map $f:\mathbb{R}^3\to\mathbb{R}^3$ by $f(x)=Ax$, where $x\in\mathbb{R}^3$
+and $\alpha\in\mathbb{R}$.
+
+\medskip
+Let $A_4$ be equal to the matrix $A$ for $\alpha=4$.
+
+\noindent\textbf{(a)} Find a basis for $\ker(f)$ and show that the geometry of the kernel is a straight
+line in $\mathbb{R}^3$. Write the equation of the line in vector form. \hfill [4]
+
+\noindent\textbf{(b)} By choosing $(\mathbf{e}_1,\mathbf{e}_2,\mathbf{e}_3)$ as a basis of $\mathbb{R}^3$
+with $\mathbf{e}_1\in\ker(f)$, show that the geometry of the image of $f$ is a plane and find
+the direction of the normal to this plane. \hfill [5]
+
+\noindent Now let $A_0$ be equal to $A$ for $\alpha=0$.
+
+\noindent\textbf{(c)} Assuming that the matrix $A_0$ was calculated with respect to the basis
+\[
+\mathbf{u}_1=(1,0,0)^T,\quad
+\mathbf{u}_2=(0,1,0)^T,\quad
+\mathbf{u}_3=(0,0,1)^T,
+\]
+express the map $f(x)$ in terms of $\mathbf{u}_1,\mathbf{u}_2,\mathbf{u}_3$ and the coordinates
+of the vector $x=(x_1,x_2,x_3)^T$. \hfill [3]
+
+\noindent\textbf{(d)} Assume now that the matrix $A'_0$ of the map $f$ is calculated with respect to
+the basis
+\[
+\mathbf{w}_1=(1,1,0)^T,\quad
+\mathbf{w}_2=(1,0,1)^T,\quad
+\mathbf{w}_3=(0,1,1)^T.
+\]
+Calculate the matrix $A'_0$ from the relation
+\[
+A'_0=CA_0C^{-1}
+\]
+by a suitable choice of the matrix $C$. \hfill [8]
+\end{mdframed}
+
+% =========================
+% Q10
+% =========================
+\begin{mdframed}[style=exercise]
+\noindent\textbf{10.}
+
+\noindent\textbf{(a)} The components of a vector $\mathbf{a}$ in the $(x,y)$ plane of a Cartesian
+coordinate system $(x,y,z)$ are given by $(a_x,a_y)$. Assume now that the $(x,y)$ axes are
+rotated about the $z$ axis by an angle $\theta$, anticlockwise, so that the components of
+$\mathbf{a}$ with respect to the rotated coordinate system $(x',y',z)$ are given by $(a'_x,a'_y)$.
+
+\medskip
+Calculate the elements of the matrix $R$ that relates the vector $(a'_x,a'_y)^T$ to the vector
+$(a_x,a_y)^T$ and show that $R$ is a rotation matrix. Find the eigenvectors of the matrix $R$.
+\hfill [7]
+
+\noindent\textbf{(b)} The equation of a conical section in the $(x,y)$ coordinate system in $\mathbb{R}^2$
+is given by
+\[
+f(x,y)=x^2+6xy+y^2=4.
+\tag{$*$}
+\]
+Write down the above equation in the matrix form
+\[
+\mathbf{x}^TM\mathbf{x}=4
+\]
+where $M$ is a symmetric matrix and $\mathbf{x}=(x,y)^T$ is a coordinate vector in $\mathbb{R}^2$.
+Use matrix diagonalisation to show that the curve in $(*)$ represents a hyperbola. Find the
+elements of the unitary matrix that diagonalises the matrix $M$.
+
+\medskip
+Sketch this curve showing the asymptotes and the points of intersection with the $(x,y)$ axes.
+\hfill [8]
+\end{mdframed}
 
 
 
