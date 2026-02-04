@@ -1,6 +1,6 @@
 \documentclass[10pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
-\usepackage[ngerman]{babel}
+\usepackage[english]{babel}
 \usepackage[T1]{fontenc}
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -437,8 +437,6 @@ Let $A$ and $B$ be $n\times n$ Hermitian matrices and $U$ an $n\times n$ unitary
 \newpage
 \section*{Section B}
 
-\section*{Section B}
-
 % =========================
 % Q7
 % =========================
@@ -489,6 +487,167 @@ then either $u$ or $z$ must be real.
 \noindent [The $(*)$ stands for the complex conjugate.] \hfill [4]
 \end{mdframed}
 
+\begin{enumerate}
+    \item [(a)] \textbf{de Moivre's theorem} states that for any real number $\theta$ and integer $n$,
+    \[(\cos\theta + i\sin\theta)^n = \cos(n\theta) + i\sin(n\theta).\]
+    \begin{enumerate}
+        \item [(i)] Using the formula for the sum of a geometric series, we have
+        \begin{align*}
+            \sum_{n=0}^{N-1}\cos n\theta &= \sum_{n=0}^{N-1}\Re(\e^{in\theta}) \\
+            &= \Re\left(\sum_{n=0}^{N-1}\e^{in\theta}\right) \\
+            &= \Re\left(\frac{1-\e^{iN\theta}}{1-\e^{i\theta}}\right) \\
+            &= \Re\left(\frac{\e^{i(N-1)\theta/2}}{\e^{i\theta/2}} \cdot \frac{\e^{iN\theta/2}-\e^{-iN\theta/2}}{\e^{i\theta/2}-\e^{-i\theta/2}}\right) \\
+            &= \Re\left(\frac{\e^{i(N-1)\theta/2}}{\e^{i\theta/2}} \cdot \frac{\sin(N\theta/2)}{\sin(\theta/2)}\right) \\
+            &= \frac{\sin(N\theta/2)}{\sin(\theta/2)} \cdot \Re(\e^{i(N-1)\theta/2}) \\
+            &= \frac{\sin(N\theta/2)}{\sin(\theta/2)} \cos((N-1)\theta/2).
+        \end{align*}
+        \hfill Q.E.D.
+        \item [(ii)] Using de Moivre's theorem, we have
+        \begin{align*}
+            \cos 5\theta + i\sin 5\theta &= (\cos\theta + i\sin\theta)^5 \\
+            &= \cos^5\theta + 5i\cos^4\theta\sin\theta - 10\cos^3\theta\sin^2\theta - 10i\cos^2\theta\sin^3\theta + 5\cos\theta\sin^4\theta + i\sin^5\theta.
+        \end{align*}
+        Equating the real parts, we get
+        \[\cos 5\theta = \cos^5\theta - 10\cos^3\theta\sin^2\theta + 5\cos\theta\sin^4\theta.\]
+        Using the identity $\sin^2\theta = 1 - \cos^2\theta$, we can rewrite the equation as
+        \begin{align*}
+            \cos 5\theta &= \cos^5\theta - 10\cos^3\theta(1 - \cos^2\theta) + 5\cos\theta(1 - \cos^2\theta)^2 \\
+            &= \cos^5\theta - 10\cos^3\theta + 10\cos^5\theta + 5\cos\theta - 10\cos^3\theta + 5\cos^5\theta \\
+            &= 16\cos^5\theta - 20\cos^3\theta + 5\cos\theta.
+        \end{align*}
+        \hfill Q.E.D.
+        \item [(b)] Rearranging the equation, we have
+        \[\frac{z-1}{z+1} = \e^{i{(2k+1)\pi}/{n}}, \quad k=0,1,2,\ldots,n-1.\]
+        Solving for $z$, we get
+        \[\boxed{z = \frac{1 + \e^{i{(2k+1)\pi}/{n}}}{1 - \e^{i{(2k+1)\pi}/{n}}}}.\]
+        For the special case $n=3$, we have
+        \[z_k = \frac{1 + \e^{i{(2k+1)\pi}/{3}}}{1 - \e^{i{(2k+1)\pi}/{3}}}, \quad k=0,1,2.\]
+        The three roots are
+        \begin{align*}
+            z_0 &= \frac{1 + \e^{i\pi/3}}{1 - \e^{i\pi/3}}, \\
+            z_1 &= \frac{1 + \e^{i\pi}}{1 - \e^{i\pi}}, \\
+            z_2 &= \frac{1 + \e^{i5\pi/3}}{1 - \e^{i5\pi/3}}.
+        \end{align*}
+        Simplifying these expressions, we get
+        \begin{align*}
+            z_0 &= \sqrt{3}i, \\
+            z_1 &= 0, \\
+            z_2 &= -\sqrt{3}i
+            .
+        \end{align*}
+        These are the three roots of the equation for $n=3$.
+
+        For the product, we have the equation
+\[
+\left(\frac{z-1}{z+1}\right)^n=-1.
+\tag{$\dagger$}
+\]
+Let
+\[
+w=\frac{z-1}{z+1}.
+\]
+Then $w^n=-1=e^{i(2k+1)\pi}$, so
+\[
+w_k=e^{i(2k+1)\pi/n},\qquad k=0,1,\dots,n-1.
+\]
+Solving $z-1=w(z+1)$ gives
+\[
+z=\frac{1+w}{1-w}.
+\]
+With $w=e^{i\phi}$ we have the standard identity
+\[
+\frac{1+e^{i\phi}}{1-e^{i\phi}}=-i\cot\!\left(\frac{\phi}{2}\right),
+\]
+hence
+\[
+z_k=-i\cot\!\left(\frac{(2k+1)\pi}{2n}\right).
+\]
+Since the set of angles
+\[
+\left\{\frac{(2r+1)\pi}{2n}: r=1,\dots,n\right\}
+\]
+is the same as
+\[
+\left\{\frac{(2k+1)\pi}{2n}: k=0,\dots,n-1\right\}
+\]
+(up to a permutation, using $\cot(\pi+\alpha)=\cot\alpha$),
+the required product is
+\[
+P:=\prod_{r=1}^n \cot\!\left(\frac{(2r+1)\pi}{2n}\right)
+=\prod_{k=0}^{n-1}\cot\!\left(\frac{(2k+1)\pi}{2n}\right).
+\]
+From $z_k=-i\cot(\cdot)$ we get $\cot(\cdot)=iz_k$, so
+\[
+P=i^n\prod_{k=0}^{n-1} z_k.
+\]
+
+Now $(\dagger)$ is equivalent to
+\[
+(z-1)^n=-(z+1)^n
+\quad\Longleftrightarrow\quad
+(z-1)^n+(z+1)^n=0,
+\]
+Expanding the left-hand side using the binomial theorem, we see that only the even powers of $z$ survive, with coefficients
+\[\binom{n}{0}+\binom{n}{2}+\binom{n}{4}+\cdots = 2^{n-1},\]
+so the polynomial is of degree $n$ with leading coefficient $2^{n-1}$. The $z_k$ are the $n$ roots of this polynomial, 
+\[F(z):=(z-1)^n+(z+1)^n=0.
+\]
+We know that
+\[2(z-z_0)(z-z_1)\cdots(z-z_{n-1})=F(z)/2^{n-1}.\]
+Setting $z=0$ gives
+\[\prod_{k=0}^{n-1} z_k = (-1)^n \frac{F(0)}{2^n}=(-1)^n\frac{(-1)^n+1}{2}.
+\]
+Therefore
+\[
+P=i^n(-1)^n\frac{(-1)^n+1}{2}.
+\]
+If $n$ is odd, then $(-1)^n+1=0$ and so $P=0$.
+If $n$ is even, then $(-1)^n+1=2$ and $\prod z_k=1$, so
+\[
+P=i^n=i^{2(n/2)}=(-1)^{n/2}.
+\]
+
+\[
+\boxed{
+\prod_{r=1}^n \cot\!\left(\frac{(2r+1)\pi}{2n}\right)=
+\begin{cases}
+0, & n\ \text{odd},\\[4pt]
+(-1)^{n/2}, & n\ \text{even}.
+\end{cases}}
+\]
+
+
+    \item [(c)] Given that
+\[\left|\frac{z+u}{z+u^*}\right|=1,\]
+we have
+\[\left|\frac{z+u}{z+u^*}\right|^2 = \frac{(z+u)(z^*+u^*)}{(z+u^*)(z^*+u)} = 1.\]
+Expanding both sides, we get
+\begin{align*}
+(z+u)(z^*+u^*) &= (z+u^*)(z^*+u)\\
+zz^* + zu^* + uz^* + uu^* &= zz^* + zu + u^*z^* + u^*u\\
+zu^* + uz^* &= zu + u^*z^*\\
+zu^* - zu &= u^*z^* - uz^*\\
+z(u^* - u) &= z^*(u^* - u)\\
+(z - z^*)(u^* - u) &= 0.
+\end{align*}
+Thus, either $z - z^* = 0$ or $u^* - u = 0$, which means either $z\in \mathbb{R}$ or $u \in \mathbb{R}$ . \hfill Q.E.D.
+
+
+    \end{enumerate}
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
 % =========================
 % Q8
 % =========================
@@ -498,7 +657,7 @@ The differential equation for the displacement $y(t)$ of a particle executing fo
 and damped harmonic oscillations with damping factor $\gamma$ and natural frequency
 $\omega_0$ may be written as
 \[
-\frac{d^2y}{dt^2}+2\gamma\frac{dy}{dt}+\omega_0^2 y
+\frac{\mathrm{d}^2y}{\mathrm{d}t^2}+2\gamma\frac{\mathrm{d}y}{\mathrm{d}t}+\omega_0^2 y
 =F\cos\omega t,
 \]
 where $F$ and $\omega$ are the amplitude and frequency of the driving force respectively.
@@ -519,6 +678,79 @@ a maximum? \hfill [6]
 \noindent\textbf{(c)} Explain what is meant by the width of the oscillator resonance. Calculate the
 width of the resonance for the case $\gamma\ll\omega_0$. \hfill [4]
 \end{mdframed}
+
+
+\begin{enumerate}
+    \item [(a)] For $F=0$, the differential equation becomes
+    \[\frac{\mathrm{d}^2y}{\mathrm{d}t^2}+2\gamma\frac{\mathrm{d}y}{\mathrm{d}t}+\omega_0^2 y = 0.\]
+    The characteristic equation is
+    \[r^2 + 2\gamma r + \omega_0^2 = 0.\]
+    The roots are
+    \[r = -\gamma \pm \sqrt{\gamma^2 - \omega_0^2}.\]
+    \begin{itemize}
+        \item For $\omega_0 < \gamma$, the roots are real and distinct. The general solution is
+        \[y(t) = \e^{-\gamma t}(C_1 \e^{\sqrt{\gamma^2 - \omega_0^2}t} + C_2 \e^{-\sqrt{\gamma^2 - \omega_0^2}t}),\]
+        where $C_1$ and $C_2$ are constants determined by initial conditions.
+
+        \item For $\omega_0 = \gamma$, the roots are real and equal. The general solution is
+        \[y(t) = (C_1 + C_2 t)\e^{-\gamma t},\]
+        where $C_1$ and $C_2$ are constants determined by initial conditions.
+    \end{itemize}
+    The two displacements can be sketched as follows:
+
+    \begin{figure}[htbp]
+        \centering
+        \includegraphics[width=0.9\textwidth]{1.png}
+        \caption{Displacements for $\omega_0 < \gamma$}
+    \end{figure}
+
+    \begin{figure}[htbp]
+        \centering
+        \includegraphics[width=0.9\textwidth]{2.png}
+        \caption{Displacements for $\omega_0 = \gamma$}
+    \end{figure}
+
+    \item [(b)] A steady state solution is a particular solution of the differential equation that represents the long-term behavior of the system after transient effects have died out. It is typically periodic and has the same frequency as the driving force.
+    
+    To find the steady state solution, we assume a solution of the form
+    \[y(t) = A\cos(\omega t - \delta),\]
+    where $A$ is the amplitude and $\delta$ is the phase shift. Substituting this into the differential equation, we get
+    \[-A\omega^2\cos(\omega t - \delta) - 2\gamma A\omega\sin(\omega t - \delta) + \omega_0^2 A\cos(\omega t - \delta) = F_0\cos(\omega t).\]
+    Equating coefficients of $\cos(\omega t)$ and $\sin(\omega t)$, we have
+    \[A(\omega_0^2 - \omega^2) = F_0\cos\delta,\]
+    \[2\gamma A\omega = F_0\sin\delta.\]
+    Solving for $A$ and $\delta$, we get
+    \[A = \frac{F_0}{\sqrt{(\omega_0^2 - \omega^2)^2 + (2\gamma\omega)^2}},\]
+    \[\tan\delta = \frac{2\gamma\omega}{\omega_0^2 - \omega^2}.\]
+    To maximize the displacement, we differentiate $A$ with respect to $\omega$ and set it to zero. The maximum occurs when $(\omega_0^2 - \omega^2)^2 + (2\gamma\omega)^2$ is minimized. This happens when $\boxed{\omega = \sqrt{\omega_0^2 - 2\gamma^2}}$, provided $\omega_0 > \gamma$.
+    The velocity is given by
+    \[v = \omega A= \frac{\omega F_0}{\sqrt{(\omega_0^2 - \omega^2)^2 + (2\gamma\omega)^2}}.\]
+    To maximize the velocity, we differentiate $v$ with respect to $\omega$ and set it to zero. The maximum occurs when minimizing 
+    \[\left(\left(\frac{\omega_0}{\omega}\right)^2-1\right)^2+4\gamma^2.\]
+    This happens when $\boxed{\omega = \omega_0}$.
+
+
+    \item [(c)] The width of the oscillator resonance, also known as the bandwidth, is defined as the range of frequencies over which the amplitude of the oscillation is greater than or equal to $\displaystyle\frac{A_{\text{max}}}{2}$, where $A_{\text{max}}$ is the maximum amplitude at resonance.
+    For $\gamma \ll \omega_0$, the resonance occurs at $\omega \approx \omega_0$. The amplitude at resonance is
+    \[A_{\text{max}} = \frac{F_0}{2\gamma\omega_0}.\]
+    To find the frequencies at which the amplitude is half of $A_{\text{max}}$, we set
+    \[\frac{F_0}{\sqrt{(\omega_0^2 - \omega^2)^2 + (2\gamma\omega)^2}} = \frac{A_{\text{max}}}{2} = \frac{F_0}{4\gamma\omega_0}.\]
+    Squaring both sides and simplifying, we get
+    \[(\omega_0^2 - \omega^2)^2 + (2\gamma\omega)^2 = (4\gamma\omega_0)^2.\]
+    Solving this quadratic equation for $\omega$, we find the two frequencies $\omega_1$ and $\omega_2$ at which the amplitude is half of $A_{\text{max}}$. The width of the resonance is then given by
+    \[\Delta \omega = \omega_2 - \omega_1 \approx\boxed{ 2\gamma}.\]
+
+
+
+\end{enumerate}
+
+
+
+
+
+
+
+
 
 % =========================
 % Q9
