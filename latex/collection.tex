@@ -7,7 +7,6 @@
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{lmodern}
-\usepackage{physics}
 \usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
 \usepackage{siunitx}
 \usepackage{fancyhdr}
@@ -77,9 +76,9 @@
     backgroundcolor=black!10,roundcorner=8pt,hidealllines=true,nobreak
 }
 
-\title{\textbf{Answers for Collection of Mathematics Methods}}
+\title{\textbf{Answers for Collection of \textit{Mathematics Methods}}}
 \author{JTST}
-\date{\today}
+\date{Jan 16$^\mathrm{th}$, 2026}
 \newcommand{\se}{\subseteq}
 
 \begin{document}
@@ -779,7 +778,7 @@ line in $\mathbb{R}^3$. Write the equation of the line in vector form. \hfill [4
 with $\mathbf{e}_1\in\ker(f)$, show that the geometry of the image of $f$ is a plane and find
 the direction of the normal to this plane. \hfill [5]
 
-\noindent Now let $A_0$ be equal to $A$ for $\alpha=0$.
+Now let $A_0$ be equal to $A$ for $\alpha=0$.
 
 \noindent\textbf{(c)} Assuming that the matrix $A_0$ was calculated with respect to the basis
 \[
@@ -803,6 +802,125 @@ A'_0=CA_0C^{-1}
 \]
 by a suitable choice of the matrix $C$. \hfill [8]
 \end{mdframed}
+
+
+\begin{enumerate}
+    \item [(a)] For $\alpha=4$, the matrix $A_4$ is
+    \[
+    A_4=
+    \begin{pmatrix}
+    1 & -1 & 4\\
+    1 & 0 & 1\\
+    2 & -1 & 5
+    \end{pmatrix}.
+    \]
+    To find $\ker(f)$, we solve the equation $A_4x=0$. The augmented matrix is
+    \[
+    \begin{pmatrix}
+    1 & -1 & 4 & | & 0\\
+    1 & 0 & 1 & | & 0\\
+    2 & -1 & 5 & | & 0
+    \end{pmatrix}.
+    \]
+    Row reducing, we get
+    \[
+    \begin{pmatrix}
+    1 & -1 & 4 & | & 0\\
+    0 & 1 & -3 & | & 0\\
+    0 & 0 & 0 & | & 0
+    \end{pmatrix}.
+    \]
+    From the row-reduced form, we have the equations:
+    \[x_1 - x_2 + 4x_3 = 0,\]
+    \[x_2 - 3x_3 = 0.\]
+    Solving these equations, we find that
+    \[x_2 = 3x_3,\]
+    \[x_1 = x_2 - 4x_3 = -x_3.\]
+    Letting $x_3 = t$, we have
+    \[\mathbf{r}(t) = t\begin{pmatrix}-1\\3\\1\end{pmatrix}, \quad t\in\mathbb{R}.\]
+
+    \item [(b)] We choose a basis for $\mathbb{R}^3$ starting with $\mathbf{e}_1 \in \ker(f)$:
+        \[
+        \mathbf{e}_1 = \begin{pmatrix} -1 \\ 3 \\ 1 \end{pmatrix}, \quad
+        \mathbf{e}_2 = \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix}, \quad
+        \mathbf{e}_3 = \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix}
+        \]
+        The image of $f$ is spanned by the transformed basis vectors. Since $f(\mathbf{e}_1) = \mathbf{0}$:
+        \[
+        \text{Im}(f) = \text{span}\{ f(\mathbf{e}_2), f(\mathbf{e}_3) \}
+        \]
+        Calculating the images using $A_4$:
+        \[
+        f(\mathbf{e}_2) = A_4 \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} = \begin{pmatrix} 1 \\ 1 \\ 2 \end{pmatrix}, \quad
+        f(\mathbf{e}_3) = A_4 \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} = \begin{pmatrix} -1 \\ 0 \\ -1 \end{pmatrix}
+        \]
+        These two vectors are linearly independent, so the geometry of the image is a \textbf{plane}.
+
+        To find the normal $\mathbf{n}$, we take the cross product:
+        \[
+        \mathbf{n} = \begin{pmatrix} 1 \\ 1 \\ 2 \end{pmatrix} \times \begin{pmatrix} -1 \\ 0 \\ -1 \end{pmatrix}
+        = \begin{vmatrix} \mathbf{i} & \mathbf{j} & \mathbf{k} \\ 1 & 1 & 2 \\ -1 & 0 & -1 \end{vmatrix}
+        = \begin{pmatrix} -1 \\ -1 \\ 1 \end{pmatrix}
+        \]
+
+    \item [(c)] Let $\alpha = 0$. The matrix is:
+        \[
+        A_0 = \begin{pmatrix} 1 & -1 & 0 \\ -3 & 0 & 1 \\ 2 & -1 & 1 \end{pmatrix}
+        \]
+        For a vector $x = (\alpha_1, \alpha_2, \alpha_3)^T$:
+        \[
+        f(x) = A_0 x = \begin{pmatrix} \alpha_1 - \alpha_2 \\ -3\alpha_1 + \alpha_3 \\ 2\alpha_1 - \alpha_2 + \alpha_3 \end{pmatrix}
+        \]
+        Expressed in terms of the basis $\mathbf{u}_i$:
+        \[
+        f(x) = (\alpha_1 - \alpha_2)\mathbf{u}_1 + (-3\alpha_1 + \alpha_3)\mathbf{u}_2 + (2\alpha_1 - \alpha_2 + \alpha_3)\mathbf{u}_3
+        \]
+
+    \item [(d)] We are given the new basis $\mathbf{w}_1, \mathbf{w}_2, \mathbf{w}_3$. Let $P$ be the transition matrix whose columns are these basis vectors:
+\[
+P = \begin{pmatrix} 1 & 1 & 0 \\ 1 & 0 & 1 \\ 0 & 1 & 1 \end{pmatrix}
+\]
+The relationship $A'_0 = C A_0 C^{-1}$ implies that $A'_0$ is the matrix in the new basis if $C = P^{-1}$. Thus we compute $A'_0 = P^{-1} A_0 P$.
+
+1. Find $P^{-1}$ (which is $C$):
+\[
+\det(P) = 1(0-1) - 1(1-0) + 0 = -2
+\]
+\[
+P^{-1} = \frac{1}{-2} \begin{pmatrix} -1 & -1 & 1 \\ -1 & 1 & -1 \\ 1 & -1 & -1 \end{pmatrix} = \frac{1}{2} \begin{pmatrix} 1 & 1 & -1 \\ 1 & -1 & 1 \\ -1 & 1 & 1 \end{pmatrix}
+\]
+
+Calculate $A_0 P$:
+\[
+A_0 P = \begin{pmatrix} 1 & -1 & 0 \\ -3 & 0 & 1 \\ 2 & -1 & 1 \end{pmatrix} \begin{pmatrix} 1 & 1 & 0 \\ 1 & 0 & 1 \\ 0 & 1 & 1 \end{pmatrix} = \begin{pmatrix} 0 & 1 & -1 \\ -3 & -2 & 1 \\ 1 & 3 & 0 \end{pmatrix}
+\]
+
+Calculate $A'_0 = P^{-1} (A_0 P)$:
+\[
+A'_0 = \frac{1}{2} \begin{pmatrix} 1 & 1 & -1 \\ 1 & -1 & 1 \\ -1 & 1 & 1 \end{pmatrix} \begin{pmatrix} 0 & 1 & -1 \\ -3 & -2 & 1 \\ 1 & 3 & 0 \end{pmatrix}
+\]
+Performing the multiplication:
+\begin{align*}
+\text{Row 1} &= \tfrac{1}{2} [ (0-3-1), (1-2-3), (-1+1+0) ] = (-2, -2, 0) \\
+\text{Row 2} &= \tfrac{1}{2} [ (0+3+1), (1+2+3), (-1-1+0) ] = (2, 3, -1) \\
+\text{Row 3} &= \tfrac{1}{2} [ (0-3+1), (-1+2+3), (1+1+0) ] = (-1, 0, 1)
+\end{align*}
+
+Thus
+\[
+A'_0 =
+\begin{pmatrix}
+-2 & -2 & 0\\
+2 & 3 & -1\\
+-1 & 0 & 1
+\end{pmatrix}
+\]
+
+
+\end{enumerate}
+
+
+
 
 % =========================
 % Q10
@@ -839,6 +957,68 @@ Sketch this curve showing the asymptotes and the points of intersection with the
 \hfill [8]
 \end{mdframed}
 
+
+\begin{enumerate}
+    \item [(a)] The rotation matrix $R$ that relates the components of the vector $\mathbf{a}$ in the rotated coordinate system to the original coordinate system is given by
+    \[R = \begin{pmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{pmatrix}.\]
+    To show that $R$ is a rotation matrix, we need to verify that it preserves lengths and angles. We can check that $R^TR = I$:
+    \[R^TR = \begin{pmatrix} \cos\theta & \sin\theta \\ -\sin\theta & \cos\theta \end{pmatrix} \begin{pmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{pmatrix} = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} = I.\]
+    Thus, $R$ is an orthogonal matrix, confirming that it is a rotation matrix.
+
+
+    To find the eigenvectors of $R$, we solve the characteristic equation $\det(R - \lambda I) = 0$:
+    \[\det\begin{pmatrix} \cos\theta - \lambda & -\sin\theta \\ \sin\theta & \cos\theta - \lambda \end{pmatrix} = (\cos\theta - \lambda)^2 + \sin^2\theta = 0.\]
+    This simplifies to
+    \[\lambda^2 - 2\lambda\cos\theta + 1 = 0.\]
+    \[\lambda = \cos\theta \pm i\sin\theta = e^{\pm i\theta}.\]
+    The corresponding eigenvectors can be found by solving $(R - \lambda I)\mathbf{v} = 0$ for each eigenvalue. Thus,
+    \[
+    \begin{pmatrix}
+        1\\i
+    \end{pmatrix}\qquad
+    \begin{pmatrix}
+        1\\-i
+    \end{pmatrix}
+    \]
+
+    \item [(b)] The equation of the conic section can be written in matrix form as
+    \[\mathbf{x}^TM\mathbf{x} = 4,\]
+    where
+    \[M = \begin{pmatrix} 1 & 3 \\ 3 & 1 \end{pmatrix}, \quad \mathbf{x} = \begin{pmatrix} x \\ y \end{pmatrix}.\]
+    To diagonalize $M$, we first find its eigenvalues by solving the characteristic equation:
+    \[\det(M - \lambda I) = \det\begin{pmatrix} 1 - \lambda & 3 \\ 3 & 1 - \lambda \end{pmatrix} = (1 - \lambda)^2 - 9 = 0.\]
+    This simplifies to
+    \[(1 - \lambda)^2 = 9 \Rightarrow 1 - \lambda = \pm 3 \Rightarrow \lambda = 1 \pm 3.\]
+    So the eigenvalues are $\lambda_1 = 4$ and $\lambda_2 = -2$.
+
+    For $\lambda_1 = 4$:
+    \[M - 4I = \begin{pmatrix} -3 & 3 \\ 3 & -3 \end{pmatrix}\Rightarrow \mathbf{v}_1 = (1,1)^T.\]
+
+    For $\lambda_2 = -2$:
+    \[M + 2I = \begin{pmatrix} 3 & 3 \\ 3 & 3 \end{pmatrix}\Rightarrow \mathbf{v}_2 = (1,-1)^T.\]
+
+    The unitary matrix $P$ that diagonalizes $M$ is formed by normalizing the eigenvectors:
+    \[P = \frac{1}{\sqrt{2}}\begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix}.\]
+    The diagonal matrix $D$ is
+    \[D = \begin{pmatrix} 4 & 0 \\ 0 & -2 \end{pmatrix}.\]
+    Then the equation becomes
+    \[-2x'^2 + 4y'^2 = 4,\]
+    where $\mathbf{x}' = P^{-1}\mathbf{x}$. This is a hyperbola in the rotated coordinate system. The asymptotes of the hyperbola can be found by setting the equation to zero:
+    \[x^2 + 6xy + y^2 = 0.\]
+
+    Factoring, we get
+    \[(x + 3y)^2 - 8y^2 = 0 \Rightarrow (x + 3y - 2\sqrt{2}y)(x + 3y + 2\sqrt{2}y) = 0.\]
+    Thus, the asymptotes are given by the lines
+    \[x + (3 - 2\sqrt{2})y = 0 \quad \text{and} \quad x + (3 + 2\sqrt{2})y = 0.\]
+    The points of intersection with the axes can be found by setting $y=0$ and $x=0$:
+    \[x = \pm 2 \quad \text{and} \quad y = \pm 2.\]
+    \begin{figure}[htbp]
+        \centering
+        \includegraphics[width=0.9\textwidth]{3.png}
+        \caption{Hyperbola with asymptotes and intersection points}
+    \end{figure}
+
+\end{enumerate}
 
 
 
