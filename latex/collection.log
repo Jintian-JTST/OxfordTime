@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2024.4.28)  4 FEB 2026 12:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2024.4.28)  4 FEB 2026 12:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -626,25 +626,25 @@ LaTeX Font Info:    External font `lmex10' loaded for size
  [1
 
 {C:/Users/JTST/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/JTST/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/Users/JTST/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/JTST/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/JTST/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Users/JTST/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}] [2] [3] [4] [5] [6] [7] [8]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 690.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 678.
  (C:\Users\JTST\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 <1.png, id=44, 1530.46782pt x 578.16pt>
 File: 1.png Graphic file (type png)
 <use 1.png>
-Package pdftex.def Info: 1.png  used on input line 702.
+Package pdftex.def Info: 1.png  used on input line 690.
 (pdftex.def)             Requested size: 435.32422pt x 164.4509pt.
 <2.png, id=46, 1527.45656pt x 590.95781pt>
 File: 2.png Graphic file (type png)
 <use 2.png>
-Package pdftex.def Info: 2.png  used on input line 708.
+Package pdftex.def Info: 2.png  used on input line 696.
 (pdftex.def)             Requested size: 435.32422pt x 168.4157pt.
  [9{C:/Users/JTST/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc} <./1.png>] [10 <./2.png>] [11] [12] [13]
 <3.png, id=67, 1212.02812pt x 922.19531pt>
 File: 3.png Graphic file (type png)
 <use 3.png>
-Package pdftex.def Info: 3.png  used on input line 1017.
+Package pdftex.def Info: 3.png  used on input line 994.
 (pdftex.def)             Requested size: 435.32422pt x 331.2302pt.
  [14 <./3.png>] (collection.aux) ) 
 Here is how much of TeX's memory you used:

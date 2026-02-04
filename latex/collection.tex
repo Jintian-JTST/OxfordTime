@@ -39,8 +39,6 @@
 % 或
 \definecolor{UnivColor}{HTML}{002147}   % 更像牛津蓝
 \newcommand{\e}{\mathrm{e}}
-
-
 \newcommand{\dx}{\frac{\mathrm{d}}{\mathrm{d}x}}
 \newcommand{\dy}{\frac{\mathrm{d}}{\mathrm{d}y}}
 \newcommand{\dydx}{\frac{\mathrm{dy}}{\mathrm{d}x}}
@@ -63,8 +61,6 @@
 \pagebreak
 }
 
-
-
 % Siunitx settings
 \sisetup{locale=DE}
 \sisetup{per-mode = symbol-or-fraction}
@@ -81,21 +77,25 @@
 \date{Jan 16$^\mathrm{th}$, 2026}
 \newcommand{\se}{\subseteq}
 
+
+
+
+
 \begin{document}
 \maketitle
 \lhead{Mathematics Methods}
 \rhead{Collection}
 \section*{Section A}
 \begin{enumerate}
-    \setcounter{enumi}{0}
-    \item \textbf{Complex Numbers} [7]
-    \begin{mdframed}[style=exercise]
-        \begin{enumerate}
-        \item[(a)] Express the term $(1+i)^4$ in the form $r\e^{i\theta}$, where $r$ and $\theta$ are real variables.
-        \item[(b)] Express the complex number $\tan^{-1}(2i)$ in the form $x+iy$ where $x,y$ are real.
-        \item[(c)] Given that $z=z_1+z_2$, where $z_1=\e^{i\theta_1}$, $z_2=\e^{i\theta_2}$ and $\theta_1,\theta_2$ are real variables, find an expression for $|z|$ in terms of $\Delta\theta=\theta_1-\theta_2$.
-        \end{enumerate}
-    \end{mdframed}
+\setcounter{enumi}{0}
+\item \textbf{Complex Numbers} [7]
+\begin{mdframed}[style=exercise]
+    \begin{enumerate}
+    \item[(a)] Express the term $(1+i)^4$ in the form $r\e^{i\theta}$, where $r$ and $\theta$ are real variables.
+    \item[(b)] Express the complex number $\tan^{-1}(2i)$ in the form $x+iy$ where $x,y$ are real.
+    \item[(c)] Given that $z=z_1+z_2$, where $z_1=\e^{i\theta_1}$, $z_2=\e^{i\theta_2}$ and $\theta_1,\theta_2$ are real variables, find an expression for $|z|$ in terms of $\Delta\theta=\theta_1-\theta_2$.
+    \end{enumerate}
+\end{mdframed}
 
     \begin{enumerate}
         \item [(a)] \begin{align*}
@@ -120,26 +120,26 @@
     \end{enumerate}
 
 
-    \item \textbf{Vectors} [8]
-    \begin{mdframed}[style=exercise]
-        \begin{enumerate}
-        \item[(a)] Write down the equation of the plane
-        \[
-        3x+4y+5z=10
-        \]
-        in the vector form
-        \[
-        \mathbf{r}=\mathbf{r}_0+t_1\mathbf{a}+t_2\mathbf{b},
-        \]
-        where $\mathbf{a}$ and $\mathbf{b}$ are constant vectors in the plane, $t_1$ and $t_2$ are real parameters and $\mathbf{r}_0$ is a constant vector.
-        What is the distance between the plane and the origin?
-        \item[(b)] Let $\mathbf{a},\mathbf{b},\mathbf{c}$ be unit vectors. Show that
-        \[
-        (\mathbf{a}\times\mathbf{b})\cdot(\mathbf{a}\times\mathbf{c})
-        = \mathbf{b}\cdot\mathbf{c} - (\mathbf{a}\cdot\mathbf{b})(\mathbf{a}\cdot\mathbf{c}).
-        \]
-        \end{enumerate}
-    \end{mdframed}
+\item \textbf{Vectors} [8]
+\begin{mdframed}[style=exercise]
+    \begin{enumerate}
+    \item[(a)] Write down the equation of the plane
+    \[
+    3x+4y+5z=10
+    \]
+    in the vector form
+    \[
+    \mathbf{r}=\mathbf{r}_0+t_1\mathbf{a}+t_2\mathbf{b},
+    \]
+    where $\mathbf{a}$ and $\mathbf{b}$ are constant vectors in the plane, $t_1$ and $t_2$ are real parameters and $\mathbf{r}_0$ is a constant vector.
+    What is the distance between the plane and the origin?
+    \item[(b)] Let $\mathbf{a},\mathbf{b},\mathbf{c}$ be unit vectors. Show that
+    \[
+    (\mathbf{a}\times\mathbf{b})\cdot(\mathbf{a}\times\mathbf{c})
+    = \mathbf{b}\cdot\mathbf{c} - (\mathbf{a}\cdot\mathbf{b})(\mathbf{a}\cdot\mathbf{c}).
+    \]
+    \end{enumerate}
+\end{mdframed}
 
     \begin{enumerate}
         \item [(a)] A particular solution to the plane equation is $\mathbf{r_0}=\left(0,0,2\right)^T$. Two independent vectors in the plane are $\mathbf{a}=(0,-2.5,2)^T$ and $\mathbf{b}=(-10/3,0,2)^T$. Thus the vector form of the plane is
@@ -166,119 +166,119 @@
 
 
 
-    \item \textbf{Matrix and linear equation} [5]
-    \begin{mdframed}[style=exercise]
-        Consider the set of linear equations
-        \[
-        \begin{aligned}
-        2x+y+z &= 2b,\\
-        ax+3y+2z &= 2a,\\
-        2x+y+3z &= 4,
-        \end{aligned}
-        \]
-        where $x,y,z$ are real variables and $a,b$ are real parameters.
+\item \textbf{Matrix and linear equation} [5]
+\begin{mdframed}[style=exercise]
+    Consider the set of linear equations
+    \[
+    \begin{aligned}
+    2x+y+z &= 2b,\\
+    ax+3y+2z &= 2a,\\
+    2x+y+3z &= 4,
+    \end{aligned}
+    \]
+    where $x,y,z$ are real variables and $a,b$ are real parameters.
 
-        Find the values of $a$ and $b$ for which the set of equations have:
-        \begin{enumerate}
-        \item[(i)] a unique solution,
-        \item[(ii)] infinitely many solutions,
-        \item[(iii)] no solution.
-        \end{enumerate}
+    Find the values of $a$ and $b$ for which the set of equations have:
+    \begin{enumerate}
+    \item[(i)] a unique solution,
+    \item[(ii)] infinitely many solutions,
+    \item[(iii)] no solution.
+    \end{enumerate}
 
-    \end{mdframed}
+\end{mdframed}
 
 
-\[
-\begin{aligned}
-2x+y+z &= 2b,\\
-ax+3y+2z &= 2a,\\
-2x+y+3z &= 4.
-\end{aligned}
-\]
+    \[
+    \begin{aligned}
+    2x+y+z &= 2b,\\
+    ax+3y+2z &= 2a,\\
+    2x+y+3z &= 4.
+    \end{aligned}
+    \]
 
-Let the coefficient matrix be
-\[
-A=
-\begin{pmatrix}
-2 & 1 & 1\\
-a & 3 & 2\\
-2 & 1 & 3
-\end{pmatrix},
-\qquad
-\mathbf{c}=
-\begin{pmatrix}
-2b\\
-2a\\
-4
-\end{pmatrix}.
-\]
-The determinant of $A$ is
-\[
-\det A
-=
-\begin{vmatrix}
-2 & 1 & 1\\
-a & 3 & 2\\
-2 & 1 & 3
-\end{vmatrix}
-=-2(a-6).
-\]
+    Let the coefficient matrix be
+    \[
+    A=
+    \begin{pmatrix}
+    2 & 1 & 1\\
+    a & 3 & 2\\
+    2 & 1 & 3
+    \end{pmatrix},
+    \qquad
+    \mathbf{c}=
+    \begin{pmatrix}
+    2b\\
+    2a\\
+    4
+    \end{pmatrix}.
+    \]
+    The determinant of $A$ is
+    \[
+    \det A
+    =
+    \begin{vmatrix}
+    2 & 1 & 1\\
+    a & 3 & 2\\
+    2 & 1 & 3
+    \end{vmatrix}
+    =-2(a-6).
+    \]
 
-\begin{enumerate}
-\item[(i)] \textbf{Unique solution.}  
-If $\det A \neq 0$, i.e.\ $a \neq 6$, the system has a unique solution for all values of $b$.
+    \begin{enumerate}
+    \item[(i)] \textbf{Unique solution.}  
+    If $\det A \neq 0$, i.e.\ $a \neq 6$, the system has a unique solution for all values of $b$.
 
-\item[(ii)] \textbf{Infinitely many solutions.}  
-Let $a=6$. The system becomes
-\[
-\begin{aligned}
-2x+y+z &= 2b,\\
-6x+3y+2z &= 12,\\
-2x+y+3z &= 4.
-\end{aligned}
-\]
-Subtracting the first equation from the third gives
-\[
-2z = 4 - 2b \quad \Rightarrow \quad z = 2 - b.
-\]
-Dividing the second equation by $3$ yields
-\[
-2x+y+\frac{2}{3}z = 4.
-\]
-From the first equation, $2x+y = 2b - z$. Substituting,
-\[
-2b - z + \frac{2}{3}z = 4
-\quad \Rightarrow \quad
-2b - \frac{1}{3}z = 4
-\quad \Rightarrow \quad
-z = 6b - 12.
-\]
-Consistency requires
-\[
-2 - b = 6b - 12 \quad \Rightarrow \quad b = 2.
-\]
-Hence $z=0$ and the remaining equation is
-\[
-2x+y = 4.
-\]
-Letting $x=t$, the solutions are
-\[
-(x,y,z) = (t,\,4-2t,\,0), \qquad t\in\mathbb{R},
-\]
-so there are infinitely many solutions when $(a,b)=(6,2)$.
+    \item[(ii)] \textbf{Infinitely many solutions.}  
+    Let $a=6$. The system becomes
+    \[
+    \begin{aligned}
+    2x+y+z &= 2b,\\
+    6x+3y+2z &= 12,\\
+    2x+y+3z &= 4.
+    \end{aligned}
+    \]
+    Subtracting the first equation from the third gives
+    \[
+    2z = 4 - 2b \quad \Rightarrow \quad z = 2 - b.
+    \]
+    Dividing the second equation by $3$ yields
+    \[
+    2x+y+\frac{2}{3}z = 4.
+    \]
+    From the first equation, $2x+y = 2b - z$. Substituting,
+    \[
+    2b - z + \frac{2}{3}z = 4
+    \quad \Rightarrow \quad
+    2b - \frac{1}{3}z = 4
+    \quad \Rightarrow \quad
+    z = 6b - 12.
+    \]
+    Consistency requires
+    \[
+    2 - b = 6b - 12 \quad \Rightarrow \quad b = 2.
+    \]
+    Hence $z=0$ and the remaining equation is
+    \[
+    2x+y = 4.
+    \]
+    Letting $x=t$, the solutions are
+    \[
+    (x,y,z) = (t,\,4-2t,\,0), \qquad t\in\mathbb{R},
+    \]
+    so there are infinitely many solutions when $(a,b)=(6,2)$.
 
-\item[(iii)] \textbf{No solution.}  
-If $a=6$ and $b\neq 2$, the two expressions for $z$ are inconsistent. Hence the system has no solution.
-\end{enumerate}
+    \item[(iii)] \textbf{No solution.}  
+    If $a=6$ and $b\neq 2$, the two expressions for $z$ are inconsistent. Hence the system has no solution.
+    \end{enumerate}
 
-\[
-\boxed{
-\begin{array}{ll}
-\text{Unique solution} & a\neq 6 \ (\text{any } b),\\[4pt]
-\text{Infinitely many solutions} & a=6,\ b=2,\\[4pt]
-\text{No solution} & a=6,\ b\neq 2.
-\end{array}}
-\]
+    \[
+    \boxed{
+    \begin{array}{ll}
+    \text{Unique solution} & a\neq 6 \ (\text{any } b),\\[4pt]
+    \text{Infinitely many solutions} & a=6,\ b=2,\\[4pt]
+    \text{No solution} & a=6,\ b\neq 2.
+    \end{array}}
+    \]
 
 
 
@@ -286,10 +286,10 @@ If $a=6$ and $b\neq 2$, the two expressions for $z$ are inconsistent. Hence the 
     \item \textbf{Differential equation} [5]
     \begin{mdframed}[style=exercise]
         Find the general solution for the differential equation
-\[
-\dx\left(x^2\dydx\right)=n(n+1)y,
-\]
-where $x$ is a real variable and $n$ is a real constant.
+    \[
+    \dx\left(x^2\dydx\right)=n(n+1)y,
+    \]
+    where $x$ is a real variable and $n$ is a real constant.
     \end{mdframed}
 
     Using the product rule, we have
@@ -306,8 +306,8 @@ where $x$ is a real variable and $n$ is a real constant.
     where $A$ and $B$ are arbitrary constants.
 
     \newpage
-    \item \textbf{Matrix and properties} [7]
-    \begin{mdframed}[style=exercise]
+\item \textbf{Matrix and properties} [7]
+\begin{mdframed}[style=exercise]
 Let $A$ and $B$ be $n\times n$ Hermitian matrices and $U$ an $n\times n$ unitary matrix.
 \begin{enumerate}
 \item[(a)] Show that the modulus of each of the eigenvalues of $U$ is equal to one $(|\lambda|=1)$.
@@ -318,7 +318,7 @@ Let $A$ and $B$ be $n\times n$ Hermitian matrices and $U$ an $n\times n$ unitary
 \item[(ii)] $AB-BA=0$.
 \end{enumerate}
 \end{enumerate}
-    \end{mdframed}
+\end{mdframed}
 
     \begin{enumerate}
         \item [(a)] Let $\lambda$ be an eigenvalue of $U$ with corresponding eigenvector $\mathbf{v}$, so that $U\mathbf{v}=\lambda \mathbf{v}$. Taking the conjugate transpose of both sides, we have
@@ -363,23 +363,23 @@ Let $A$ and $B$ be $n\times n$ Hermitian matrices and $U$ an $n\times n$ unitary
 
 
 
-    \newpage
-    \item \textbf{Matrix and geometry} [8]
-    \begin{mdframed}[style=exercise]
-        The rotation matrix $A$ in $\mathbb{R}^3$ is given by
-        \[
-        A=\frac12
-        \begin{pmatrix}
-        \sqrt2 & -1 & -1\\
-        0 & \sqrt2 & -\sqrt2\\
-        \sqrt2 & 1 & 1
-        \end{pmatrix}.
-        \]
-        \begin{enumerate}
-        \item[(a)] Show that the matrix $A$ is orthogonal.
-        \item[(b)] Calculate $\cos\theta$, where $\theta$ is the angle of rotation, and find a unit vector in the direction of the axis of rotation.
-        \end{enumerate}
-    \end{mdframed}
+\newpage
+\item \textbf{Matrix and geometry} [8]
+\begin{mdframed}[style=exercise]
+    The rotation matrix $A$ in $\mathbb{R}^3$ is given by
+    \[
+    A=\frac12
+    \begin{pmatrix}
+    \sqrt2 & -1 & -1\\
+    0 & \sqrt2 & -\sqrt2\\
+    \sqrt2 & 1 & 1
+    \end{pmatrix}.
+    \]
+    \begin{enumerate}
+    \item[(a)] Show that the matrix $A$ is orthogonal.
+    \item[(b)] Calculate $\cos\theta$, where $\theta$ is the angle of rotation, and find a unit vector in the direction of the axis of rotation.
+    \end{enumerate}
+\end{mdframed}
 
     \begin{enumerate}
         \item [(a)] To show that $A$ is orthogonal, we need to verify that $A^TA=I$. Calculating $A^T$,
@@ -537,115 +537,103 @@ then either $u$ or $z$ must be real.
         These are the three roots of the equation for $n=3$.
 
         For the product, we have the equation
-\[
-\left(\frac{z-1}{z+1}\right)^n=-1.
-\tag{$\dagger$}
-\]
-Let
-\[
-w=\frac{z-1}{z+1}.
-\]
-Then $w^n=-1=e^{i(2k+1)\pi}$, so
-\[
-w_k=e^{i(2k+1)\pi/n},\qquad k=0,1,\dots,n-1.
-\]
-Solving $z-1=w(z+1)$ gives
-\[
-z=\frac{1+w}{1-w}.
-\]
-With $w=e^{i\phi}$ we have the standard identity
-\[
-\frac{1+e^{i\phi}}{1-e^{i\phi}}=-i\cot\!\left(\frac{\phi}{2}\right),
-\]
-hence
-\[
-z_k=-i\cot\!\left(\frac{(2k+1)\pi}{2n}\right).
-\]
-Since the set of angles
-\[
-\left\{\frac{(2r+1)\pi}{2n}: r=1,\dots,n\right\}
-\]
-is the same as
-\[
-\left\{\frac{(2k+1)\pi}{2n}: k=0,\dots,n-1\right\}
-\]
-(up to a permutation, using $\cot(\pi+\alpha)=\cot\alpha$),
-the required product is
-\[
-P:=\prod_{r=1}^n \cot\!\left(\frac{(2r+1)\pi}{2n}\right)
-=\prod_{k=0}^{n-1}\cot\!\left(\frac{(2k+1)\pi}{2n}\right).
-\]
-From $z_k=-i\cot(\cdot)$ we get $\cot(\cdot)=iz_k$, so
-\[
-P=i^n\prod_{k=0}^{n-1} z_k.
-\]
+        \[
+        \left(\frac{z-1}{z+1}\right)^n=-1.
+        \tag{$\dagger$}
+        \]
+        Let
+        \[
+        w=\frac{z-1}{z+1}.
+        \]
+        Then $w^n=-1=e^{i(2k+1)\pi}$, so
+        \[
+        w_k=e^{i(2k+1)\pi/n},\qquad k=0,1,\dots,n-1.
+        \]
+        Solving $z-1=w(z+1)$ gives
+        \[
+        z=\frac{1+w}{1-w}.
+        \]
+        With $w=e^{i\phi}$ we have the standard identity
+        \[
+        \frac{1+e^{i\phi}}{1-e^{i\phi}}=-i\cot\!\left(\frac{\phi}{2}\right),
+        \]
+        hence
+        \[
+        z_k=-i\cot\!\left(\frac{(2k+1)\pi}{2n}\right).
+        \]
+        Since the set of angles
+        \[
+        \left\{\frac{(2r+1)\pi}{2n}: r=1,\dots,n\right\}
+        \]
+        is the same as
+        \[
+        \left\{\frac{(2k+1)\pi}{2n}: k=0,\dots,n-1\right\}
+        \]
+        (up to a permutation, using $\cot(\pi+\alpha)=\cot\alpha$),
+        the required product is
+        \[
+        P:=\prod_{r=1}^n \cot\!\left(\frac{(2r+1)\pi}{2n}\right)
+        =\prod_{k=0}^{n-1}\cot\!\left(\frac{(2k+1)\pi}{2n}\right).
+        \]
+        From $z_k=-i\cot(\cdot)$ we get $\cot(\cdot)=iz_k$, so
+        \[
+        P=i^n\prod_{k=0}^{n-1} z_k.
+        \]
 
-Now $(\dagger)$ is equivalent to
-\[
-(z-1)^n=-(z+1)^n
-\quad\Longleftrightarrow\quad
-(z-1)^n+(z+1)^n=0,
-\]
-Expanding the left-hand side using the binomial theorem, we see that only the even powers of $z$ survive, with coefficients
-\[\binom{n}{0}+\binom{n}{2}+\binom{n}{4}+\cdots = 2^{n-1},\]
-so the polynomial is of degree $n$ with leading coefficient $2^{n-1}$. The $z_k$ are the $n$ roots of this polynomial, 
-\[F(z):=(z-1)^n+(z+1)^n=0.
-\]
-We know that
-\[2(z-z_0)(z-z_1)\cdots(z-z_{n-1})=F(z)/2^{n-1}.\]
-Setting $z=0$ gives
-\[\prod_{k=0}^{n-1} z_k = (-1)^n \frac{F(0)}{2^n}=(-1)^n\frac{(-1)^n+1}{2}.
-\]
-Therefore
-\[
-P=i^n(-1)^n\frac{(-1)^n+1}{2}.
-\]
-If $n$ is odd, then $(-1)^n+1=0$ and so $P=0$.
-If $n$ is even, then $(-1)^n+1=2$ and $\prod z_k=1$, so
-\[
-P=i^n=i^{2(n/2)}=(-1)^{n/2}.
-\]
+        Now $(\dagger)$ is equivalent to
+        \[
+        (z-1)^n=-(z+1)^n
+        \quad\Longleftrightarrow\quad
+        (z-1)^n+(z+1)^n=0,
+        \]
+        Expanding the left-hand side using the binomial theorem, we see that only the even powers of $z$ survive, with coefficients
+        \[\binom{n}{0}+\binom{n}{2}+\binom{n}{4}+\cdots = 2^{n-1},\]
+        so the polynomial is of degree $n$ with leading coefficient $2^{n-1}$. The $z_k$ are the $n$ roots of this polynomial, 
+        \[F(z):=(z-1)^n+(z+1)^n=0.
+        \]
+        We know that
+        \[2(z-z_0)(z-z_1)\cdots(z-z_{n-1})=F(z)/2^{n-1}.\]
+        Setting $z=0$ gives
+        \[\prod_{k=0}^{n-1} z_k = (-1)^n \frac{F(0)}{2^n}=(-1)^n\frac{(-1)^n+1}{2}.
+        \]
+        Therefore
+        \[
+        P=i^n(-1)^n\frac{(-1)^n+1}{2}.
+        \]
+        If $n$ is odd, then $(-1)^n+1=0$ and so $P=0$.
+        If $n$ is even, then $(-1)^n+1=2$ and $\prod z_k=1$, so
+        \[
+        P=i^n=i^{2(n/2)}=(-1)^{n/2}.
+        \]
 
-\[
-\boxed{
-\prod_{r=1}^n \cot\!\left(\frac{(2r+1)\pi}{2n}\right)=
-\begin{cases}
-0, & n\ \text{odd},\\[4pt]
-(-1)^{n/2}, & n\ \text{even}.
-\end{cases}}
-\]
-
-
-    \item [(c)] Given that
-\[\left|\frac{z+u}{z+u^*}\right|=1,\]
-we have
-\[\left|\frac{z+u}{z+u^*}\right|^2 = \frac{(z+u)(z^*+u^*)}{(z+u^*)(z^*+u)} = 1.\]
-Expanding both sides, we get
-\begin{align*}
-(z+u)(z^*+u^*) &= (z+u^*)(z^*+u)\\
-zz^* + zu^* + uz^* + uu^* &= zz^* + zu + u^*z^* + u^*u\\
-zu^* + uz^* &= zu + u^*z^*\\
-zu^* - zu &= u^*z^* - uz^*\\
-z(u^* - u) &= z^*(u^* - u)\\
-(z - z^*)(u^* - u) &= 0.
-\end{align*}
-Thus, either $z - z^* = 0$ or $u^* - u = 0$, which means either $z\in \mathbb{R}$ or $u \in \mathbb{R}$ . \hfill Q.E.D.
+        \[
+        \boxed{
+        \prod_{r=1}^n \cot\!\left(\frac{(2r+1)\pi}{2n}\right)=
+        \begin{cases}
+        0, & n\ \text{odd},\\[4pt]
+        (-1)^{n/2}, & n\ \text{even}.
+        \end{cases}}
+        \]
 
 
-    \end{enumerate}
-\end{enumerate}
+            \item [(c)] Given that
+        \[\left|\frac{z+u}{z+u^*}\right|=1,\]
+        we have
+        \[\left|\frac{z+u}{z+u^*}\right|^2 = \frac{(z+u)(z^*+u^*)}{(z+u^*)(z^*+u)} = 1.\]
+        Expanding both sides, we get
+        \begin{align*}
+        (z+u)(z^*+u^*) &= (z+u^*)(z^*+u)\\
+        zz^* + zu^* + uz^* + uu^* &= zz^* + zu + u^*z^* + u^*u\\
+        zu^* + uz^* &= zu + u^*z^*\\
+        zu^* - zu &= u^*z^* - uz^*\\
+        z(u^* - u) &= z^*(u^* - u)\\
+        (z - z^*)(u^* - u) &= 0.
+        \end{align*}
+        Thus, either $z - z^* = 0$ or $u^* - u = 0$, which means either $z\in \mathbb{R}$ or $u \in \mathbb{R}$ . \hfill Q.E.D.
 
 
-
-
-
-
-
-
-
-
-
-
+            \end{enumerate}
+        \end{enumerate}
 
 % =========================
 % Q8
@@ -679,77 +667,66 @@ width of the resonance for the case $\gamma\ll\omega_0$. \hfill [4]
 \end{mdframed}
 
 
-\begin{enumerate}
-    \item [(a)] For $F=0$, the differential equation becomes
-    \[\frac{\mathrm{d}^2y}{\mathrm{d}t^2}+2\gamma\frac{\mathrm{d}y}{\mathrm{d}t}+\omega_0^2 y = 0.\]
-    The characteristic equation is
-    \[r^2 + 2\gamma r + \omega_0^2 = 0.\]
-    The roots are
-    \[r = -\gamma \pm \sqrt{\gamma^2 - \omega_0^2}.\]
-    \begin{itemize}
-        \item For $\omega_0 < \gamma$, the roots are real and distinct. The general solution is
-        \[y(t) = \e^{-\gamma t}(C_1 \e^{\sqrt{\gamma^2 - \omega_0^2}t} + C_2 \e^{-\sqrt{\gamma^2 - \omega_0^2}t}),\]
-        where $C_1$ and $C_2$ are constants determined by initial conditions.
+    \begin{enumerate}
+        \item [(a)] For $F=0$, the differential equation becomes
+        \[\frac{\mathrm{d}^2y}{\mathrm{d}t^2}+2\gamma\frac{\mathrm{d}y}{\mathrm{d}t}+\omega_0^2 y = 0.\]
+        The characteristic equation is
+        \[r^2 + 2\gamma r + \omega_0^2 = 0.\]
+        The roots are
+        \[r = -\gamma \pm \sqrt{\gamma^2 - \omega_0^2}.\]
+        \begin{itemize}
+            \item For $\omega_0 < \gamma$, the roots are real and distinct. The general solution is
+            \[y(t) = \e^{-\gamma t}(C_1 \e^{\sqrt{\gamma^2 - \omega_0^2}t} + C_2 \e^{-\sqrt{\gamma^2 - \omega_0^2}t}),\]
+            where $C_1$ and $C_2$ are constants determined by initial conditions.
 
-        \item For $\omega_0 = \gamma$, the roots are real and equal. The general solution is
-        \[y(t) = (C_1 + C_2 t)\e^{-\gamma t},\]
-        where $C_1$ and $C_2$ are constants determined by initial conditions.
-    \end{itemize}
-    The two displacements can be sketched as follows:
+            \item For $\omega_0 = \gamma$, the roots are real and equal. The general solution is
+            \[y(t) = (C_1 + C_2 t)\e^{-\gamma t},\]
+            where $C_1$ and $C_2$ are constants determined by initial conditions.
+        \end{itemize}
+        The two displacements can be sketched as follows:
 
-    \begin{figure}[htbp]
-        \centering
-        \includegraphics[width=0.9\textwidth]{1.png}
-        \caption{Displacements for $\omega_0 < \gamma$}
-    \end{figure}
+        \begin{figure}[htbp]
+            \centering
+            \includegraphics[width=0.9\textwidth]{1.png}
+            \caption{Displacements for $\omega_0 < \gamma$}
+        \end{figure}
 
-    \begin{figure}[htbp]
-        \centering
-        \includegraphics[width=0.9\textwidth]{2.png}
-        \caption{Displacements for $\omega_0 = \gamma$}
-    \end{figure}
+        \begin{figure}[htbp]
+            \centering
+            \includegraphics[width=0.9\textwidth]{2.png}
+            \caption{Displacements for $\omega_0 = \gamma$}
+        \end{figure}
 
-    \item [(b)] A steady state solution is a particular solution of the differential equation that represents the long-term behavior of the system after transient effects have died out. It is typically periodic and has the same frequency as the driving force.
-    
-    To find the steady state solution, we assume a solution of the form
-    \[y(t) = A\cos(\omega t - \delta),\]
-    where $A$ is the amplitude and $\delta$ is the phase shift. Substituting this into the differential equation, we get
-    \[-A\omega^2\cos(\omega t - \delta) - 2\gamma A\omega\sin(\omega t - \delta) + \omega_0^2 A\cos(\omega t - \delta) = F_0\cos(\omega t).\]
-    Equating coefficients of $\cos(\omega t)$ and $\sin(\omega t)$, we have
-    \[A(\omega_0^2 - \omega^2) = F_0\cos\delta,\]
-    \[2\gamma A\omega = F_0\sin\delta.\]
-    Solving for $A$ and $\delta$, we get
-    \[A = \frac{F_0}{\sqrt{(\omega_0^2 - \omega^2)^2 + (2\gamma\omega)^2}},\]
-    \[\tan\delta = \frac{2\gamma\omega}{\omega_0^2 - \omega^2}.\]
-    To maximize the displacement, we differentiate $A$ with respect to $\omega$ and set it to zero. The maximum occurs when $(\omega_0^2 - \omega^2)^2 + (2\gamma\omega)^2$ is minimized. This happens when $\boxed{\omega = \sqrt{\omega_0^2 - 2\gamma^2}}$, provided $\omega_0 > \gamma$.
-    The velocity is given by
-    \[v = \omega A= \frac{\omega F_0}{\sqrt{(\omega_0^2 - \omega^2)^2 + (2\gamma\omega)^2}}.\]
-    To maximize the velocity, we differentiate $v$ with respect to $\omega$ and set it to zero. The maximum occurs when minimizing 
-    \[\left(\left(\frac{\omega_0}{\omega}\right)^2-1\right)^2+4\gamma^2.\]
-    This happens when $\boxed{\omega = \omega_0}$.
-
-
-    \item [(c)] The width of the oscillator resonance, also known as the bandwidth, is defined as the range of frequencies over which the amplitude of the oscillation is greater than or equal to $\displaystyle\frac{A_{\text{max}}}{2}$, where $A_{\text{max}}$ is the maximum amplitude at resonance.
-    For $\gamma \ll \omega_0$, the resonance occurs at $\omega \approx \omega_0$. The amplitude at resonance is
-    \[A_{\text{max}} = \frac{F_0}{2\gamma\omega_0}.\]
-    To find the frequencies at which the amplitude is half of $A_{\text{max}}$, we set
-    \[\frac{F_0}{\sqrt{(\omega_0^2 - \omega^2)^2 + (2\gamma\omega)^2}} = \frac{A_{\text{max}}}{2} = \frac{F_0}{4\gamma\omega_0}.\]
-    Squaring both sides and simplifying, we get
-    \[(\omega_0^2 - \omega^2)^2 + (2\gamma\omega)^2 = (4\gamma\omega_0)^2.\]
-    Solving this quadratic equation for $\omega$, we find the two frequencies $\omega_1$ and $\omega_2$ at which the amplitude is half of $A_{\text{max}}$. The width of the resonance is then given by
-    \[\Delta \omega = \omega_2 - \omega_1 \approx\boxed{ 2\gamma}.\]
+        \item [(b)] A steady state solution is a particular solution of the differential equation that represents the long-term behavior of the system after transient effects have died out. It is typically periodic and has the same frequency as the driving force.
+        
+        To find the steady state solution, we assume a solution of the form
+        \[y(t) = A\cos(\omega t - \delta),\]
+        where $A$ is the amplitude and $\delta$ is the phase shift. Substituting this into the differential equation, we get
+        \[-A\omega^2\cos(\omega t - \delta) - 2\gamma A\omega\sin(\omega t - \delta) + \omega_0^2 A\cos(\omega t - \delta) = F_0\cos(\omega t).\]
+        Equating coefficients of $\cos(\omega t)$ and $\sin(\omega t)$, we have
+        \[A(\omega_0^2 - \omega^2) = F_0\cos\delta,\]
+        \[2\gamma A\omega = F_0\sin\delta.\]
+        Solving for $A$ and $\delta$, we get
+        \[A = \frac{F_0}{\sqrt{(\omega_0^2 - \omega^2)^2 + (2\gamma\omega)^2}},\]
+        \[\tan\delta = \frac{2\gamma\omega}{\omega_0^2 - \omega^2}.\]
+        To maximize the displacement, we differentiate $A$ with respect to $\omega$ and set it to zero. The maximum occurs when $(\omega_0^2 - \omega^2)^2 + (2\gamma\omega)^2$ is minimized. This happens when $\boxed{\omega = \sqrt{\omega_0^2 - 2\gamma^2}}$, provided $\omega_0 > \gamma$.
+        The velocity is given by
+        \[v = \omega A= \frac{\omega F_0}{\sqrt{(\omega_0^2 - \omega^2)^2 + (2\gamma\omega)^2}}.\]
+        To maximize the velocity, we differentiate $v$ with respect to $\omega$ and set it to zero. The maximum occurs when minimizing 
+        \[\left(\left(\frac{\omega_0}{\omega}\right)^2-1\right)^2+4\gamma^2.\]
+        This happens when $\boxed{\omega = \omega_0}$.
 
 
-
-\end{enumerate}
-
-
-
-
-
-
-
-
+        \item [(c)] The width of the oscillator resonance, also known as the bandwidth, is defined as the range of frequencies over which the amplitude of the oscillation is greater than or equal to $\displaystyle\frac{A_{\text{max}}}{2}$, where $A_{\text{max}}$ is the maximum amplitude at resonance.
+        For $\gamma \ll \omega_0$, the resonance occurs at $\omega \approx \omega_0$. The amplitude at resonance is
+        \[A_{\text{max}} = \frac{F_0}{2\gamma\omega_0}.\]
+        To find the frequencies at which the amplitude is half of $A_{\text{max}}$, we set
+        \[\frac{F_0}{\sqrt{(\omega_0^2 - \omega^2)^2 + (2\gamma\omega)^2}} = \frac{A_{\text{max}}}{2} = \frac{F_0}{4\gamma\omega_0}.\]
+        Squaring both sides and simplifying, we get
+        \[(\omega_0^2 - \omega^2)^2 + (2\gamma\omega)^2 = (4\gamma\omega_0)^2.\]
+        Solving this quadratic equation for $\omega$, we find the two frequencies $\omega_1$ and $\omega_2$ at which the amplitude is half of $A_{\text{max}}$. The width of the resonance is then given by
+        \[\Delta \omega = \omega_2 - \omega_1 \approx\boxed{ 2\gamma}.\]
+    \end{enumerate}
 
 % =========================
 % Q9
@@ -806,38 +783,38 @@ by a suitable choice of the matrix $C$. \hfill [8]
 
 \begin{enumerate}
     \item [(a)] For $\alpha=4$, the matrix $A_4$ is
-    \[
-    A_4=
-    \begin{pmatrix}
-    1 & -1 & 4\\
-    1 & 0 & 1\\
-    2 & -1 & 5
-    \end{pmatrix}.
-    \]
-    To find $\ker(f)$, we solve the equation $A_4x=0$. The augmented matrix is
-    \[
-    \begin{pmatrix}
-    1 & -1 & 4 & | & 0\\
-    1 & 0 & 1 & | & 0\\
-    2 & -1 & 5 & | & 0
-    \end{pmatrix}.
-    \]
-    Row reducing, we get
-    \[
-    \begin{pmatrix}
-    1 & -1 & 4 & | & 0\\
-    0 & 1 & -3 & | & 0\\
-    0 & 0 & 0 & | & 0
-    \end{pmatrix}.
-    \]
-    From the row-reduced form, we have the equations:
-    \[x_1 - x_2 + 4x_3 = 0,\]
-    \[x_2 - 3x_3 = 0.\]
-    Solving these equations, we find that
-    \[x_2 = 3x_3,\]
-    \[x_1 = x_2 - 4x_3 = -x_3.\]
-    Letting $x_3 = t$, we have
-    \[\mathbf{r}(t) = t\begin{pmatrix}-1\\3\\1\end{pmatrix}, \quad t\in\mathbb{R}.\]
+        \[
+        A_4=
+        \begin{pmatrix}
+        1 & -1 & 4\\
+        1 & 0 & 1\\
+        2 & -1 & 5
+        \end{pmatrix}.
+        \]
+        To find $\ker(f)$, we solve the equation $A_4x=0$. The augmented matrix is
+        \[
+        \begin{pmatrix}
+        1 & -1 & 4 & | & 0\\
+        1 & 0 & 1 & | & 0\\
+        2 & -1 & 5 & | & 0
+        \end{pmatrix}.
+        \]
+        Row reducing, we get
+        \[
+        \begin{pmatrix}
+        1 & -1 & 4 & | & 0\\
+        0 & 1 & -3 & | & 0\\
+        0 & 0 & 0 & | & 0
+        \end{pmatrix}.
+        \]
+        From the row-reduced form, we have the equations:
+        \[x_1 - x_2 + 4x_3 = 0,\]
+        \[x_2 - 3x_3 = 0.\]
+        Solving these equations, we find that
+        \[x_2 = 3x_3,\]
+        \[x_1 = x_2 - 4x_3 = -x_3.\]
+        Letting $x_3 = t$, we have
+        \[\mathbf{r}(t) = t\begin{pmatrix}-1\\3\\1\end{pmatrix}, \quad t\in\mathbb{R}.\]
 
     \item [(b)] We choose a basis for $\mathbb{R}^3$ starting with $\mathbf{e}_1 \in \ker(f)$:
         \[
@@ -877,44 +854,44 @@ by a suitable choice of the matrix $C$. \hfill [8]
         \]
 
     \item [(d)] We are given the new basis $\mathbf{w}_1, \mathbf{w}_2, \mathbf{w}_3$. Let $P$ be the transition matrix whose columns are these basis vectors:
-\[
-P = \begin{pmatrix} 1 & 1 & 0 \\ 1 & 0 & 1 \\ 0 & 1 & 1 \end{pmatrix}
-\]
-The relationship $A'_0 = C A_0 C^{-1}$ implies that $A'_0$ is the matrix in the new basis if $C = P^{-1}$. Thus we compute $A'_0 = P^{-1} A_0 P$.
+        \[
+        P = \begin{pmatrix} 1 & 1 & 0 \\ 1 & 0 & 1 \\ 0 & 1 & 1 \end{pmatrix}
+        \]
+        The relationship $A'_0 = C A_0 C^{-1}$ implies that $A'_0$ is the matrix in the new basis if $C = P^{-1}$. Thus we compute $A'_0 = P^{-1} A_0 P$.
 
-1. Find $P^{-1}$ (which is $C$):
-\[
-\det(P) = 1(0-1) - 1(1-0) + 0 = -2
-\]
-\[
-P^{-1} = \frac{1}{-2} \begin{pmatrix} -1 & -1 & 1 \\ -1 & 1 & -1 \\ 1 & -1 & -1 \end{pmatrix} = \frac{1}{2} \begin{pmatrix} 1 & 1 & -1 \\ 1 & -1 & 1 \\ -1 & 1 & 1 \end{pmatrix}
-\]
+        1. Find $P^{-1}$ (which is $C$):
+        \[
+        \det(P) = 1(0-1) - 1(1-0) + 0 = -2
+        \]
+        \[
+        P^{-1} = \frac{1}{-2} \begin{pmatrix} -1 & -1 & 1 \\ -1 & 1 & -1 \\ 1 & -1 & -1 \end{pmatrix} = \frac{1}{2} \begin{pmatrix} 1 & 1 & -1 \\ 1 & -1 & 1 \\ -1 & 1 & 1 \end{pmatrix}
+        \]
 
-Calculate $A_0 P$:
-\[
-A_0 P = \begin{pmatrix} 1 & -1 & 0 \\ -3 & 0 & 1 \\ 2 & -1 & 1 \end{pmatrix} \begin{pmatrix} 1 & 1 & 0 \\ 1 & 0 & 1 \\ 0 & 1 & 1 \end{pmatrix} = \begin{pmatrix} 0 & 1 & -1 \\ -3 & -2 & 1 \\ 1 & 3 & 0 \end{pmatrix}
-\]
+        Calculate $A_0 P$:
+        \[
+        A_0 P = \begin{pmatrix} 1 & -1 & 0 \\ -3 & 0 & 1 \\ 2 & -1 & 1 \end{pmatrix} \begin{pmatrix} 1 & 1 & 0 \\ 1 & 0 & 1 \\ 0 & 1 & 1 \end{pmatrix} = \begin{pmatrix} 0 & 1 & -1 \\ -3 & -2 & 1 \\ 1 & 3 & 0 \end{pmatrix}
+        \]
 
-Calculate $A'_0 = P^{-1} (A_0 P)$:
-\[
-A'_0 = \frac{1}{2} \begin{pmatrix} 1 & 1 & -1 \\ 1 & -1 & 1 \\ -1 & 1 & 1 \end{pmatrix} \begin{pmatrix} 0 & 1 & -1 \\ -3 & -2 & 1 \\ 1 & 3 & 0 \end{pmatrix}
-\]
-Performing the multiplication:
-\begin{align*}
-\text{Row 1} &= \tfrac{1}{2} [ (0-3-1), (1-2-3), (-1+1+0) ] = (-2, -2, 0) \\
-\text{Row 2} &= \tfrac{1}{2} [ (0+3+1), (1+2+3), (-1-1+0) ] = (2, 3, -1) \\
-\text{Row 3} &= \tfrac{1}{2} [ (0-3+1), (-1+2+3), (1+1+0) ] = (-1, 0, 1)
-\end{align*}
+        Calculate $A'_0 = P^{-1} (A_0 P)$:
+        \[
+        A'_0 = \frac{1}{2} \begin{pmatrix} 1 & 1 & -1 \\ 1 & -1 & 1 \\ -1 & 1 & 1 \end{pmatrix} \begin{pmatrix} 0 & 1 & -1 \\ -3 & -2 & 1 \\ 1 & 3 & 0 \end{pmatrix}
+        \]
+        Performing the multiplication:
+        \begin{align*}
+        \text{Row 1} &= \tfrac{1}{2} [ (0-3-1), (1-2-3), (-1+1+0) ] = (-2, -2, 0) \\
+        \text{Row 2} &= \tfrac{1}{2} [ (0+3+1), (1+2+3), (-1-1+0) ] = (2, 3, -1) \\
+        \text{Row 3} &= \tfrac{1}{2} [ (0-3+1), (-1+2+3), (1+1+0) ] = (-1, 0, 1)
+        \end{align*}
 
-Thus
-\[
-A'_0 =
-\begin{pmatrix}
--2 & -2 & 0\\
-2 & 3 & -1\\
--1 & 0 & 1
-\end{pmatrix}
-\]
+        Thus
+        \[
+        A'_0 =
+        \begin{pmatrix}
+        -2 & -2 & 0\\
+        2 & 3 & -1\\
+        -1 & 0 & 1
+        \end{pmatrix}
+        \]
 
 
 \end{enumerate}
@@ -1019,7 +996,5 @@ Sketch this curve showing the asymptotes and the points of intersection with the
     \end{figure}
 
 \end{enumerate}
-
-
 
 \end{document}
