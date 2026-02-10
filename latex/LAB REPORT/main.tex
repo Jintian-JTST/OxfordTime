@@ -37,9 +37,9 @@
 
 %%%%% If you want to omit something in this lab, place a % sign to the left of it and it won't show up on the lab, like this line!
 
-\begin{abstract} 
-	The abstract should be a short 3-5 sentence paragraph. In it, you should state the hypothesis, what you did, and what you found. The abstract is meant to be a very short summary of your paper to follow. It is a good suggestion to write the abstract last in your report after you have written everything else. This will allow you to best summarize your work. 
-\end{abstract}
+%\begin{abstract} 
+	%The abstract should be a short 3-5 sentence paragraph. In it, you should state the hypothesis, what you did, and what you found. The abstract is meant to be a very short summary of your paper to follow. It is a good suggestion to write the abstract last in your report after you have written everything else. This will allow you to best summarize your work. 
+%\end{abstract}
 
 \section{Introduction}
 
@@ -65,12 +65,42 @@ The moment of inertia of the disk is given by $I = \frac{1}{2} m R^2$. The equat
 I \frac{d^2\theta}{dt^2} + b \frac{d\theta}{dt} + \kappa \theta = \tau_{\text{drive}}(t)
 \]
 
+Solving $\theta(t)$ we got 
+\begin{equation}
+    \omega_\gamma = \sqrt{\omega_0^2 - \frac{1}{4Q^2}} \label{w}
+\end{equation}
+and we define the quality factor $Q$ as
+\begin{equation}
+    Q = \frac{\omega_\gamma}{\gamma}\label{q}
+\end{equation}
 
-    
+For driven oscillations, the phase difference between the driving force and the response of the system is given by $\phi$, and the steady-state amplitude $A$ of the oscillation as a function of the driving frequency $\omega$ is given by
+\begin{equation}
+\tan\phi = \frac{\gamma\omega}{\omega_0^2 - \omega^2} \label{phi}
+\end{equation}
+\begin{equation}
+A(\omega) = \frac{\tau_0}{\kappa}\frac{\omega_0^2}{\sqrt{(\omega_0^2 - \omega^2)^2 + (\gamma\omega)^2}} \label{A}
+\end{equation}
 
-    
 \section{Experimental Setup}
-	In this section, you should explain your experiment in detail. The usual method is that you first explain what you did, then you explain how you did it. I.e. first explain the data you are trying to collect. Then explain (citing relevant equations as necessary) why this data is necessary in order to prove/disprove your hypothesis. Finally, explain how you collected the data, citing both the materials used as well as stating their purpose and what they are used to collect or to do. You can break up this section into two sections if you wish. The first would be materials and the second would be procedure. 
+
+
+
+In the experiment, we used a torsional pendulum setup consisting of a disk suspended from a torsion wire. The pulley (3) was attached to the wire, allowing it to oscillate freely when displaced from its equilibrium position. A driving mechanism (7) and (8) was used to apply a periodic torque to the disk, enabling us to study driven oscillations.
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.5\textwidth]{1.png} %This is the name of the picture file, make sure to upload the picture to overleaf and give it a simple name like 1.jpg or graph1.png
+\label{Apparatus}
+\caption{Experimental apparatus for studying driven harmonic motion.}
+\end{figure}
+
+For the damping systems, we used a magnetic damping system (2) and an eddy current damping system (1). The magnetic damping system consists of a magnet that interacts with the metal disk, while a conductive plate generates eddy currents to oppose the motion of the disk. By adjusting the distance between the magnet and the conductive plate, we can control the amount of damping in the system. The distance is selected as 3 mm, 4mm, and 6 mm.
+
+We use PASCO system to collect data. This system includes a rotary motion sensor (4) that measures the angular displacement of the disk. The entire setup is mounted on a stable base to minimize external vibrations and ensure accurate measurements. The experimental apparatus is shown in Figure \ref{Apparatus}.
+
+
+
+
 
 %%%%%%%%%%Here is a sample bulleted list that is often useful for the materials section. You can also number or letter your materials to easily refer to them later on
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -78,14 +108,129 @@ I \frac{d^2\theta}{dt^2} + b \frac{d\theta}{dt} + \kappa \theta = \tau_{\text{dr
 
 \section{Data}
 
-\subsection{Measure the constant of the spring}
+\subsection{Measure the natural frequency of the system}
 Placing one brass weight and a plastic hook on one side of the spring, and measure the displacement of the spring. Without any additional weights, the spring is stretched by 0.05 m. With one brass weight, the measured $\theta=-0.489(1)$ radians. Adding $20$ grams on the left hand side of the spring, the measured $\theta=1.769(1)$ radians. Adding $50$ grams on the left hand side of the spring, the measured $\theta=5.066(1)$ radians.
 
-From measurements we also got the radius of the disk $R=26.26(2)$ mm. Given that $g=9.81 \mathrm{ms^{-2}}$, from eq.\ref{k} we can calculate the torsion constant $\kappa=2.413(6) \times 10^{-3}\mathrm{Nm\ rad^{-1}}$.
+From measurements we also got the radius of the disk $R=26.26(2)$ mm. Given that $g=9.81 \mathrm{ms^{-2}}$, from Eq.\ref{k} we can calculate the torsion constant $\kappa=2.413(6) \times 10^{-3}\ \mathrm{Nm\ rad^{-1}}$.
+
+To measure the moment of inertia of the disk, we should get the radius and mass of the disk. The radius is $R=47.66(2)$ mm and the mass is $m=121.44(1)$ g, so we can calculate the moment of inertia of the disk $I=1.379(1) \times 10^{-4}\ \mathrm{kg\ m^2}$.
+
+Combine $\kappa$ and $I$, we can calculate the theoretical value of the natural frequency of the system \begin{equation}\omega_0 = \sqrt{\frac{\kappa}{I}}=\boxed{4.18(1)\ \mathrm{rad\ s^{-1}}}.\end{equation}
+
+Therefore the theoretical period of the system is \begin{equation}T_0 = \frac{2\pi}{\omega_0}=\boxed{1.50(1)\ \mathrm{s}}.\end{equation}
+
+Turns the disk and let it oscillate freely, we can measure the period of the oscillation $T=1.42(1)$ s. This is close to the theoretical value, but there is a small difference. The reason for this difference may be that the spring is not ideal and there are some frictional forces in the system, which can affect the period of oscillation.
+
+
+\subsection{Measure the Q factor of the damping system}
+
+Using the curve fitting tool in PASCO, we can fit the curve of the free oscillation and get the value of $\gamma$ and $\omega$. Taking three sets of data for each distance of the magnet from the disk, we can extract the damping coefficient $\gamma$ and calculate the Q factor using Eq.\ref{q}. The results are shown in the table below.
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+Distance & $\gamma$ (s$^{-1}$) & $\omega_\gamma$ (rad/s) & $\bar{Q}$\\
+\hline
+\hline
+3 mm & 0.460(3) & 4.29(1) & 4.66(6) \\
+\hline
+4 mm& 0.422(3) & 4.29(1) & 5.09(7) \\
+\hline
+6 mm & 0.242(2) & 4.28(1) & 8.9(3) \\
+\hline
+\end{tabular}
+\end{center}
+
+
+
+
+\subsection{Measuring the Q factor of the forced damping system}
+
+By applying a driving force to the system and measuring the amplitude of the oscillation as a function of the driving frequency, we can fit the data to Eq.\ref{A} to extract the value of $Q$. The results are shown in the table below.
+
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+Distance & $\tau_0\omega_0^2/\kappa$ (rad$^3$/s$^2$) & $\omega_0$ (rad/s) & $\gamma$ (s$^{-1}$) & $\bar{Q}$\\
+\hline
+\hline
+3 mm & 1.52(3) & 4.895(7) & 1.56(2) & 3.13(5) \\
+\hline
+4 mm & 1.49(2) & 4.755(5) & 1.06(1) & 4.49(4) \\
+\hline
+6 mm & 1.52(3) & 4.604(5) & 0.64(1) & 7.2(1) \\
+\hline
+\end{tabular}
+\end{center}
+
+
+\begin{figure}[htbp]
+\centering
+
+\begin{minipage}{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{3mm.png}
+    \caption{3 mm}
+    \label{fig:3mm}
+\end{minipage}
+\hfill
+\begin{minipage}{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{4mm.png}
+    \caption{4 mm}
+    \label{fig:4mm}
+\end{minipage}
+\hfill
+\begin{minipage}{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{6mm.png}
+    \caption{6 mm}
+    \label{fig:6mm}
+\end{minipage}
+
+\caption{Amplitude of oscillation as a function of driving frequency for different distances of the magnet from the disk. The data points represent experimental measurements, while the solid lines represent fits to the theoretical model given by Eq.\ref{A}.}
+\label{fig:apparatus}
+\end{figure}
+
+
+\subsection{Measuring the phase difference between the driven force and the oscillator}
+
+It is trivial that when $\omega \ll \omega_0$, the phase difference $\phi \to 0$. Near the natural frequency $\omega_0$, the phase difference $\phi \to \pi/2$. When $\omega \gg \omega_0$, the phase difference $\phi \to \pi$.
+
+\begin{figure}[htbp]
+\centering
+    \centering
+    \includegraphics[width=0.9\textwidth]{2.png}
+    \caption{The phase difference between the driven force and the oscillator as a function of driving frequency for the 3 mm distance when $\omega \to \infty$. Blue data dots represent oscillator, while the red data represents the driven force. The horizontal axis represents times. The phase difference $\phi$ is approximately $\pi$ when $\omega \gg \omega_0$.}
+    \label{fig:3mm_phase}
+\end{figure}
+
 
 \section{Analysis}
 
-We 
+\subsection{Analysing the data for damped oscillation}
+
+From the PASCO curve fitting tool, we know that data is consistent with exponential decay, which is the expected behavior for a damped oscillator. For each Q factor, we notice the trend that as the distance of the magnet from the disk increases, the damping coefficient $\gamma$ decreases and the Q factor increases. This is consistent with our understanding of damping, as increasing the distance reduces the strength of the magnetic interaction and thus reduces the damping effect.
+
+Another thing is that the values of $\omega_\gamma$ (all around 4.29 rad/s) are close to the natural frequency $\omega_0=4.18(1)$ rad/s of the system, which is expected for a lightly damped oscillator. The small differences between $\omega_\gamma$ and $\omega_0$ can be attributed to the damping effect, which slightly reduces the effective frequency of oscillation.
+
+\subsection{Analysing the data for driven oscillation}
+
+The shape of the curve shows that as the driving frequency approaches the natural frequency of the system, the amplitude of oscillation increases significantly. The peak amplitude occurs near the natural frequency, and the width of the resonance peak is related to the damping in the system. As the distance of the magnet from the disk increases, the resonance peak becomes sharper and higher, indicating a higher Q factor. This is consistent with our previous analysis of the damped oscillation data, where we found that increasing the distance reduces damping and increases the Q factor.
+
+As the damping in the system decreases (as the magnet is moved further away), the width of the resonance peak narrows, and the maximum amplitude increases. This is because a higher Q factor corresponds to less energy loss per cycle, allowing the system to oscillate with larger amplitudes at resonance.
+
+As driven frequency increases, the amplitude of oscillation decreases, which is expected. Since at low frequencies, the system can easily follow the driving force, resulting in larger amplitudes. However, as the driving frequency increases beyond the natural frequency, the system cannot keep up with the driving force, leading to a decrease in amplitude.
+
+The Q factors obtained from the driven oscillation data are generally lower than those obtained from the damped oscillation data. We deduce that this is because the driven oscillation data is more sensitive to noise and other experimental uncertainties, which can affect the accuracy of the fit and lead to lower Q values. Additionally, the presence of the driving force can introduce additional sources of damping that are not present in the free oscillation case, further reducing the Q factor. If choosing a reliable Q factor value, I prefer the one obtained from the damped oscillation data, as it is less affected by experimental uncertainties and provides a more accurate representation of the damping in the system.
+
+
+\section{Conclusion}
+
+In this experiment, we investigated the behavior of a driven harmonic oscillator and measured key parameters such as the natural frequency, damping coefficient, and Q factor. Our results showed that the natural frequency of the system was close to the theoretical value calculated from the torsion constant and moment of inertia. We also observed that as the distance of the magnet from the disk increased, the damping coefficient decreased and the Q factor increased, which is consistent with our understanding of damping in oscillatory systems. The amplitude of oscillation as a function of driving frequency exhibited a resonance peak near the natural frequency, and the width of the resonance peak was related to the damping in the system. The Q factors obtained from the driven oscillation data were generally lower than those obtained from the damped oscillation data, likely due to increased sensitivity to experimental uncertainties in the driven case. Overall, our findings are consistent with the theoretical predictions for driven harmonic motion, and the experiment provided valuable insights into the effects of damping and driving forces on oscillatory systems.
+
+
 
 %%%%%Here is a nice sample data table%%%%%%%%%%
 %\begin{center}

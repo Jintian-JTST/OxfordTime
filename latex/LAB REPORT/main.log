@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2024.4.28)  10 FEB 2026 11:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2024.4.28)  10 FEB 2026 14:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -529,19 +529,46 @@ LaTeX Font Info:    Trying to load font information for U+wasy on input line 34.
 File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 ) [1
 
-{C:/Users/JTST/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2] (main.aux) ) 
+{C:/Users/JTST/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
+<1.png, id=16, 750.55406pt x 995.97093pt>
+File: 1.png Graphic file (type png)
+<use 1.png>
+Package pdftex.def Info: 1.png  used on input line 92.
+(pdftex.def)             Requested size: 241.84842pt x 320.9208pt.
+ [2 <./1.png>] [3]
+<3mm.png, id=24, 425.1885pt x 340.1508pt>
+File: 3mm.png Graphic file (type png)
+<use 3mm.png>
+Package pdftex.def Info: 3mm.png  used on input line 173.
+(pdftex.def)             Requested size: 154.78653pt x 123.8296pt.
+<4mm.png, id=26, 425.1885pt x 340.1508pt>
+File: 4mm.png Graphic file (type png)
+<use 4mm.png>
+Package pdftex.def Info: 4mm.png  used on input line 180.
+(pdftex.def)             Requested size: 154.78653pt x 123.8296pt.
+<6mm.png, id=27, 425.1885pt x 340.1508pt>
+File: 6mm.png Graphic file (type png)
+<use 6mm.png>
+Package pdftex.def Info: 6mm.png  used on input line 187.
+(pdftex.def)             Requested size: 154.78653pt x 123.8296pt.
+<2.png, id=28, 453.19313pt x 137.7647pt>
+File: 2.png Graphic file (type png)
+<use 2.png>
+Package pdftex.def Info: 2.png  used on input line 204.
+(pdftex.def)             Requested size: 435.32419pt x 132.33246pt.
+ [4 <./3mm.png> <./4mm.png> <./6mm.png> <./2.png>] [5] (main.aux) ) 
 Here is how much of TeX's memory you used:
- 28927 strings out of 476331
- 769579 string characters out of 5788237
- 1858660 words of memory out of 5000000
- 48956 multiletter control sequences out of 15000+600000
- 520196 words of font info for 61 fonts, out of 8000000 for 9000
+ 28970 strings out of 476331
+ 769996 string characters out of 5788237
+ 1863660 words of memory out of 5000000
+ 48994 multiletter control sequences out of 15000+600000
+ 519588 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,6n,103p,1016b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/JTST/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/JTST/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/JTST/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/JTST/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/JTST/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/JTST/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/JTST/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/JTST/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/JTST/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on main.pdf (2 pages, 120030 bytes).
+ 99i,9n,103p,1249b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/JTST/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/JTST/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/JTST/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/JTST/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/JTST/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/JTST/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/JTST/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/JTST/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/JTST/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on main.pdf (5 pages, 787007 bytes).
 PDF statistics:
- 57 PDF objects out of 1000 (max. 8388607)
+ 76 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 38 words of extra memory for PDF output out of 10000 (max. 10000000)
 
