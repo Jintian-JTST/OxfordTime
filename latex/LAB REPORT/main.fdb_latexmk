@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1770397050.18763 "c:/Users/JTST/OxfordTime/latex/LAB REPORT/main.tex" "main.pdf" "main" 1770397051.66745 0
+["pdflatex"] 1770722733.62496 "c:/Users/JTST/OxfordTime/latex/LAB REPORT/main.tex" "main.pdf" "main" 1770722735.86146 0
   "C:/Users/JTST/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1770397048 413266 9caae96b9f7070092b127e6ca5767fa3 ""
   "C:/Users/JTST/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1714272313 23178488 217b9f3035755e6714b31692dca37d29 ""
   "C:/Users/JTST/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
@@ -25,7 +25,6 @@
   "C:/Users/JTST/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1247596666 34811 78b52f49e893bcba91bd7581cdc144c0 ""
   "C:/Users/JTST/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1247596666 32080 340ef9bf63678554ee606688e7b5339d ""
   "C:/Users/JTST/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1247596667 36741 0ee9e374ec3e30da87cdfb0ea3575226 ""
-  "C:/Users/JTST/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1247596666 35469 dcf3a5f2fc1862f5952e3ee5eb1d98c4 ""
   "C:/Users/JTST/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1247596667 35752 024fb6c41858982481f6968b5fc26508 ""
   "C:/Users/JTST/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1247596667 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "C:/Users/JTST/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb" 1247596666 32362 bc3f3eec7ab7d65fe700963d4017d32c ""
@@ -179,9 +178,9 @@
   "C:/Users/JTST/AppData/Local/Programs/MiKTeX/tex/latex/wasysym/uwasy.fd" 1579693002 2296 c50bf1089c7a46a0d4e9a119e980be4e ""
   "C:/Users/JTST/AppData/Local/Programs/MiKTeX/tex/latex/wasysym/wasysym.sty" 1579693002 11252 7fbfbe7bbcbe1f73acbe32ae2f10c666 ""
   "C:/Users/JTST/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1656236890 56148 51a9a8571c07b9921892ae11063ae853 ""
-  "c:/Users/JTST/OxfordTime/latex/LAB REPORT/main.tex" 1770397030 22371 37c6467c414e3e48104be5c25b76f3f0 ""
-  "main.aux" 1770397051 567 46df82c0d6c0f2c63633dce2a8f50e39 "pdflatex"
-  "main.tex" 1770397030 22371 37c6467c414e3e48104be5c25b76f3f0 ""
+  "c:/Users/JTST/OxfordTime/latex/LAB REPORT/main.tex" 1770722732 22939 dba54b0377ee13175921ad21f807e5df ""
+  "main.aux" 1770722735 668 025abac18dc8a354f142e1800666822f "pdflatex"
+  "main.tex" 1770722732 22939 dba54b0377ee13175921ad21f807e5df ""
   (generated)
   "main.aux"
   "main.log"

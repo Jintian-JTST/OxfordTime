@@ -25,8 +25,8 @@
 
 \begin{document}
 
-\title{Lab Report Template for CHS Physics 211 v2.0} %Title should be concise and to the point  
-\author{Put your name and your partner's names here} %Your name first
+\title{GP04 Student lab report} %Title should be concise and to the point  
+\author{JINTIAN WANG, Exeter College, Oxford} %Your name first
 
 
 \date{\today}  % This will automatically put today's date in the report
@@ -42,12 +42,30 @@
 \end{abstract}
 
 \section{Introduction}
-	 
-    This template is designed to be a guide for completing lab reports for Physics 211. Please note that although I have provided this template, you are not under any obligation to use it. It simply provides a nice general design and tips for writing an exceptional physics laboratory report. As you use this template, please make a copy of this code and copy/paste it into a new document so that you will always have access to this original version to look at. It would lso be a good idea to have a printed copy of the pdf template and code to reference when needed. In addition, the formatting for various things like data tables, graphs, citations, etc. is in here for convenience. Please read through the code provided carefully as there are lots of things in \% that you can't see on the generated pdf (like how to include pictures, equations, and LOTS of notes on how to do everything). What follows is a general description of what each section of the lab report should contain. Finally, please note that there are equations and useful latex code at the bottom of this report.\\
-    
-    The introduction is usually a  paragraph or two. You should start off by stating the problem of the experiment and why the problem is worth studying. If there is any historical or background knowledge required to understand your report, you should state it here. Finally, you should state your hypothesis as an if-then statement. \cite{1}
-    
-    %note the cite above. That is an in text citation. By putting citations in your bibliography, you can cite in text simply using the \cite{} command and putting the number of the citation in the {} 
+
+Simple harmonic motion (SHM) plays a fundamental role throughout physics, appearing in systems ranging from oscillatory motion in classical mechanics to lattice vibrations and quantum harmonic oscillators in quantum mechanics. In an ideal simple harmonic oscillator, the restoring force acting on the system is directly proportional to the displacement from equilibrium and acts in the opposite direction, leading to periodic motion described by a second-order linear differential equation.
+
+In realistic physical systems, however, oscillations cannot occur indefinitely without energy loss. Dissipative effects such as friction and air resistance introduce damping, causing the amplitude of oscillation to decrease over time. In addition, external forces may act on the oscillator and continuously supply energy to the system. When such a driving force is applied, the resulting motion depends strongly on the driving frequency, leading to phenomena such as resonance. By analysing and solving the equations of motion for free, damped, and driven oscillators, key physical quantities such as the oscillation period, amplitude, and phase response can be determined.
+
+In this experiment, we investigate and verify the theoretical description of driven harmonic motion. Free oscillations, damped oscillations, and oscillations driven over a wide range of frequencies were studied experimentally. The effective spring constant, natural frequency, and damping constant of the oscillator were measured independently, allowing for quantitative comparisons between theoretical predictions and experimental results.
+
+
+
+\section{Theory}
+
+The rotational oscillator used in this experiment consists of a disk of mass $m$ and radius $R$ suspended from a torsion wire with torsion constant $\kappa$. According to Hooke's law for torsion: $\tau = \kappa \Delta\theta = mgr$, we can discover the formula of $\kappa$:
+\begin{equation}
+\kappa = \frac{mgr}{\Delta\theta}\label{k}
+\end{equation}
+
+
+The moment of inertia of the disk is given by $I = \frac{1}{2} m R^2$. The equation of motion for the angular displacement $\theta(t)$ of the disk can be derived from Newton's second law for rotation:
+
+\[
+I \frac{d^2\theta}{dt^2} + b \frac{d\theta}{dt} + \kappa \theta = \tau_{\text{drive}}(t)
+\]
+
+
     
 
     
@@ -55,39 +73,36 @@
 	In this section, you should explain your experiment in detail. The usual method is that you first explain what you did, then you explain how you did it. I.e. first explain the data you are trying to collect. Then explain (citing relevant equations as necessary) why this data is necessary in order to prove/disprove your hypothesis. Finally, explain how you collected the data, citing both the materials used as well as stating their purpose and what they are used to collect or to do. You can break up this section into two sections if you wish. The first would be materials and the second would be procedure. 
 
 %%%%%%%%%%Here is a sample bulleted list that is often useful for the materials section. You can also number or letter your materials to easily refer to them later on
-\begin{description}
-  \item[$\bullet$] 61cm ramp
-  \item[$\bullet$] stack of textbooks
-  \item[$\bullet$] ball
-  \item[$\bullet$] meter stick
-  \item[$\bullet$] tape
-  \item[$\bullet$] timer
-  \item[$\bullet$] Logger Pro
-  \item[$\bullet$] motion sensor
-\end{description}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \section{Data}
 
-In this section you should explain your results. You should not interpret the results in this section, that is for the analysis/conclusion portion of the lab. Again, you are merely stating the results of your experiment here. Please avoid gigantic tables with every data point in existence that no one will ever read. Use data tables wisely to summarize large amounts of data or to highlight important trends/results. If you want to display large amounts of data, often a graph/histogram, pie chart, etc. is the wiser choice. 
+\subsection{Measure the constant of the spring}
+Placing one brass weight and a plastic hook on one side of the spring, and measure the displacement of the spring. Without any additional weights, the spring is stretched by 0.05 m. With one brass weight, the measured $\theta=-0.489(1)$ radians. Adding $20$ grams on the left hand side of the spring, the measured $\theta=1.769(1)$ radians. Adding $50$ grams on the left hand side of the spring, the measured $\theta=5.066(1)$ radians.
+
+From measurements we also got the radius of the disk $R=26.26(2)$ mm. Given that $g=9.81 \mathrm{ms^{-2}}$, from eq.\ref{k} we can calculate the torsion constant $\kappa=2.413(6) \times 10^{-3}\mathrm{Nm\ rad^{-1}}$.
+
+\section{Analysis}
+
+We 
 
 %%%%%Here is a nice sample data table%%%%%%%%%%
-\begin{center}
-\begin{tabular}{|c|c|c|c|c|} %this specifies how many columns to make. For example. if you only wanted three columns, it would look like this : {|c|c|c|}
-\hline
-Angle of incline & Trial 1 (Sec.) & Trial 2 (Sec.) & Trial 3 (Sec.) & Average Time (Sec.)\\[0.5ex] %Title for each column
-\hline\hline
-$2^{\circ}$&$2.615$&$2.73$5&$2.585$&$2.645$\\ %data for row 1
-\hline
-$4^{\circ}$&$1.8$&$1.875$&$1.685$&$1.787$\\ %data for row 2
-\hline
-$6^{\circ}$&$1.445$&$1.39$&$1.44$&$1.425$\\ %data for row 3
-\hline
-8$^{\circ}$&1.195&1.31&1.1&1.202\\ %data for row 4
-\hline
-\end{tabular}
-\end{center} 
+%\begin{center}
+%\begin{tabular}{|c|c|c|c|c|} %this specifies how many columns to make. For example. if you only wanted three columns, it would look like this : {|c|c|c|}
+%\hline
+%Angle of incline & Trial 1 (Sec.) & Trial 2 (Sec.) & Trial 3 (Sec.) & Average Time (Sec.)\\[0.5ex] %Title for each column
+%\hline\hline
+%$2^{\circ}$&$2.615$&$2.73$5&$2.585$&$2.645$\\ %data for row 1
+%\hline
+%$4^{\circ}$&$1.8$&$1.875$&$1.685$&$1.787$\\ %data for row 2
+%\hline
+%$6^{\circ}$&$1.445$&$1.39$&$1.44$&$1.425$\\ %data for row 3
+%\hline
+%8$^{\circ}$&1.195&1.31&1.1&1.202\\ %data for row 4
+%\hline
+%\end{tabular}
+%\end{center} 
  
 % When making a table, make sure every data point is separated by $ to signify a different cell in your table. To end a row, use the \\ to move to the next row. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -120,13 +135,13 @@ $6^{\circ}$&$1.445$&$1.39$&$1.44$&$1.425$\\ %data for row 3
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Here are some sample equations showing how to use the align tool to number and align math in your report
 
-\begin{align} %Note that in align, you are in "math mode" and thus you don't need the $ between your math
-K &= U_g \\
-mgh &=\frac{1}{2}mv^2 \\
-(10)(.225) &=\frac{1}{2}v^2 \nonumber \\  %by using \nonumber, you can take off the label on the side of an equation, which is nice so that steps of math with work aren't numbered. It is entirely your choice if you want to use this or not. 
-4.5 &=v^2 \nonumber \\
-2.12 \frac{m}{s} &=v 
-\end{align}
+%\begin{align} %Note that in align, you are in "math mode" and thus you don't need the $ between your math
+%K &= U_g \\
+%mgh &=\frac{1}{2}mv^2 \\
+%(10)(.225) &=\frac{1}{2}v^2 \nonumber \\  %by using \nonumber, you can take off the label on the side of an equation, which is nice so that steps of math with work aren't numbered. It is entirely your choice if you want to use this or not. 
+%4.5 &=v^2 \nonumber \\
+%2.12 \frac{m}{s} &=v 
+%\end{align}
 %The align tool allows you to number your equations, which is super useful for referencing math in your work. I.e. you could say "see equation (1) for details." 
 
 %Note: the \\ is to make a new line. Whatever you want aligned, just use & to the left, for example see the = above. Finally, don't use \\ on the last line or it will create a blank bottom equation
@@ -145,33 +160,32 @@ mgh &=\frac{1}{2}mv^2 \\
 
 
 
-\section{Analysis}
-	This is the most important part of the lab report; it is where you
-analyze the data. In this section you will interpret your results. You need to look at your data and decide if the hypothesis was supported or contradicted by your data.  \\ %Note: the \\ gives you a line of space
+%\section{Analysis}
+%	This is the most important part of the lab report; it is where you analyze the data. In this section you will interpret your results. You need to look at your data and decide if the hypothesis was supported or contradicted by your data.  \\ %Note: the \\ gives you a line of space
     
-    Your discussion should include the following at a minimum. [1] What is the relationship between your measurements and your final results? [2] What trends were observable? [3] What can you conclude from the graphs that you made? [4] How did the independent variables affect the dependent variables? (For example, did an increase in a given measured (independent) variable result in an increase or decrease in the associated calculated (dependent) variable?) \\ 
+%    Your discussion should include the following at a minimum. [1] What is the relationship between your measurements and your final results? [2] What trends were observable? [3] What can you conclude from the graphs that you made? [4] How did the independent variables affect the dependent variables? (For example, did an increase in a given measured (independent) variable result in an increase or decrease in the associated calculated (dependent) variable?) \\ 
 
-Then describe how your experimental results substantiate/agree with the theory. (This is not a single statement that your results agree or disagree with theory.) When comparison values are available, discuss the agreement using either uncertainty and/or percent differences. This leads into the discussion of the sources of error. Your discussion should include the calculation of averages and standard deviation to be able to describe precision of experiment. All data points should be plotted $\pm$ two standard deviations and compared with theoretical data to interpret accuracy. It is ok to say that your results were inconclusive. It is important to cite all possible sources of error and state specifically how you believed they affected the collected data. If you get a result or an uncertainty that is ridiculous (or just really big/small), show that you have noticed and thought about it, not just copied a number from your calculator and moved on. \\
+%Then describe how your experimental results substantiate/agree with the theory. (This is not a single statement that your results agree or disagree with theory.) When comparison values are available, discuss the agreement using either uncertainty and/or percent differences. This leads into the discussion of the sources of error. Your discussion should include the calculation of averages and standard deviation to be able to describe precision of experiment. All data points should be plotted $\pm$ two standard deviations and compared with theoretical data to interpret accuracy. It is ok to say that your results were inconclusive. It is important to cite all possible sources of error and state specifically how you believed they affected the collected data. If you get a result or an uncertainty that is ridiculous (or just really big/small), show that you have noticed and thought about it, not just copied a number from your calculator and moved on. \\
 
-For example, when rolling a ball down a ramp, you may not have taken in account the effects of rolling friction or the fact that some gravitational potential energy is converted into rotational kinetic energy. Both of these would cause the overall time for the ball to roll down the ramp to increase.
+%For example, when rolling a ball down a ramp, you may not have taken in account the effects of rolling friction or the fact that some gravitational potential energy is converted into rotational kinetic energy. Both of these would cause the overall time for the ball to roll down the ramp to increase.
 
 
-\section{Conclusion}
-    The conclusion should connect to the introduction and re-state the relevance and importance of the experiment. Its a nice touch to sometimes make historical connections in this part of the report as well. It is always good to end on a note stating the importance of your findings, the connections to other topics in physics and science, and opportunities for future extensions/research/experiments in the subject. Remember to report your results with correct units and uncertainties, for example $g=9.7 \pm 0.2 m \cdotp s^{-2}$. 
+%\section{Conclusion}
+%    The conclusion should connect to the introduction and re-state the relevance and importance of the experiment. Its a nice touch to sometimes make historical connections in this part of the report as well. It is always good to end on a note stating the importance of your findings, the connections to other topics in physics and science, and opportunities for future extensions/research/experiments in the subject. Remember to report your results with correct units and uncertainties, for example $g=9.7 \pm 0.2 m \cdotp s^{-2}$. 
     
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% This is the Bibliography where you will cite your sources used in the paper %%%%
 
-\begin{thebibliography}{0}
+%\begin{thebibliography}{0}
 
 	%Each item starts with a \bibitem{} command and the details thereafter.
 	
-	\bibitem{1} Cite your first source here
-	\bibitem{2} Cite another source
+	%\bibitem{1} Cite your first source here
+	%\bibitem{2} Cite another source
 	
     %%% The 1,2 etc. are used to cite in text. See up in the intro for an example
     %%% When you want to cite in your cite, type in \cite{} wherever you want
-\end{thebibliography}
+%\end{thebibliography}
     
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%    
 
