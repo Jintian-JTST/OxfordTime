@@ -25,7 +25,7 @@
 
 \begin{document}
 
-\title{GP04 Student lab report} %Title should be concise and to the point  
+\title{Dynamics of Free, Damped, and Driven Oscillations} %Title should be concise and to the point  
 \author{JINTIAN WANG, Exeter College, Oxford} %Your name first
 
 
@@ -37,15 +37,15 @@
 
 %%%%% If you want to omit something in this lab, place a % sign to the left of it and it won't show up on the lab, like this line!
 
-%\begin{abstract} 
-	%The abstract should be a short 3-5 sentence paragraph. In it, you should state the hypothesis, what you did, and what you found. The abstract is meant to be a very short summary of your paper to follow. It is a good suggestion to write the abstract last in your report after you have written everything else. This will allow you to best summarize your work. 
-%\end{abstract}
+\begin{abstract} 
+This experiment investigates the dynamics of free, damped, and driven simple harmonic motion using a rotational torsional oscillator. The system's natural frequency was measured experimentally as $\omega_0 = 4.42(3) \text{ rad s}^{-1}$, which agreed reasonably well with the theoretical value derived from the measured torsion constant $\kappa$ and moment of inertia $I$. By varying the spacing of the eddy-current damping magnet (3, 4, and 6 mm), we observed that the Quality factor ($Q$) increased as the damping force decreased, consistent with theoretical expectations. Resonance curves obtained from the driven system demonstrated a clear amplitude peak near the natural frequency. However, the $Q$ factors derived from driven oscillations were consistently lower than those from free decay, likely due to additional friction introduced by the driving mechanism.
+\end{abstract}
 
 \section{Introduction}
 
-Simple harmonic motion (SHM) plays a fundamental role throughout physics, appearing in systems ranging from oscillatory motion in classical mechanics to lattice vibrations and quantum harmonic oscillators in quantum mechanics. In an ideal simple harmonic oscillator, the restoring force acting on the system is directly proportional to the displacement from equilibrium and acts in the opposite direction, leading to periodic motion described by a second-order linear differential equation.
+Simple harmonic motion (SHM) plays a fundamental role throughout physics. In an ideal simple harmonic oscillator, the restoring force acting on the system is directly proportional to the displacement from equilibrium and acts in the opposite direction, leading to periodic motion described by a second-order linear differential equation.
 
-In realistic physical systems, however, oscillations cannot occur indefinitely without energy loss. Dissipative effects such as friction and air resistance introduce damping, causing the amplitude of oscillation to decrease over time. In addition, external forces may act on the oscillator and continuously supply energy to the system. When such a driving force is applied, the resulting motion depends strongly on the driving frequency, leading to phenomena such as resonance. By analysing and solving the equations of motion for free, damped, and driven oscillators, key physical quantities such as the oscillation period, amplitude, and phase response can be determined.
+In realistic physical systems, however, oscillations cannot occur indefinitely without energy loss. Dissipative effects such as friction and air resistance introduce damping, causing the amplitude of oscillation to decrease over time. In addition, external forces may act on the oscillator and continuously supply energy to the system.
 
 In this experiment, we investigate and verify the theoretical description of driven harmonic motion. Free oscillations, damped oscillations, and oscillations driven over a wide range of frequencies were studied experimentally. The effective spring constant, natural frequency, and damping constant of the oscillator were measured independently, allowing for quantitative comparisons between theoretical predictions and experimental results.
 
@@ -53,50 +53,63 @@ In this experiment, we investigate and verify the theoretical description of dri
 
 \section{Theory}
 
-The rotational oscillator used in this experiment consists of a disk of mass $m$ and radius $R$ suspended from a torsion wire with torsion constant $\kappa$. According to Hooke's law for torsion: $\tau = \kappa \Delta\theta = mgr$, we can discover the formula of $\kappa$:
+The apparatus consists of a disk of mass $M$ and radius $R$ coupled to a string-and-spring arrangement that provides an effective torsional spring constant $\kappa$. The equation of motion for the angular displacement $\theta(t)$ is given by Newton's second law for rotation:
 \begin{equation}
-\kappa = \frac{mgr}{\Delta\theta}\label{k}
+I \ddot{\theta} + B \dot{\theta} + \kappa \theta = \tau_{\text{drive}}(t),
+\end{equation}
+where $I = \frac{1}{2}MR^2$ is the moment of inertia, and $B$ is the viscous damping coefficient. It is convenient to define
+\[
+\gamma = \frac{B}{I},
+\]
+so the linewidth parameter in the driven response is $\gamma$.
+
+A static calibration of $\kappa$ can be performed by applying a known torque $\tau=mgr$ (hanging mass $m$ at pulley groove radius $r$) and measuring the angular deflection $\Delta\theta$:
+\begin{equation}
+\kappa = \frac{m g r}{\Delta\theta}.
+\label{k}
 \end{equation}
 
+For free, damped oscillations ($\tau_{\text{drive}}=0$), the system oscillates at the damped frequency $\omega_\gamma$:
+\begin{equation}
+\omega_\gamma = \omega_0 \sqrt{1 - \frac{1}{4Q^2}}
+\quad \text{where} \quad
+\omega_0 = \sqrt{\frac{\kappa}{I}}.
+\label{eq:w_gamma}
+\end{equation}
+The quality factor can be written as
+\begin{equation}
+Q = \frac{\omega_\gamma}{\gamma} \simeq \frac{\omega_0}{\gamma}\quad (\text{light damping}).
+\label{q}
+\end{equation}
 
-The moment of inertia of the disk is given by $I = \frac{1}{2} m R^2$. The equation of motion for the angular displacement $\theta(t)$ of the disk can be derived from Newton's second law for rotation:
-
+In ringdown fits, PASCO commonly returns an envelope decay constant $\lambda$ defined by $\theta_{\max}(t)\propto e^{-\lambda t}$. In this notation,
 \[
-I \frac{d^2\theta}{dt^2} + b \frac{d\theta}{dt} + \kappa \theta = \tau_{\text{drive}}(t)
+\lambda = \frac{\gamma}{2},
+\qquad
+Q=\frac{\omega_\gamma}{\gamma}=\frac{\omega_\gamma}{2\lambda}.
 \]
 
-Solving $\theta(t)$ we got 
+For a system driven by a sinusoidal torque $\tau(t) = \tau_0 \cos(\omega t)$, the steady-state amplitude is:
 \begin{equation}
-    \omega_\gamma = \sqrt{\omega_0^2 - \frac{1}{4Q^2}} \label{w}
+A(\omega) = \frac{\tau_0}{\kappa} \frac{\omega_0^2}{\sqrt{(\omega_0^2 - \omega^2)^2 + (\gamma\omega)^2}}.
+\label{A}
 \end{equation}
-and we define the quality factor $Q$ as
-\begin{equation}
-    Q = \frac{\omega_\gamma}{\gamma}\label{q}
-\end{equation}
-
-For driven oscillations, the phase difference between the driving force and the response of the system is given by $\phi$, and the steady-state amplitude $A$ of the oscillation as a function of the driving frequency $\omega$ is given by
-\begin{equation}
-\tan\phi = \frac{\gamma\omega}{\omega_0^2 - \omega^2} \label{phi}
-\end{equation}
-\begin{equation}
-A(\omega) = \frac{\tau_0}{\kappa}\frac{\omega_0^2}{\sqrt{(\omega_0^2 - \omega^2)^2 + (\gamma\omega)^2}} \label{A}
-\end{equation}
+The phase difference $\phi$ between the driver and the oscillator satisfies $\tan\phi = \gamma\omega / (\omega_0^2 - \omega^2)$.
 
 \section{Experimental Setup}
 
-
-
-In the experiment, we used a torsional pendulum setup consisting of a disk suspended from a torsion wire. The pulley (3) was attached to the wire, allowing it to oscillate freely when displaced from its equilibrium position. A driving mechanism (7) and (8) was used to apply a periodic torque to the disk, enabling us to study driven oscillations.
+In the experiment, we used a rotational oscillator consisting of a disk connected to a pulley and a string-and-spring restoring mechanism. A driving mechanism was used to apply a periodic torque to the disk, enabling us to study driven oscillations.
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.5\textwidth]{1.png} %This is the name of the picture file, make sure to upload the picture to overleaf and give it a simple name like 1.jpg or graph1.png
+\includegraphics[width=0.4\textwidth]{1.png}
+\caption{Experimental apparatus for studying driven harmonic motion (adapted from GP04 script \cite{gp04}).}
 \label{Apparatus}
-\caption{Experimental apparatus for studying driven harmonic motion.}
 \end{figure}
 
-For the damping systems, we used a magnetic damping system (2) and an eddy current damping system (1). The magnetic damping system consists of a magnet that interacts with the metal disk, while a conductive plate generates eddy currents to oppose the motion of the disk. By adjusting the distance between the magnet and the conductive plate, we can control the amount of damping in the system. The distance is selected as 3 mm, 4mm, and 6 mm.
+Eddy-current damping was produced by placing a magnet near the conducting disk; the damping strength was controlled by the magnet--disc spacing (3/4/6 mm).
 
-We use PASCO system to collect data. This system includes a rotary motion sensor (4) that measures the angular displacement of the disk. The entire setup is mounted on a stable base to minimize external vibrations and ensure accurate measurements. The experimental apparatus is shown in Figure \ref{Apparatus}.
+We used the PASCO system to collect data. This system includes a rotary motion sensor that measures the angular displacement of the disk. The entire setup is mounted on a stable base to minimize external vibrations and ensure accurate measurements.
+
 
 
 
@@ -108,23 +121,21 @@ We use PASCO system to collect data. This system includes a rotary motion sensor
 
 \section{Data}
 
-\subsection{Measure the natural frequency of the system}
+\subsection{Natural frequency}
 Placing one brass weight and a plastic hook on one side of the spring, and measure the displacement of the spring. Without any additional weights, the spring is stretched by 0.05 m. With one brass weight, the measured $\theta=-0.489(1)$ radians. Adding $20$ grams on the left hand side of the spring, the measured $\theta=1.769(1)$ radians. Adding $50$ grams on the left hand side of the spring, the measured $\theta=5.066(1)$ radians.
 
 From measurements we also got the radius of the disk $R=26.26(2)$ mm. Given that $g=9.81 \mathrm{ms^{-2}}$, from Eq.\ref{k} we can calculate the torsion constant $\kappa=2.413(6) \times 10^{-3}\ \mathrm{Nm\ rad^{-1}}$.
 
-To measure the moment of inertia of the disk, we should get the radius and mass of the disk. The radius is $R=47.66(2)$ mm and the mass is $m=121.44(1)$ g, so we can calculate the moment of inertia of the disk $I=1.379(1) \times 10^{-4}\ \mathrm{kg\ m^2}$.
+To measure the moment of inertia of the disk, we should get the radius and mass of the disk. The radius is $R=47.66(2)$ mm and the mass is $M=121.44(1)$ g, so we can calculate the moment of inertia of the disk $I=1.379(1) \times 10^{-4}\ \mathrm{kg\ m^2}$.
 
-Combine $\kappa$ and $I$, we can calculate the theoretical value of the natural frequency of the system \begin{equation}\omega_0 = \sqrt{\frac{\kappa}{I}}=\boxed{4.18(1)\ \mathrm{rad\ s^{-1}}}.\end{equation}
+Combine $\kappa$ and $I$, we can calculate the theoretical value of the natural frequency of the system $\omega_0 = \sqrt{\kappa/I}=4.18(1)\ \mathrm{rad\ s^{-1}}$. Therefore the theoretical period of the system is $T_0 = 2\pi/\omega_0=1.50(1)\ \mathrm{s}$.
 
-Therefore the theoretical period of the system is \begin{equation}T_0 = \frac{2\pi}{\omega_0}=\boxed{1.50(1)\ \mathrm{s}}.\end{equation}
-
-Turns the disk and let it oscillate freely, we can measure the period of the oscillation $T=1.42(1)$ s. This is close to the theoretical value, but there is a small difference. The reason for this difference may be that the spring is not ideal and there are some frictional forces in the system, which can affect the period of oscillation.
+Turning the disk to let it oscillate freely, we measured the period of oscillation as $T=1.42(1)$ s, which yields $\boxed{\omega_0=4.42(3) \mathrm{\ s^{-1}}}$. This value is slightly higher than the theoretical prediction. Since damping effects would theoretically \textit{reduce} the observed frequency, this discrepancy is likely due to systematic uncertainties in the static measurement of the torsion constant $\kappa$ or the moment of inertia $I$ (e.g., assuming a uniform mass distribution for the disk), rather than frictional forces.
 
 
-\subsection{Measure the Q factor of the damping system}
+\subsection{Damping system}
 
-Using the curve fitting tool in PASCO, we can fit the curve of the free oscillation and get the value of $\gamma$ and $\omega$. Taking three sets of data for each distance of the magnet from the disk, we can extract the damping coefficient $\gamma$ and calculate the Q factor using Eq.\ref{q}. The results are shown in the table below.
+Using the curve fitting tool in PASCO, we fit free oscillation data to extract the envelope decay constant $\lambda$ and the oscillation frequency $\omega_\gamma$. Taking three sets of data for each distance of the magnet from the disk, we calculate the quality factor using $Q=\omega_\gamma/(2\lambda)$. The results are shown below.
 
 \begin{center}
 \begin{tabular}{|c|c|c|c|}
@@ -141,12 +152,8 @@ Distance & $\gamma$ (s$^{-1}$) & $\omega_\gamma$ (rad/s) & $\bar{Q}$\\
 \end{tabular}
 \end{center}
 
-
-
-
-\subsection{Measuring the Q factor of the forced damping system}
-
-By applying a driving force to the system and measuring the amplitude of the oscillation as a function of the driving frequency, we can fit the data to Eq.\ref{A} to extract the value of $Q$. The results are shown in the table below.
+\subsection{Forced oscillation}
+By applying a driving torque and measuring the amplitude as a function of driving frequency, we fit the data to Eq.~\ref{A} to extract $\gamma$ and hence $Q=\omega_0/\gamma$ (driven steady-state method). The results are shown below.
 
 
 \begin{center}
@@ -167,43 +174,38 @@ Distance & $\tau_0\omega_0^2/\kappa$ (rad$^3$/s$^2$) & $\omega_0$ (rad/s) & $\ga
 
 \begin{figure}[htbp]
 \centering
-
 \begin{minipage}{0.32\textwidth}
     \centering
     \includegraphics[width=\textwidth]{3mm.png}
-    \caption{3 mm}
-    \label{fig:3mm}
+    \small (a) 3 mm
 \end{minipage}
 \hfill
 \begin{minipage}{0.32\textwidth}
     \centering
     \includegraphics[width=\textwidth]{4mm.png}
-    \caption{4 mm}
-    \label{fig:4mm}
+    \small (b) 4 mm
 \end{minipage}
 \hfill
 \begin{minipage}{0.32\textwidth}
     \centering
     \includegraphics[width=\textwidth]{6mm.png}
-    \caption{6 mm}
-    \label{fig:6mm}
+    \small (c) 6 mm
 \end{minipage}
 
-\caption{Amplitude of oscillation as a function of driving frequency for different distances of the magnet from the disk. The data points represent experimental measurements, while the solid lines represent fits to the theoretical model given by Eq.\ref{A}.}
-\label{fig:apparatus}
+\caption{Amplitude of oscillation as a function of driving frequency for different magnet--disc spacings. Points are measurements and solid curves are fits to Eq.~\ref{A}.}
+\label{fig:resonance}
 \end{figure}
 
 
 \subsection{Measuring the phase difference between the driven force and the oscillator}
 
-It is trivial that when $\omega \ll \omega_0$, the phase difference $\phi \to 0$. Near the natural frequency $\omega_0$, the phase difference $\phi \to \pi/2$. When $\omega \gg \omega_0$, the phase difference $\phi \to \pi$.
+It is expected that when $\omega \ll \omega_0$, the phase difference $\phi \to 0$. Near the natural frequency $\omega_0$, the phase difference $\phi \to \pi/2$. When $\omega \gg \omega_0$, the phase difference $\phi \to \pi$.
 
 \begin{figure}[htbp]
 \centering
-    \centering
-    \includegraphics[width=0.9\textwidth]{2.png}
-    \caption{The phase difference between the driven force and the oscillator as a function of driving frequency for the 3 mm distance when $\omega \to \infty$. Blue data dots represent oscillator, while the red data represents the driven force. The horizontal axis represents times. The phase difference $\phi$ is approximately $\pi$ when $\omega \gg \omega_0$.}
-    \label{fig:3mm_phase}
+\includegraphics[width=0.9\textwidth]{2.png}
+\caption{Oscillator and driver signals versus time at high driving frequency ($\omega \gg \omega_0$), showing an approximately $\pi$ phase lag (anti-phase) at large $\omega$.}
+\label{fig:phase}
 \end{figure}
 
 
@@ -211,19 +213,21 @@ It is trivial that when $\omega \ll \omega_0$, the phase difference $\phi \to 0$
 
 \subsection{Analysing the data for damped oscillation}
 
-From the PASCO curve fitting tool, we know that data is consistent with exponential decay, which is the expected behavior for a damped oscillator. For each Q factor, we notice the trend that as the distance of the magnet from the disk increases, the damping coefficient $\gamma$ decreases and the Q factor increases. This is consistent with our understanding of damping, as increasing the distance reduces the strength of the magnetic interaction and thus reduces the damping effect.
+From the PASCO curve fitting tool, the data are consistent with exponential decay, as expected for a damped oscillator. We observe that as the distance of the magnet from the disk increases, the decay constant $\lambda$ decreases and the quality factor $Q$ increases. This is consistent with eddy current damping becoming weaker at larger magnet to disc separations.
 
-Another thing is that the values of $\omega_\gamma$ (all around 4.29 rad/s) are close to the natural frequency $\omega_0=4.18(1)$ rad/s of the system, which is expected for a lightly damped oscillator. The small differences between $\omega_\gamma$ and $\omega_0$ can be attributed to the damping effect, which slightly reduces the effective frequency of oscillation.
+The values of $\omega_\gamma$ (around \SI{4.29}{rad/s}) are slightly lower than the measured free-oscillation frequency $\omega_{\mathrm{free}}=4.42(3)\ \mathrm{rad\,s^{-1}}$, which is consistent with damping reducing the oscillation frequency. The small differences between $\omega_\gamma$ and $\omega_0$ can be attributed to the damping effect, which slightly reduces the effective frequency of oscillation.
 
 \subsection{Analysing the data for driven oscillation}
 
-The shape of the curve shows that as the driving frequency approaches the natural frequency of the system, the amplitude of oscillation increases significantly. The peak amplitude occurs near the natural frequency, and the width of the resonance peak is related to the damping in the system. As the distance of the magnet from the disk increases, the resonance peak becomes sharper and higher, indicating a higher Q factor. This is consistent with our previous analysis of the damped oscillation data, where we found that increasing the distance reduces damping and increases the Q factor.
+The resonance curves show that as the driving frequency approaches the natural frequency, the oscillation amplitude increases significantly and reaches a maximum near resonance. As the magnet is moved further away (reduced damping), the resonance peak becomes sharper and higher, indicating a higher $Q$, consistent with the free-decay method.
 
 As the damping in the system decreases (as the magnet is moved further away), the width of the resonance peak narrows, and the maximum amplitude increases. This is because a higher Q factor corresponds to less energy loss per cycle, allowing the system to oscillate with larger amplitudes at resonance.
 
-As driven frequency increases, the amplitude of oscillation decreases, which is expected. Since at low frequencies, the system can easily follow the driving force, resulting in larger amplitudes. However, as the driving frequency increases beyond the natural frequency, the system cannot keep up with the driving force, leading to a decrease in amplitude.
+For the \SI{6}{mm} spacing data, the resonance peak was observed at approximately $f_{\mathrm{peak}}\approx\SI{0.72}{Hz}$. Using the measured free-oscillation angular frequency $\omega_{\mathrm{free}}=4.42(3)\ \mathrm{rad\,s^{-1}}$, the corresponding frequency is $f_{\mathrm{free}}=\SI{0.703}{Hz}$. The fractional difference is therefore $2.35\%$. This small difference is consistent with finite sweep effects and systematic uncertainties in identifying the peak frequency from discrete data.
 
-The Q factors obtained from the driven oscillation data are generally lower than those obtained from the damped oscillation data. We deduce that this is because the driven oscillation data is more sensitive to noise and other experimental uncertainties, which can affect the accuracy of the fit and lead to lower Q values. Additionally, the presence of the driving force can introduce additional sources of damping that are not present in the free oscillation case, further reducing the Q factor. If choosing a reliable Q factor value, I prefer the one obtained from the damped oscillation data, as it is less affected by experimental uncertainties and provides a more accurate representation of the damping in the system.
+As the driving frequency increases, the amplitude of oscillation decreases, which is expected. At low frequencies, the system can easily follow the driving force, resulting in larger amplitudes. However, as the driving frequency increases beyond the natural frequency, the inertia of the system prevents it from keeping up with the rapidly changing driving force, leading to a decrease in amplitude.
+
+The $Q$ factors obtained from the driven oscillation fits are generally lower than those obtained from the free-decay method. A plausible explanation is that the driven configuration introduces additional dissipation through the drive coupling (motor, linkage, string friction), increasing the effective damping and reducing the fitted $Q$.
 
 
 \section{Conclusion}
@@ -231,291 +235,9 @@ The Q factors obtained from the driven oscillation data are generally lower than
 In this experiment, we investigated the behavior of a driven harmonic oscillator and measured key parameters such as the natural frequency, damping coefficient, and Q factor. Our results showed that the natural frequency of the system was close to the theoretical value calculated from the torsion constant and moment of inertia. We also observed that as the distance of the magnet from the disk increased, the damping coefficient decreased and the Q factor increased, which is consistent with our understanding of damping in oscillatory systems. The amplitude of oscillation as a function of driving frequency exhibited a resonance peak near the natural frequency, and the width of the resonance peak was related to the damping in the system. The Q factors obtained from the driven oscillation data were generally lower than those obtained from the damped oscillation data, likely due to increased sensitivity to experimental uncertainties in the driven case. Overall, our findings are consistent with the theoretical predictions for driven harmonic motion, and the experiment provided valuable insights into the effects of damping and driving forces on oscillatory systems.
 
 
-
-%%%%%Here is a nice sample data table%%%%%%%%%%
-%\begin{center}
-%\begin{tabular}{|c|c|c|c|c|} %this specifies how many columns to make. For example. if you only wanted three columns, it would look like this : {|c|c|c|}
-%\hline
-%Angle of incline & Trial 1 (Sec.) & Trial 2 (Sec.) & Trial 3 (Sec.) & Average Time (Sec.)\\[0.5ex] %Title for each column
-%\hline\hline
-%$2^{\circ}$&$2.615$&$2.73$5&$2.585$&$2.645$\\ %data for row 1
-%\hline
-%$4^{\circ}$&$1.8$&$1.875$&$1.685$&$1.787$\\ %data for row 2
-%\hline
-%$6^{\circ}$&$1.445$&$1.39$&$1.44$&$1.425$\\ %data for row 3
-%\hline
-%8$^{\circ}$&1.195&1.31&1.1&1.202\\ %data for row 4
-%\hline
-%\end{tabular}
-%\end{center} 
- 
-% When making a table, make sure every data point is separated by $ to signify a different cell in your table. To end a row, use the \\ to move to the next row. 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-%%%%%%%%%%    Using Graphs/pictures in LaTeX    %%%%%%%%%%%%%%%%%%%%%%%%%%
-%In this section you will find the code for inserting a graph into LaTeX. My suggestion is to use excel to create your graph, so that you can include trend lines, error bars (set to 2 sigma standard deviation or to a set amount, e.g. 0.2s to include roughly for human error effects due to timing. You can also use excel to plot experimental data (with error bars) and theoretical data, which allows you to easily see if the theoretical data falls within the region of acceptable error. 
-
-%Once your graph is created, take a screen shot using print screen (prt scn on most computers). Paste into paint and crop out your graph and save as a jpg or png file. Title your picture as something simple to reference later, for example "graph1"
-
-%You will then click the "project" tab in the upper left-hand corner of overleaf, click the drop-down arrow "main.tex" and click upload to upload your picture. From there, use the code below to insert the picture into your report. 
-
-%technique #1: Basic way
-%\includegraphics[width=\textwidth]{YOUR-FILE-NAME-HERE}
-
-%technique #2: slightly more advanced way which allows formatting, sizing, cen
-
-%\begin{figure}[h!]
- % \caption{A picture of a gull.}
-  %\centering
-  %\includegraphics[width=0.5\textwidth]{Image File Name}
-%\end{figure}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Here are some sample equations showing how to use the align tool to number and align math in your report
-
-%\begin{align} %Note that in align, you are in "math mode" and thus you don't need the $ between your math
-%K &= U_g \\
-%mgh &=\frac{1}{2}mv^2 \\
-%(10)(.225) &=\frac{1}{2}v^2 \nonumber \\  %by using \nonumber, you can take off the label on the side of an equation, which is nice so that steps of math with work aren't numbered. It is entirely your choice if you want to use this or not. 
-%4.5 &=v^2 \nonumber \\
-%2.12 \frac{m}{s} &=v 
-%\end{align}
-%The align tool allows you to number your equations, which is super useful for referencing math in your work. I.e. you could say "see equation (1) for details." 
-
-%Note: the \\ is to make a new line. Whatever you want aligned, just use & to the left, for example see the = above. Finally, don't use \\ on the last line or it will create a blank bottom equation
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-%~~~~may the f=ma be with you!~~~~~~~~Mr. C 
-
-
-
-%%%%%%%%%%% Here is how to include a picture in your report   %%%%%%%%%%%%%%%%%%%%%
-% \includegraphics[width=.3\textwidth]{Picture13}
-% In this example, Picture2.png is the name of the picture file. For every picture that you want, you first have to save the picture to your computer, then give it a name like Picture2.png 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-%\section{Analysis}
-%	This is the most important part of the lab report; it is where you analyze the data. In this section you will interpret your results. You need to look at your data and decide if the hypothesis was supported or contradicted by your data.  \\ %Note: the \\ gives you a line of space
-    
-%    Your discussion should include the following at a minimum. [1] What is the relationship between your measurements and your final results? [2] What trends were observable? [3] What can you conclude from the graphs that you made? [4] How did the independent variables affect the dependent variables? (For example, did an increase in a given measured (independent) variable result in an increase or decrease in the associated calculated (dependent) variable?) \\ 
-
-%Then describe how your experimental results substantiate/agree with the theory. (This is not a single statement that your results agree or disagree with theory.) When comparison values are available, discuss the agreement using either uncertainty and/or percent differences. This leads into the discussion of the sources of error. Your discussion should include the calculation of averages and standard deviation to be able to describe precision of experiment. All data points should be plotted $\pm$ two standard deviations and compared with theoretical data to interpret accuracy. It is ok to say that your results were inconclusive. It is important to cite all possible sources of error and state specifically how you believed they affected the collected data. If you get a result or an uncertainty that is ridiculous (or just really big/small), show that you have noticed and thought about it, not just copied a number from your calculator and moved on. \\
-
-%For example, when rolling a ball down a ramp, you may not have taken in account the effects of rolling friction or the fact that some gravitational potential energy is converted into rotational kinetic energy. Both of these would cause the overall time for the ball to roll down the ramp to increase.
-
-
-%\section{Conclusion}
-%    The conclusion should connect to the introduction and re-state the relevance and importance of the experiment. Its a nice touch to sometimes make historical connections in this part of the report as well. It is always good to end on a note stating the importance of your findings, the connections to other topics in physics and science, and opportunities for future extensions/research/experiments in the subject. Remember to report your results with correct units and uncertainties, for example $g=9.7 \pm 0.2 m \cdotp s^{-2}$. 
-    
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% This is the Bibliography where you will cite your sources used in the paper %%%%
-
-%\begin{thebibliography}{0}
-
-	%Each item starts with a \bibitem{} command and the details thereafter.
-	
-	%\bibitem{1} Cite your first source here
-	%\bibitem{2} Cite another source
-	
-    %%% The 1,2 etc. are used to cite in text. See up in the intro for an example
-    %%% When you want to cite in your cite, type in \cite{} wherever you want
-%\end{thebibliography}
-    
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%    
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% Here are some equations and other useful things, feel free to copy and paste into your lab report :) %
-
-% Note: It is super easy to look up equations/constants already formatted in LaTeX online. Here are a few websites I like to use:
-
-% LaTeX Tutorial: http://pages.physics.cornell.edu/sps/pages/resources/latex.html
-	%NOTE: This contains both pdf and text (code) of each document, which includes guides, lab 			report templates, and lots of other good stuff!
-
-% LaTeX Cheat Sheet: http://wch.github.io/latexsheet/
-
-% Equations: http://www.equationsheet.com/sheets/Equations-5.html
-
-% Constants, symbols, letters, etc:  http://www.rpi.edu/dept/arc/training/latex/LaTeX_symbols.pdf
-
-% AP Physics Calculus Reference Table: https://secure-media.collegeboard.org/digitalServices/pdf/ap/physics-c-tables-and-equations-list.pdf
-
-% AP Physics Trig Reference Table: https://secure-media.collegeboard.org/digitalServices/pdf/ap/ap-physics-1-equations-table.pdf
-
-% Regents Physics Reference Table: http://www.p12.nysed.gov/assessment/reftable/physics-rt/physics06tbl.pdf
-
-% Here are three good sources to use other then this for considering how to write a good lab report. Much of this guide was gleaned from them
-	
-    %http://web.mit.edu/8.13/www/Samplepaper/simple-zipped/simple-paper.pdf 				-MIT Physics Lab (really, really good template!) 
-    
-    % http://pages.physics.cornell.edu/sps/pages/resources/LatexSession/Exercises/LabReport.pdf -Cornell Template
-    % https://engineering.purdue.edu/ME588/LabManual/report_format.pdf 							-Purdue Engineering Template 
-    % http://physics.columbia.edu/files/physics/content/1291_report_format_and_example.pdf 		-Columbia University Template
-    % https://www.baylor.edu/physics/doc.php/110769.pdf											-Baylor University Template
-    % www.nd.edu/~hgberry/Fall2012/Guidelines.docx												-Notre Dame Template
-    %http://www.esf.edu/iq/colloquium/documents/LabReportnotes.pdf								-SUNY ESF Template
-    %http://writing.engr.psu.edu/workbooks/laboratory.html										-Virginia Tech Template
-    %https://projects.ncsu.edu/labwrite/index_labwrite.htm										-SUPER in-depth guide to writing lab reports
-    
-    %https://gist.github.com/dcernst/1827406													-Template for completing Math homework in LaTeX
-    %https://joshldavis.com/2014/02/12/doing-your-homework-in-latex/							-More about math homework in LaTeX
-    
-    
-    
-%Purdue University Online Writing Lab-OWL: https://owl.english.purdue.edu/ Use this to generate citations!
-
-%Basically, if you get stuck, just google "Latex ______" for whatever you need and look through the LaTeX stackexchange or wiki article to find and copy/paste what you need
-
-
-
-
-
-%	Here are some common equations we use in class. I will continue to update as we continue throughout the year. I will attempt to organize by the order we learn the topics from oldest at the top to newest at the bottom. Go ahead and copy/paste as needed in your report
-
-%%%%%%%%%%%%%%%%%%%%%%%%%% Basic Calculus %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%		   $$\frac{\mathrm{d}}{\mathrm{d}x}C=0$$
-%           $$\frac{\mathrm{d}}{\mathrm{d}x}Cx=C$$
-%           $$\frac{\mathrm{d}}{\mathrm{d}x}x=1$$           
-%           $$\frac{\mathrm{d}}{\mathrm{d}x}x^n = nx^{n-1} $$  	-power rule
-% 		   $$\frac{\mathrm{d}}{\mathrm{d}x}fg= fg'+f'g$$		-product rule
-%           $$\frac{\mathrm{d}}{\mathrm{d}x}f(g(x))=f'(g(x))g'(x)$$	-chain rule
-%           $$\frac{\mathrm{d}}{\mathrm{d}x} \sin{x} = \cos{x}$$	
-%           $$\frac{\mathrm{d}}{\mathrm{d}x} \cos{x} = -\sin{x}$$
-           
-%           $$\int k \mathrm{d}x = kx+C$$		-integral of a constant
-%           $$\int x^n \mathrm{d}x= \frac{1}{n+1}x^{n+1}+C$$	-power rule for integrals
-%           $$\int \cos{u}\mathrm{d}u = \sin{u} + C$$	
-%           $$\int \sin{u}\mathrm{d}u = -cos{u} + C$$	
-
-% see https://reu.dimacs.rutgers.edu/Symbols.pdf for a nice list of math LaTeX symbols
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Kinematics %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%			$$\bar{v}=\frac{d}{t}$$ 								-average speed
-%			$$v=\frac{\mathrm{d}x}{\mathrm{d}t}$$					-instantaneous velocity definition
-%			$$a=\frac{\mathrm{d}v}{\mathrm{d}t}$$					-instantaneous acceleration definition
-%			if acceleration is constant, then:
-%				$${x_f}={x_i}+{v_i}t+\frac{1}{2}a{t^2}$$  			-free-fall equation
-%				$${v_f}={v_i}+at$$									-find new velocity
-%				$${{v_f}^2}={{v_i}^2}+2a({x_f}-{x_i})$$				-equation without time
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Newton's Laws %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%			$$F_{net}=ma=m\frac{\mathrm{d}v}{\mathrm{d}t}=m\frac{\mathrm{d}^{2}x}{\mathrm{d}{t^2}}$$	-Newt's 2nd Law
-%			$$F_f=\mu F_n$$											-Friction 
-%			$$w=mg$$												-Weight
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Work, Power, Energy %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%			$$W=\Delta E = \int F dx = Fd  \hspace{3pt} \text{(if F constant)} $$ 	-Work-Energy Theorem
-%			$$Power=\frac{\mathrm{d}E}{\mathrm{d}t}=\frac{\mathrm{d}W}{\mathrm{d}t} = \frac{Fd}{t} = F \bar{v}$$		-Power
-%			$$K=\frac{1}{2}mv^2$$													-Kinetic Energy
-%			$$U_g=mgh$$																-Gravitational Potential Energy
-%			$$U_e=\frac{1}{2}kx^2$$													-Spring Potential Energy
-%			$$F_e=kx$$																-Hooke's Law
-%			$$F=-\frac{\mathrm{d}U}{\mathrm{d}x}$$									-Force is derivative of Potential
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Momentum, Center of Mass %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% 			$$p=mv$$								-definition of momentum
-%			$$F=\frac{\mathrm{d}p}{\mathrm{d}t}
-%			$$ft=\Delta{p}$$ 						-trig version of impulse momentum theorem
-%			$$J=\int F \mathrm{d}t = \Delta{p}$$	-calc version of impulse momentum theorem
-%			$$p_{before}=p_{after}$$				-Conservation of Momentum
-%			$$X_{c.o.m}=\frac{\Sigma x_i m_i}{M}$$  -x-coordinate of Center of Mass
-%       	$$Y_{c.o.m}=\frac{\Sigma y_i m_i}{M}$$  -y-coordinate of Center of Mass
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Rotational Kinematics %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%		$$\omega=\frac{\mathrm{d}\theta}{\mathrm{d}t}$$ 			-definition of angular speed (rad/sec)
-%		$$\alpha=\frac{\mathrm{d}\omega}{\mathrm{d}t}=\frac{\mathrm{d}^2\theta}{\mathrm{d}t^2}$$ 			-definition of angular acceleration
-%		$$v=r\omega$$												-angular/linear velocity connection
-%		$$S=r \theta$$												-arc length/angle connection
-%		if angular acceleration is constant, then:
-%			$$\omega_f=\omega_i+\alpha t$$   	-find angular velocity
-%			$$\theta=\theta_i + \omega_i t + \frac{1}{2} \alpha t^2$$ 		-angular "free-fall" equation
-%			$${\omega_f}^2 = {\omega_i}^2 + 2\alpha(\theta_f - \theta_i)$$ 	-angular equation w/o time
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Rotational Dynamics + Gravitation %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%		$$\tau=r \times F = rF\sin{\theta}$$			-definition of torque
-%		$$\tau = I \alpha$$								-Newt's 2nd Law for Rotation
-%		$$a_c = v^{2}/r = {\omega^2}r$$					-centripetal acceleration
-%		$$F_c=ma_c = m{\omega^2}r$$						-centripetal force
-%		$$I=\int r^2 \mathrm{d}m = \Sigma m r^2$$		-Calculate Moment of Inertia of an Object
-%		$$K_r=\frac{1}{2}I{\omega^2}$$					-Rotational Kinetic Energy
-%		$$L= I\omega = r \times p = rp\sin{\theta}$$	-Angular Momentum
-%		$$L_{before}=L_{after}$$						-Conservation of Angular Momentum
-
-%		$$F_g = \frac{\text{G}m_1 m_2}{r^2}$$			-Newton's Law of Universal Gravitation
-%		$$U_g= -\frac{\text{G}m_1 m_2}{r}$$				-Gravitational Potential Energy
-
-%%%%%%%%%%%%%%%%%%%%%%%%% Vibrations, Simple Harmonic Motion, Sound %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
-
-%		$$v=f\lambda$$								-speed of a wave
-%		$4T=\frac{2\pi}{\omega}=\frac{1}{f}$$		-period of a wave
-%		$$x(t)=x_{max}\cos{(\omega t + \phi)}$$	    -wave equation
-%		$$T_s=2\pi\sqrt{\frac{m}{k}}$$				-Period of an oscillating spring
-%		$$T_p=2\pi\sqrt{\frac{l}{g}}$$				-Period of a Pendulum
-%		$$\frac{\mathrm{d}^2 \smiley{}}{{dt}^2} - {\omega}^2 \smiley{} = 0$$ 	-General Simple Harmonic Motion Equation
-%		
-		
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Fluid Mechanics %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%		$$\rho=m/V$$						-Density
-%		$$P=F/A$$							-Definition of Pressure
-%		$$P=P_i+\rho gh	$$					-Pressure change as a function of depth
-%		$$\rho_1A_1v_1=\rho_2A_2v_2$$		-Continuity Equation for fluid flow
-%		$$F_b=\rho gV_{displaced}$$			-Archimedes Principle
-%		$$P_1+\frac{1}{2}\rho v_1^2 +\rho gh_1 = P_2+\frac{1}{2}\rho v_2^2 +\rho gh_2 $$ -Bernoulli Equation
-%		
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Thermodynamics %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%		$$\frac{\Delta Q}{\Delta t} = \frac{k A \Delta T}{l}$$ 		-Conduction Equation
-%		$$Q = mc \Delta T$$											-Heat Flow Equation (sensible heat)
-%		$$Q=mL_f$$													-Latent Heat of Fusion
-%		$$Q=mL_v$$													-Latent Heat of Vaporization
-%		$$ \Delta l = \alpha l_0 \Delta T$$							-Length expansion
-%		$$ \Delta A = 2 \alpha A_0 \Delta T$$						-Area expansion
-%		$$ \Delta V = 3 \alpha V_0 \Delta T$$						-Volume Expansion
-%       $$PV=Nk_BT$$												-Ideal Gas Law
-%		$$K=\frac{n}{2}k_BT$$										-Equipartition Theorem
-			%if Ideal Gas:
-            	% then $$K=\frac{3}{2}k_BT$$
-%		$$W=-\int P \mathrm{d}V										-Thermodynamic Work on a gas (calc)
-%		$$W=-P \DeltaV$$											-Thermodynamic Work on a gas Equation-trig
-%		$$\Delta U= Q+W$$											-1st Law of Thermodynamics
-%		$$\epsilon_{real} = 1- \frac{Q_c}{Q_h}$$					-Real Efficiency 
-%       $$\epsilon_{theory} = 1- \frac{T_c}{T_h}$$					-Theoretical "Carnot" efficiency
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Misc. Useful Things %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% 
-% \framebox{box}  This puts a box around something. Good for showing something important
-% to quote someone, use the following template:
-	%\begin{quotation}
-	%``You miss 100\% of the shots you never take'' %note that quotes are formatted this way in LaTeX
-	%-Michael Scott
-	%\end{quotation}
-
-
-
-% https://physics.info/equations/ is a good source for most common equations found in introductory physics (trig and calc based)
+\begin{thebibliography}{9}
+\bibitem{gp04} GP04: Driven Harmonic Motion
+\end{thebibliography}
 
 
 
