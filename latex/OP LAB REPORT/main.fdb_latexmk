@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1773143255.98233 "c:/Users/JTST/OxfordTime/latex/OP LAB REPORT/main.tex" "main.pdf" "main" 1773143258.74002 0
+["pdflatex"] 1773150867.89365 "c:/Users/JTST/OxfordTime/latex/OP LAB REPORT/main.tex" "main.pdf" "main" 1773150871.09576 0
   "C:/Users/JTST/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1770397048 413266 9caae96b9f7070092b127e6ca5767fa3 ""
   "C:/Users/JTST/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1714272313 23178488 217b9f3035755e6714b31692dca37d29 ""
   "C:/Users/JTST/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
@@ -181,10 +181,12 @@
   "C:/Users/JTST/AppData/Local/Programs/MiKTeX/tex/latex/wasysym/uwasy.fd" 1579693002 2296 c50bf1089c7a46a0d4e9a119e980be4e ""
   "C:/Users/JTST/AppData/Local/Programs/MiKTeX/tex/latex/wasysym/wasysym.sty" 1579693002 11252 7fbfbe7bbcbe1f73acbe32ae2f10c666 ""
   "C:/Users/JTST/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1656236890 56148 51a9a8571c07b9921892ae11063ae853 ""
-  "c:/Users/JTST/OxfordTime/latex/OP LAB REPORT/main.tex" 1773143254 4164 0058375d371ab19bcb13f5257a2d9ce0 ""
-  "main.aux" 1773143258 1050 19e34cfb1c4f1503d5915d758e0d8bc2 "pdflatex"
-  "main.tex" 1773143254 4164 0058375d371ab19bcb13f5257a2d9ce0 ""
+  "c:/Users/JTST/OxfordTime/latex/OP LAB REPORT/main.tex" 1773150868 6205 baee38a08de5cc63cb6a3f4d40e3cb6f ""
+  "main.aux" 1773150870 1565 5ee69fe26e086404e0b650c734edced2 "pdflatex"
+  "main.tex" 1773150868 6205 baee38a08de5cc63cb6a3f4d40e3cb6f ""
+  "mer.png" 1773150757 120872 582bcc3fcaec32a439ae077e7b9fbd48 ""
   "monochromator.png" 1773142324 165096 22ca0a1622d6ce2a7f9f1d64dda6a3d4 ""
+  "output.png" 1773150856 2168 5ccc33f3f67dae29afa174059cde8f85 ""
   (generated)
   "main.aux"
   "main.log"

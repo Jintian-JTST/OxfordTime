@@ -82,14 +82,19 @@ According to \cite{op13}, the wavelength $\lambda$ of the light diffracted by th
 \begin{equation}
 \lambda = z\left( \frac{2d\cos\gamma}{pl} \right),
 \end{equation}
-where $z$ is the reading on the sine-bar, $d$ is the grating spacing, $\gamma$ is the Czerny--Turner angle, $p$ is the ruling frequency of the grating, and $l$ is the length of the sine-bar. Take the data in table \ref{tb1}, we can calculate coefficient $2d\cos\gamma/pl=2.000 \times 10^{-5}$, which means the wavelength of the diffracted light is approximately equal to the reading on the sine-bar in millimeters.
+where $z$ is the reading on the sine-bar, $d$ is the grating spacing, $\gamma$ is the Czerny--Turner angle, $p$ is the ruling frequency of the grating, and $l$ is the length of the sine-bar. Take the data in table \ref{tb1}, we can calculate coefficient $2d\cos\gamma/pl=2.000 \times 10^{-5}$.
 
 
 \section{Experimental Setup}
 
-3
+\subsection{Calibration}
+
+We use a mercury lamp to calibrate the monochromator. The mercury lamp emits light at several discrete wavelengths, which can be used as reference points for calibration. We will measure the sine-bar readings corresponding to these known wavelengths, and use them to determine the relationship between the sine-bar reading and the wavelength.
+
+Since the lines are hard to distinguish, two person will take turns to obtain the readings, and the average of the two readings will be taken as the final reading for each line. Each line will be measured three times, and the average of the three measurements will be taken as the final reading for that line. The readings will be recorded in a table, and a graph of wavelength versus sine-bar reading will be plotted to determine the calibration curve.
 
 
+\subsection{}
 
 %%%%%%%%%%Here is a sample bulleted list that is often useful for the materials section. You can also number or letter your materials to easily refer to them later on
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -97,7 +102,46 @@ where $z$ is the reading on the sine-bar, $d$ is the grating spacing, $\gamma$ i
 
 \section{Data}
 
-4
+\begin{table}[h]
+\centering
+\begin{tabular}{c|c|c|c|c}
+\hline
+\hline
+Wavelength (\AA) & Reading 1 (mm) & Reading 2 (mm) & Reading 3 (mm) & Average (mm) \\
+\hline\hline
+4047.7 & 20.39 & 20.39 & 20.42 & 20.40 \\
+4079.0 & 20.55 & 20.57 & 20.58 & 20.57 \\
+4109.2 & 20.69 & 20.72 & 20.71 & 20.71 \\
+4340.4 & 21.90 & 21.92 & 21.89 & 21.90 \\
+4348.7 & 21.95 & 21.95 & 21.95 & 21.95 \\
+4359.5 & 22.00 & 22.02 & 22.01 & 22.01 \\
+4917.3 & 24.88 & 24.89 & 24.89 & 24.89 \\
+4961.7 & 25.12 & 25.12 & 25.11 & 25.12 \\
+5027.0 & 25.46 & 25.46 & 25.46 & 25.46 \\
+5047.0 & 25.56 & 25.54 & 25.55 & 25.55 \\
+5462.2 & 27.73 & 27.72 & 27.72 & 27.73 \\
+5677.4 & 28.84 & 28.84 & 28.84 & 28.84 \\
+5771.2 & 29.32 & 29.33 & 29.34 & 29.33 \\
+5792.2 & 29.43 & 29.44 & 29.44 & 29.44 \\
+5860.9 & 29.82 & 29.81 & 29.82 & 29.82 \\
+5891.6 & 29.96 & 29.95 & 29.96 & 29.96 \\
+6074.4 & 30.91 & 30.89 & 30.92 & 30.91 \\
+6125.2 & 31.17 & 31.18 & 31.17 & 31.17 \\
+6236.1 & 31.75 & 31.75 & 31.77 & 31.76 \\
+6718.3 & 34.29 & 34.32 & 34.30 & 34.30 \\
+6909.4 & 35.33 & 35.33 & 35.33 & 35.33 \\
+\hline\hline
+\end{tabular}
+\caption{Spectrometer calibration measurements}
+\end{table}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.8\textwidth]{output.png}
+\includegraphics[width=0.8\textwidth]{mer.png}
+\caption{Corresponding mercury spectrum \cite{op13}}
+\end{figure}
+
 
 
 \section{Analysis}
