@@ -230,31 +230,34 @@ R_{\mathrm{H}}
 
 From sections 4.2 and 4.3, we can see that the experimental value of the Rydberg constant is in excellent agreement with theoretical predictions. However, the experimental value is slightly higher than the theoretical $R_{\mathrm{H}}$, making it appear closer to $R_\infty$. We suggest that this small discrepancy ($\sim 0.08\%$) is predominantly driven by systematic errors in the experiment.
 
-Take a constant $\Delta z = 0.02 \text{ mm}$ error in the micrometer reading as an example. If all micrometer readings are overestimated by $\Delta z$, reconsidering the calculation of $R$ we could find 
+Take a constant $\Delta z = +0.04 \text{ mm}$ error in the micrometer reading as an example. If all micrometer readings are overestimated by $\Delta z$, reconsidering the calculation of $R$ we could find the new wavelengths of the hydrogen lines, and then the new Rydberg constant. The results are shown in table \ref{rydberg_corrected_04}. This gives a new weighted mean of $R=1.09665 \times 10^7 \text{ m}^{-1}$, which is much closer to the theoretical $R_{\mathrm{H}}$. 
+
 
 \begin{table}[htbp]
 \centering
 \begin{tabular}{c c c c c c}
 \hline\hline
-Line & $n$ & $z$ (mm) & $\lambda$ (\AA) 
+Line & $n$ & $z + \Delta z$ (mm) & $\lambda'$ (\AA) 
 & $R$ ($10^{-3}$\,\AA$^{-1}$) 
 & $\sigma_R$ ($10^{-7}$\,\AA$^{-1}$) \\
 \hline\hline
-$H_\alpha$ & 3 & 33.49(1) & $6564.5 \pm 2.0$ & 1.09681 & 3.34 \\
-$H_\beta$  & 4 & 24.56(1) & $4853.4 \pm 2.0$ & 1.09889 & 4.53 \\
-$H_\gamma$ & 5 & 21.90(1) & $4340.4 \pm 2.0$ & 1.09711 & 5.05 \\
-$H_\delta$ & 6 & 20.64(1) & $4094.1 \pm 2.0$ & 1.09914 & 5.37 \\
+$H_\alpha$ & 3 & 33.53(1) & $6568(2)$ & 1.09622 & 3.34 \\
+$H_\beta$  & 4 & 24.60(1) & $4860(2)$ & 1.09739 & 4.52 \\
+$H_\gamma$ & 5 & 21.94(1) & $4346(2)$ & 1.09570 & 5.04 \\
+$H_\delta$ & 6 & 20.68(1) & $4101(2)$ & 1.09729 & 5.35 \\
 \hline\hline
 \end{tabular}
-\caption{Determination of the Rydberg constant from hydrogen Balmer lines. The wavelengths ($\lambda$) were derived from the mean micrometer readings ($z$) using local linear interpolation. The uncertainty in wavelength is estimated as $\pm 2.0$ \AA, which propagates to $\sigma_R$.}
-\label{rydberg_final}
+\caption{Recalculated Rydberg constant assuming a systematic shift of $\Delta z = +0.04$ mm. }
+\label{rydberg_corrected_04}
 \end{table}
 
 
 
 \section{Conclusion}
 
-6
+
+
+
 
 \begin{thebibliography}{9}
 \bibitem{op13} OP13: The grating monochromator

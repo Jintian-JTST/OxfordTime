@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2024.4.28)  10 MAR 2026 16:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2024.4.28)  10 MAR 2026 16:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -603,19 +603,19 @@ Package pdftex.def Info: resQ.png  used on input line 157.
 <h.png, id=45, 1152.55594pt x 131.74219pt>
 File: h.png Graphic file (type png)
 <use h.png>
-Package pdftex.def Info: h.png  used on input line 321.
+Package pdftex.def Info: h.png  used on input line 324.
 (pdftex.def)             Requested size: 483.69684pt x 55.28911pt.
  [6 <./h.png>] (main.aux) ) 
 Here is how much of TeX's memory you used:
  30413 strings out of 476331
- 797821 string characters out of 5788237
+ 797828 string characters out of 5788237
  1867660 words of memory out of 5000000
  50424 multiletter control sequences out of 15000+600000
  520196 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,12n,103p,773b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/JTST/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/JTST/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/JTST/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/JTST/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/JTST/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/JTST/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/JTST/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/JTST/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/JTST/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/JTST/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/JTST/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on main.pdf (6 pages, 616968 bytes).
+Output written on main.pdf (6 pages, 616898 bytes).
 PDF statistics:
  95 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
