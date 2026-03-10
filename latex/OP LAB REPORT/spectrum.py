@@ -129,10 +129,10 @@ def plot_long_strip(lines,
 if __name__ == "__main__":
     # 调整 base_linewidth 可以控制整体线宽感
     plot_long_strip(lines,
-                    wl_min=380,
+                    wl_min=370,
                     wl_max=700,
                     figsize=(18, 1.8),   # 宽条形 -> 更长的横向效果
                     base_linewidth=4.2,  # 与强度相乘得到最终线宽
                     background_color='black',
-                    savepath="mercury_strip_700nm.png",
+                    savepath="output.png",
                     dpi=600)  # 高分辨率保存
