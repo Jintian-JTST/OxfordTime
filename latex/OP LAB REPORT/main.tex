@@ -1,7 +1,7 @@
 \documentclass[12pt]{article}
 
 %%%%%%%%%%%%%%%%%%%%%%% Don't change anything in here. This space is called the preamble, it is where you tell the computer to load the proper LaTeX packages to perform the math and formatting desired. 
-
+\usepackage{caption}
 \usepackage{physics} 
 \usepackage{siunitx} 
 \usepackage{enumerate} 
@@ -47,7 +47,42 @@ As quantum theory developed, energy levels of atoms were found to be quantized, 
 
 \section{Theory}
 
-2
+In the Czerny-Turner monochromator, concave mirrors are used to collimate the beam of light falling on the grating and to focus those beams diffracted from the grating, as shown in figure \ref{fig1}.
+
+
+\begin{figure}[h]
+\centering
+
+\begin{minipage}{0.48\textwidth}
+    \centering
+    \includegraphics[width=0.9\textwidth]{monochromator.png}
+    \captionof{figure}{Czerny--Turner monochromator.}
+    \label{fig1}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\textwidth}
+    \centering
+    \begin{tabular}{|l|r|}
+    \hline
+    Grating size & 48\,mm $\times$ 48\,mm \\ \hline
+    Ruling frequency $(1/d)$ & 1200\,lines/mm \\ \hline
+    Mirror diameter & 63.5\,mm \\ \hline
+    Mirror radius of curvature & 439\,mm \\ \hline
+    Czerny--Turner angle, $\gamma$ & $25^\circ 28'$ \\ \hline
+    Length of sine-bar, $l$ & 75.24\,mm \\ \hline
+    \end{tabular}
+    \captionof{table}{Design parameters of the Czerny-Turner monochromator.}
+    \label{tb1}
+\end{minipage}
+
+\end{figure}
+
+
+According to \cite{op13}, the wavelength $\lambda$ of the light diffracted by the grating is given by
+\begin{equation}
+\lambda = z\left( \frac{2d\cos\gamma}{pl} \right),
+\end{equation}
+where $z$ is the reading on the sine-bar, $d$ is the grating spacing, $\gamma$ is the Czerny--Turner angle, $p$ is the ruling frequency of the grating, and $l$ is the length of the sine-bar. Take the data in table \ref{tb1}, we can calculate coefficient $2d\cos\gamma/pl=2.000 \times 10^{-5}$, which means the wavelength of the diffracted light is approximately equal to the reading on the sine-bar in millimeters.
 
 
 \section{Experimental Setup}
@@ -75,7 +110,7 @@ As quantum theory developed, energy levels of atoms were found to be quantized, 
 6
 
 \begin{thebibliography}{9}
-\bibitem{gp04} GP04: Driven Harmonic Motion
+\bibitem{op13} OP13: The grating monochromator
 \end{thebibliography}
 
 
