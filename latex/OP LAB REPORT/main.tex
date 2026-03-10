@@ -25,7 +25,7 @@
 
 \begin{document}
 
-\title{The grating monochromator} %Title should be concise and to the point  
+\title{Measurement of the Rydberg Constant from the Hydrogen Balmer Spectrum} %Title should be concise and to the point  
 \author{JINTIAN WANG, Exeter College, Oxford} %Your name first
 
 
@@ -38,51 +38,29 @@
 %%%%% If you want to omit something in this lab, place a % sign to the left of it and it won't show up on the lab, like this line!
 
 \begin{abstract} 
-1
-\end{abstract}
+The visible emission spectrum of atomic hydrogen was investigated to determine the Rydberg constant and verify the quantization of atomic energy levels. A Czerny-Turner grating monochromator was first empirically calibrated using the known vacuum wavelengths of a mercury discharge lamp, employing a quadratic fit to accurately account for mechanical non-idealities in the instrument's sine-bar drive. Using this calibration, the wavelengths of the four visible Balmer series lines ($H_\alpha$, $H_\beta$, $H_\gamma$, $H_\delta$) emitted by a hydrogen discharge tube were measured. The Rydberg constant was calculated from a weighted mean of these transitions, yielding $R = 1.09828(22) \times 10^7 \text{ m}^{-1}$. While this demonstrates excellent agreement with quantum mechanical predictions, the experimental value exhibits a slight systematic overestimation of $0.08\%$ compared to the theoretical finite-mass constant, $R_H$, placing it numerically closer to $R_\infty$. This minor discrepancy is attributed to systematic uncertainties, predominantly a uniform zero-offset shift and residual mechanical backlash in the micrometer during the exchange of the light sources.\end{abstract}
 
 \section{Introduction}
 
-As quantum theory developed, energy levels of atoms were found to be quantized, and the emission spectra of atoms were found to consist of discrete lines. By measuring the wavelengths of these lines, the energy levels of atoms could be determined, and we can verify the predictions of quantum theory. In this experiment, we will use a Czerny-Turner monochromator to measure the emission spectrum of a mercury lamp, and determine the energy levels of mercury atoms. Then we will use the same monochromator to measure the emission spectrum of a hydrogen lamp, and determine the wavelengths each emission line corresponds to.
+As quantum theory developed, energy levels of atoms were found to be quantized, and the emission spectra of atoms were found to consist of discrete lines. By measuring the wavelengths of these lines, the energy levels of atoms could be determined, and we can verify the predictions of quantum theory. In this experiment, we will use a mercury lamp as a source of light to calibrate a Czerny-Turner monochromator, and then measure the emission spectrum of a hydrogen lamp, and determine the wavelengths each line corresponds to.
 
 \section{Theory}
 
-In the Czerny-Turner monochromator, concave mirrors are used to collimate the beam of light falling on the grating and to focus those beams diffracted from the grating, as shown in figure \ref{fig1}.
-
-
-\begin{figure}[htbp]
-\centering
-
-\begin{minipage}{0.48\textwidth}
-    \centering
-    \includegraphics[width=0.9\textwidth]{monochromator.png}
-    \captionof{figure}{Czerny--Turner monochromator.}
-    \label{fig1}
-\end{minipage}
-\hfill
-\begin{minipage}{0.48\textwidth}
-    \centering
-    \begin{tabular}{|l|r|}
-    \hline
-    Grating size & 48\,mm $\times$ 48\,mm \\ \hline
-    Ruling frequency $(1/d)$ & 1200\,lines/mm \\ \hline
-    Mirror diameter & 63.5\,mm \\ \hline
-    Mirror radius of curvature & 439\,mm \\ \hline
-    Czerny--Turner angle, $\gamma$ & $25^\circ 28'$ \\ \hline
-    Length of sine-bar, $l$ & 75.24\,mm \\ \hline
-    \end{tabular}
-    \captionof{table}{Design parameters of the Czerny-Turner monochromator.}
-    \label{tb1}
-\end{minipage}
-
-\end{figure}
-
+In the Czerny-Turner monochromator, concave mirrors are used to collimate the beam of light falling on the grating and to focus those beams diffracted from the grating. The grating is mounted on a sine-bar mechanism, which allows the angle of the grating to be varied by turning a micrometer. By adjusting the angle of the grating, different wavelengths of light can be diffracted into the exit aperture, allowing us to select a specific wavelength for measurement.
 
 According to \cite{op13}, the wavelength $\lambda$ of the light diffracted by the grating is given by
 \begin{equation}
 \lambda = z\left( \frac{2d\cos\gamma}{pl} \right),
 \end{equation}
-where $z$ is the reading on the sine-bar, $d$ is the grating spacing, $\gamma$ is the Czerny--Turner angle, $p$ is the ruling frequency of the grating, and $l$ is the length of the sine-bar. Take the data in table \ref{tb1}, we can calculate coefficient $2d\cos\gamma/pl=2.000 \times 10^{-5}$.
+where $z$ is the reading on the sine-bar, $d$ is the grating spacing, $\gamma$ is the Czerny--Turner angle, $p$ is the ruling frequency of the grating, and $l$ is the length of the sine-bar. Take the data of the monochromator in \cite{op13}, we can calculate coefficient $2d\cos\gamma/pl=2.000 \times 10^{-5}$.
+
+According to the Bohr model of the hydrogen atom, the wavelength of the light emitted when an electron transitions from a higher energy level $n_i$ to a lower energy level $n_f$ is given by
+\begin{equation}
+\frac{1}{\lambda} = R \left( \frac{1}{n_f^2} - \frac{1}{n_i^2} \right),
+\end{equation}
+where $R$ is the Rydberg constant. By measuring the wavelengths of the spectral lines of hydrogen, we can determine the value of the Rydberg constant and compare it with the theoretical value.
+
+In this experiment, we will measure the wavelengths of the four visible Balmer lines of the hydrogen spectrum, which correspond to transitions from $n_i = 3, 4, 5, 6$ to $n_f = 2$. By substituting these values into equation (2), we can calculate the Rydberg constant $R$ for each line and take a weighted mean to obtain a more accurate value.
 
 
 \section{Experimental Setup}
@@ -172,6 +150,7 @@ Using the quadratic model obtained from the calibration, we can convert the micr
 
 \begin{table}[htbp]
 \centering
+\caption{Determination of the Rydberg constant from hydrogen spectra}
 \begin{tabular}{c c c c c c}
 \hline\hline
 Line & $n$ & $z$ (mm) & $\lambda$ (\AA) 
@@ -184,11 +163,10 @@ $H_\gamma$ & 5 & 21.90(1) & $4338(2)$ & 1.09772 & 5.06 \\
 $H_\delta$ & 6 & 20.64(1) & $4093(2)$ & 1.09944 & 5.37 \\
 \hline\hline
 \end{tabular}
-\caption{Determination of the Rydberg constant from hydrogen spectra}
 \label{rydberg}
 \end{table}
 
-Since we obtained $\sigma_R$ for each spectral line, a weighted mean of $R$ was calculated. 
+In the table, the uncertainty in the wavelength $\sigma_\lambda$ is estimated to be 2 \AA, which is the smallest resolution of the monochromator. For each uncertainty $\sigma_\lambda$, we use the formula $\sigma_R = \left| \frac{\partial R}{\partial \lambda} \right| \sigma_\lambda$ to calculate the uncertainty in $R$. Since we obtained $\sigma_R$ for each spectral line, a weighted mean of $R$ was calculated. 
 The resulting value is
 
 \[
@@ -228,13 +206,14 @@ R_{\mathrm{H}}
 
 \subsection{Result comparisons}
 
-From sections 4.2 and 4.3, we can see that the experimental value of the Rydberg constant is in excellent agreement with theoretical predictions. However, the experimental value is slightly higher than the theoretical $R_{\mathrm{H}}$, making it appear closer to $R_\infty$. We suggest that this small discrepancy ($\sim 0.08\%$) is predominantly driven by systematic errors in the experiment.
+From sections 4.2 and 4.3, we can see that the experimental value of the Rydberg constant is in excellent agreement with theoretical predictions. However, the experimental value is slightly higher ($\sim 0.08\%$) than the theoretical $R_{\mathrm{H}}$, making it appear closer to $R_\infty$. We suggest that this small discrepancy  is predominantly driven by systematic errors in the experiment.
 
 Take a constant $\Delta z = +0.04 \text{ mm}$ error in the micrometer reading as an example. If all micrometer readings are overestimated by $\Delta z$, reconsidering the calculation of $R$ we could find the new wavelengths of the hydrogen lines, and then the new Rydberg constant. The results are shown in table \ref{rydberg_corrected_04}. This gives a new weighted mean of $R=1.09665 \times 10^7 \text{ m}^{-1}$, which is much closer to the theoretical $R_{\mathrm{H}}$. 
 
 
 \begin{table}[htbp]
 \centering
+\caption{Recalculated Rydberg constant assuming a systematic shift of $\Delta z = +0.04$ mm. }
 \begin{tabular}{c c c c c c}
 \hline\hline
 Line & $n$ & $z + \Delta z$ (mm) & $\lambda'$ (\AA) 
@@ -247,7 +226,6 @@ $H_\gamma$ & 5 & 21.94(1) & $4346(2)$ & 1.09570 & 5.04 \\
 $H_\delta$ & 6 & 20.68(1) & $4101(2)$ & 1.09729 & 5.35 \\
 \hline\hline
 \end{tabular}
-\caption{Recalculated Rydberg constant assuming a systematic shift of $\Delta z = +0.04$ mm. }
 \label{rydberg_corrected_04}
 \end{table}
 
@@ -257,17 +235,19 @@ $H_\delta$ & 6 & 20.68(1) & $4101(2)$ & 1.09729 & 5.35 \\
 
 
 
+In this experiment, the discrete emission lines of the hydrogen Balmer series were successfully measured using an empirically calibrated Czerny-Turner monochromator. By applying a quadratic calibration curve to account for non-idealities in the sine-bar mechanism, the measurements yielded a weighted mean Rydberg constant of $R = 1.09828(22) \times 10^7 \text{ m}^{-1}$. While this result is in excellent overall agreement with quantum mechanical predictions, it exhibits a slight systematic overestimation of approximately $0.08\%$ compared to the theoretical finite-mass Rydberg constant, $R_H$. This deviation renders the experimental value numerically closer to the infinite-mass constant, $R_\infty$, clearly indicating that the uncertainty budget is dominated by systematic deviations rather than purely random statistical fluctuations.
+
+These systematic discrepancies are highly likely driven by a micrometer zero-offset, residual mechanical backlash, or a microscopic change in the illumination angle when the mercury calibration lamp was replaced by the hydrogen tube. As demonstrated in the analysis, a uniform $+0.04\text{ mm}$ shift in the micrometer readings corrects the experimental value to $R = 1.09665 \times 10^7 \text{ m}^{-1}$, closely aligning it with $R_H$. To improve the accuracy of future measurements, a rigorous zero-order alignment could be performed to physically quantify and eliminate the mechanical zero-offset. Furthermore, ensuring both light sources share an identical spatial footprint on the entrance slit, maintaining tighter control of the slit width, and increasing the number of calibration lines near the target wavelengths would help minimise wavelength-dependent aberrations and extrapolation errors.
 
 
 \begin{thebibliography}{9}
 \bibitem{op13} OP13: The grating monochromator
 \end{thebibliography}
 
-
-\newpage
 \section{Appendix}
 \begin{table}[htbp]
 \centering
+\caption{Spectrometer calibration measurements (mercury lamp)}
 \begin{tabular}{c|c|c|c|c}
 \hline
 \hline
@@ -296,13 +276,13 @@ Wavelength (\AA) & Reading 1 (mm) & Reading 2 (mm) & Reading 3 (mm) & Average (m
 6909.4 & 35.33(1) & 35.33(1) & 35.33(1) & 35.33(1) \\
 \hline\hline
 \end{tabular}
-\caption{Spectrometer calibration measurements (mercury lamp)}
 \label{calibration}
 \end{table}
 
 
 \begin{table}[H]
 \centering
+\caption{Spectrometer hydrogen line measurements}
 \begin{tabular}{c|c|c|c|c}
 \hline
 \hline
@@ -314,7 +294,6 @@ $H_\gamma$ & 21.90(1) & 21.90(1) & 21.91(1) & 21.90(1) \\
 $H_\delta$ & 20.66(1) & 20.62(1) & 20.64(1) & 20.64(1) \\
 \hline\hline
 \end{tabular}
-\caption{Spectrometer hydrogen line measurements}
 \label{hydrogen}
 \end{table}
 
