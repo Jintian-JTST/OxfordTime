@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1773337411.13998 "c:/Users/JTST/OxfordTime/latex/OP LAB REPORT/main.tex" "main.pdf" "main" 1773337413.71149 0
+["pdflatex"] 1773338890.93892 "c:/Users/JTST/OxfordTime/latex/OP LAB REPORT/main.tex" "main.pdf" "main" 1773338893.56863 0
   "C:/Users/JTST/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1770397048 413266 9caae96b9f7070092b127e6ca5767fa3 ""
   "C:/Users/JTST/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1714272313 23178488 217b9f3035755e6714b31692dca37d29 ""
   "C:/Users/JTST/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
@@ -214,13 +214,12 @@
   "C:/Users/JTST/AppData/Local/Programs/MiKTeX/tex/latex/wasysym/uwasy.fd" 1579693002 2296 c50bf1089c7a46a0d4e9a119e980be4e ""
   "C:/Users/JTST/AppData/Local/Programs/MiKTeX/tex/latex/wasysym/wasysym.sty" 1579693002 11252 7fbfbe7bbcbe1f73acbe32ae2f10c666 ""
   "C:/Users/JTST/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1656236890 56148 51a9a8571c07b9921892ae11063ae853 ""
-  "c:/Users/JTST/OxfordTime/latex/OP LAB REPORT/main.tex" 1773337407 16552 c6b4628cfb9f2babef00a8a64ea0e701 ""
+  "c:/Users/JTST/OxfordTime/latex/OP LAB REPORT/main.tex" 1773338887 16871 f6943b24e68d288ecdefaf3a954a7465 ""
   "ccL.png" 1773155885 28711 978542569b4645e87a861dca0d3d72b7 ""
   "ccQ.png" 1773155903 29293 34a3fd7cf3f9c9938896e251dcb0d940 ""
-  "h.png" 1773153675 13569 77168ae16ac17166680380a6024b9a83 ""
-  "main.aux" 1773337413 4981 129b6ff617a34614ff94672624424769 "pdflatex"
-  "main.out" 1773337413 1527 c9028bddccb07b62b253412b6b505780 "pdflatex"
-  "main.tex" 1773337407 16552 c6b4628cfb9f2babef00a8a64ea0e701 ""
+  "main.aux" 1773338893 4714 b5bbe595569504481d1246e9a4cce3f7 "pdflatex"
+  "main.out" 1773338893 1527 c9028bddccb07b62b253412b6b505780 "pdflatex"
+  "main.tex" 1773338887 16871 f6943b24e68d288ecdefaf3a954a7465 ""
   "mer.png" 1773151204 120872 582bcc3fcaec32a439ae077e7b9fbd48 ""
   "output.png" 1773151307 49064 58cb1c37a84185355cc3d1800c156c93 ""
   "resL.png" 1773155918 51894 8d8c46afb5c436e8c60988289098889d ""

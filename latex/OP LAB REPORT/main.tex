@@ -29,7 +29,7 @@
 \maketitle 
 
 \begin{abstract} 
-The visible emission spectrum of atomic hydrogen was investigated to determine the Rydberg constant and verify the quantization of atomic energy levels. A Czerny-Turner grating monochromator was first empirically calibrated using the known vacuum wavelengths of a mercury discharge lamp, employing a quadratic fit to accurately account for mechanical non-idealities in the instrument's sine-bar drive. Using this calibration, the wavelengths of the four visible Balmer series lines ($H_\alpha$, $H_\beta$, $H_\gamma$, $H_\delta$) emitted by a hydrogen discharge tube were measured. The Rydberg constant was calculated from a weighted mean of these transitions, yielding $R = 1.09828(22) \times 10^7 \text{ m}^{-1}$. While this demonstrates excellent agreement with quantum mechanical predictions, the experimental value exhibits a slight systematic overestimation of $0.08\%$ compared to the theoretical finite-mass constant, $R_H$, placing it numerically closer to $R_\infty$. This minor discrepancy is attributed to systematic uncertainties, predominantly a uniform zero-offset shift and residual mechanical backlash in the micrometer during the exchange of the light sources.\end{abstract}
+The visible emission spectrum of atomic hydrogen was investigated to determine the Rydberg constant and verify the quantization of atomic energy levels. A Czerny-Turner grating monochromator was first empirically calibrated using the known vacuum wavelengths of a mercury discharge lamp, employing a quadratic fit to accurately account for mechanical non-idealities in the instrument's sine-bar drive. Using this calibration, the wavelengths of the four visible Balmer series lines ($H_\alpha$, $H_\beta$, $H_\gamma$, $H_\delta$) emitted by a hydrogen discharge tube were measured. The Rydberg constant was calculated from a weighted mean of these transitions, yielding $R = 1.09828(22) \times 10^7 \text{ m}^{-1}$. While this demonstrates excellent agreement with quantum mechanical predictions, the experimental value exhibits a slight systematic overestimation of $0.14\%$ compared to the theoretical finite-mass constant, $R_H$, placing it numerically closer to $R_\infty$. This minor discrepancy is attributed to systematic uncertainties, predominantly a uniform zero-offset shift and residual mechanical backlash in the micrometer during the exchange of the light sources.\end{abstract}
 
 \section{Introduction}
 
@@ -43,7 +43,9 @@ According to \cite{op13}, the wavelength $\lambda$ of the light diffracted by th
 \begin{equation}
 \lambda = z\left( \frac{2d\cos\gamma}{pl} \right),
 \end{equation}
-where $z$ is the reading on the sine-bar, $d$ is the grating spacing, $\gamma$ is the Czerny--Turner angle, $p$ is the ruling frequency of the grating, and $l$ is the length of the sine-bar. Take the data of the monochromator in \cite{op13}, we can calculate coefficient $2d\cos\gamma/pl=2.000 \times 10^{-5}$.
+where $z$ is the sine-bar micrometer reading, $d$ is the grating spacing, $\gamma$ is the Czerny--Turner angle, $p$ is the diffraction order, and $l$ is the sine-bar length.
+
+For the grating used in \cite{op13}, the spacing is $d \approx 1/(1200~\mathrm{mm^{-1}})=833~\mathrm{nm}$, which is of the same order as visible wavelengths ($\lambda \sim 400$--$700~\mathrm{nm}$). This confirms that first-order diffraction ($p=1$) produces the observed visible lines. Take the data of the monochromator in \cite{op13}, we can calculate coefficient $2d\cos\gamma/pl=2.000 \times 10^{-5}$.
 
 According to the Bohr model of the hydrogen atom, the wavelength of the light emitted when an electron transitions from a higher energy level $n_i$ to a lower energy level $n_f$ is given by
 \begin{equation}
@@ -91,7 +93,7 @@ For each spectral line, multiple readings were taken and averaged. The data were
 
 \subsection{Calibration}
 
-We firstly performed a linear regression on the calibration data in table \ref{calibration} using Python. The relationship is given by $z = a\lambda + b$, where $a$ and $b$ are the regression coefficients. The fitted line is shown in figure \ref{ccL}. The residual plot is shown in figure \ref{residual}. The residuals are randomly distributed around zero, indicating that the linear model is appropriate for the calibration data.
+We firstly performed a linear regression on the calibration data in table \ref{calibration} using Python. The relationship is given by $z = a\lambda + b$, where $a$ and $b$ are the regression coefficients. The fitted line is shown in figure \ref{ccL}. The residual plot is shown in figure \ref{residual}.
 
 \begin{figure}[htbp]
 \centering
@@ -137,7 +139,9 @@ From the model we can obtain the three coefficients: $a = 2.856(251) \times 10^{
 
 \subsection{Hydrogen wavelengths}
 
-Using the quadratic model obtained from the calibration, we can convert the micrometer readings of the hydrogen spectrum to wavelengths. The results are shown in table \ref{rydberg}.
+Since the calibration fit was performed in the form 
+\( z = a\lambda^2 + b\lambda + c,\)
+the hydrogen wavelengths were obtained by analytically inverting this quadratic relation for $\lambda(z)$ and selecting the physically relevant branch of the solution. Using the quadratic model obtained from the calibration, we can convert the micrometer readings of the hydrogen spectrum to wavelengths. The results are shown in table \ref{rydberg}.
 
 \begin{table}[htbp]
 \centering
@@ -145,8 +149,8 @@ Using the quadratic model obtained from the calibration, we can convert the micr
 \begin{tabular}{c c c c c c}
 \hline\hline
 Line & $n$ & $z$ (mm) & $\lambda$ (\AA) 
-& $R$ ($10^{-3}$\,\AA$^{-1}$) 
-& $\sigma_R$ ($10^{-7}$\,\AA$^{-1}$) \\
+& $R$ ($10^7$\,m$^{-1}$) 
+& $\sigma_R$ ($10^3$\,m$^{-1}$) \\
 \hline\hline
 $H_\alpha$ & 3 & 33.49(1) & $6560(2)$ & 1.09756 & 3.35 \\
 $H_\beta$  & 4 & 24.56(1) & $4852(2)$ & 1.09920 & 4.53 \\
@@ -157,7 +161,7 @@ $H_\delta$ & 6 & 20.64(1) & $4093(2)$ & 1.09944 & 5.37 \\
 \label{rydberg}
 \end{table}
 
-In the table, the uncertainty in the wavelength $\sigma_\lambda$ is estimated to be 2 \AA, which is the smallest resolution of the monochromator. For each uncertainty $\sigma_\lambda$, we use the formula $\sigma_R = \left| \frac{\partial R}{\partial \lambda} \right| \sigma_\lambda$ to calculate the uncertainty in $R$. Since we obtained $\sigma_R$ for each spectral line, a weighted mean of $R$ was calculated. 
+The wavelength uncertainty was taken as the quadrature sum of the reading uncertainty in $z$ propagated through the calibration curve, $\sigma_{\lambda,z}=|d\lambda/dz|\sigma_z$, and the scatter of the mercury calibration about the fitted curve, $\sigma_{\lambda,\mathrm{cal}}$. In practice this is comparable to the instrument resolution, giving $\sigma_\lambda \approx 2$ \AA. Since we obtained $\sigma_R$ for each spectral line, a weighted mean of $R$ was calculated. 
 The resulting value is
 
 \[
@@ -169,7 +173,7 @@ The uncertainty has been rounded to two significant figures, and the central val
 
 \subsection{Theoretical prediction}
 
-From CODATA recommended values \cite{nist_constants},
+From values recommended in \cite{nist_constants},
 \[
 R_\infty = 1.0973732\times 10^{7}\ \si{m^{-1}},
 \qquad
@@ -208,15 +212,13 @@ This conservative systematic shift yields a new weighted mean of $R \approx \box
 
 \section{Conclusion}
 
+In this experiment, the discrete emission lines of the hydrogen Balmer series were successfully measured using an empirically calibrated Czerny-Turner monochromator. By applying a quadratic calibration curve to account for non-idealities in the sine-bar mechanism, the measurements yielded a weighted mean Rydberg constant of $R = 1.09828(22) \times 10^7 \text{ m}^{-1}$. While this result is in excellent overall agreement with quantum mechanical predictions, it exhibits a slight systematic overestimation of approximately $0.14\%$ compared to the theoretical finite-mass Rydberg constant $R_H$. This deviation renders the experimental value numerically closer to the infinite-mass constant, $R_\infty$, clearly indicating that the uncertainty budget is dominated by systematic deviations rather than purely random statistical fluctuations.
 
-
-In this experiment, the discrete emission lines of the hydrogen Balmer series were successfully measured using an empirically calibrated Czerny-Turner monochromator. By applying a quadratic calibration curve to account for non-idealities in the sine-bar mechanism, the measurements yielded a weighted mean Rydberg constant of $R = 1.09828(22) \times 10^7 \text{ m}^{-1}$. While this result is in excellent overall agreement with quantum mechanical predictions, it exhibits a slight systematic overestimation of approximately $0.08\%$ compared to the theoretical finite-mass Rydberg constant, $R_H$. This deviation renders the experimental value numerically closer to the infinite-mass constant, $R_\infty$, clearly indicating that the uncertainty budget is dominated by systematic deviations rather than purely random statistical fluctuations.
-
-These systematic discrepancies are highly likely driven by a micrometer zero-offset, residual mechanical backlash, or a microscopic change in the illumination angle when the mercury calibration lamp was replaced by the hydrogen tube. As demonstrated in the analysis, a uniform $+0.04\text{ mm}$ shift in the micrometer readings corrects the experimental value to $R = 1.09665 \times 10^7 \text{ m}^{-1}$, closely aligning it with $R_H$. To improve the accuracy of future measurements, a rigorous zero-order alignment could be performed to physically quantify and eliminate the mechanical zero-offset. Furthermore, ensuring both light sources share an identical spatial footprint on the entrance slit, maintaining tighter control of the slit width, and increasing the number of calibration lines near the target wavelengths would help minimise wavelength-dependent aberrations and extrapolation errors.
+These systematic discrepancies are highly likely driven by a micrometer zero-offset, residual mechanical backlash, or a microscopic change in the illumination angle when the mercury calibration lamp was replaced by the hydrogen tube. As demonstrated in the analysis, a uniform $+0.02\text{ mm}$ shift in the micrometer readings corrects the experimental value to $R = 1.09780 \times 10^7 \text{ m}^{-1}$, moves the result towards $R_H$, but does not fully remove the offset. To improve the accuracy of future measurements, a rigorous zero-order alignment could be performed to physically quantify and eliminate the mechanical zero-offset. Furthermore, ensuring both light sources share an identical spatial footprint on the entrance slit, maintaining tighter control of the slit width, and increasing the number of calibration lines near the target wavelengths would help minimise wavelength-dependent aberrations and extrapolation errors.
 
 
 \begin{thebibliography}{9}
-\bibitem{op13} \emph{OP13: The grating monochromator}, First Year Physics Laboratory Manual, University of Oxford.
+\bibitem{op13} \emph{OP13: The grating monochromator}, Year 1 Physics Lab Script, University of Oxford.
 \bibitem{nist_constants} NIST, \emph{Fundamental Physical Constants (CODATA 2022 recommended values)}, \url{https://physics.nist.gov/cuu/Constants/} (accessed 12 Mar 2026).
 \end{thebibliography}
 
@@ -274,12 +276,6 @@ $H_\delta$ & 20.66(1) & 20.62(1) & 20.64(1) & 20.64(1) \\
 \end{table}
 
 
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=\textwidth]{h.png}
-\caption{Corresponding hydrogen spectrum \cite{op13}}
-\label{H}
-\end{figure}
 
 
 \end{document}
