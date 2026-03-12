@@ -1,16 +1,14 @@
 \documentclass[12pt]{article}
-
-%%%%%%%%%%%%%%%%%%%%%%% Don't change anything in here. This space is called the preamble, it is where you tell the computer to load the proper LaTeX packages to perform the math and formatting desired. 
 \usepackage{caption}
+\usepackage{hyperref}
 \usepackage{physics} 
 \usepackage{siunitx} 
 \usepackage{enumerate} 
 \usepackage{pgfplots}
 \usepackage{pgfplotstable}
 \usepackage{tikz,pgfplots}
-\usepackage{amsmath}  %I added this so that you can use the align tool for equations!
-\usepackage{wasysym} %This package allows you to put emojis in your paper!!!!
-	%wasysym: \smiley{} \frownie{} see http://milde.users.sourceforge.net/LUCR/Math/mathpackages/wasysym-symbols.pdf for list of most symbols available in this package
+\usepackage{amsmath}
+\usepackage{wasysym} 
 \usepackage{float}
 \usepackage{geometry}
  \geometry{
@@ -21,21 +19,14 @@
  }
 
 \pgfplotsset{compat=1.14}
-%%%%%%%%%%%%%%%%%%%%%%%%% Again, Don't change anything Above %%%%%%%%%%%%%%%%%%%%
+
 
 \begin{document}
+\title{Measurement of the Rydberg Constant from the Hydrogen Balmer Spectrum} 
+\author{JINTIAN WANG, Exeter College, Oxford} 
 
-\title{Measurement of the Rydberg Constant from the Hydrogen Balmer Spectrum} %Title should be concise and to the point  
-\author{JINTIAN WANG, Exeter College, Oxford} %Your name first
-
-
-\date{\today}  % This will automatically put today's date in the report
-
-\maketitle  %this command makes the title
-
-%%%% to use this template, please copy-paste the entire thing into a new document and save it so you have it!
-
-%%%%% If you want to omit something in this lab, place a % sign to the left of it and it won't show up on the lab, like this line!
+\date{\today}  
+\maketitle 
 
 \begin{abstract} 
 The visible emission spectrum of atomic hydrogen was investigated to determine the Rydberg constant and verify the quantization of atomic energy levels. A Czerny-Turner grating monochromator was first empirically calibrated using the known vacuum wavelengths of a mercury discharge lamp, employing a quadratic fit to accurately account for mechanical non-idealities in the instrument's sine-bar drive. Using this calibration, the wavelengths of the four visible Balmer series lines ($H_\alpha$, $H_\beta$, $H_\gamma$, $H_\delta$) emitted by a hydrogen discharge tube were measured. The Rydberg constant was calculated from a weighted mean of these transitions, yielding $R = 1.09828(22) \times 10^7 \text{ m}^{-1}$. While this demonstrates excellent agreement with quantum mechanical predictions, the experimental value exhibits a slight systematic overestimation of $0.08\%$ compared to the theoretical finite-mass constant, $R_H$, placing it numerically closer to $R_\infty$. This minor discrepancy is attributed to systematic uncertainties, predominantly a uniform zero-offset shift and residual mechanical backlash in the micrometer during the exchange of the light sources.\end{abstract}
@@ -178,57 +169,41 @@ The uncertainty has been rounded to two significant figures, and the central val
 
 \subsection{Theoretical prediction}
 
-Given that 
-$\varepsilon_0 = 8.8542 \times 10^{-12}\ \mathrm{F\,m^{-1}}$,
-$e = 1.6022 \times 10^{-19}\ \mathrm{C}$,
-$c = 2.9979 \times 10^{8}\ \mathrm{m\,s^{-1}}$,
-$\hbar = 1.0546 \times 10^{-34}\ \mathrm{J\,s} $,
-$m_e = 9.1095 \times 10^{-31}\ \mathrm{kg}$,
-and $m_p = 1.6726 \times 10^{-27}\ \mathrm{kg}
-$, we can calculate the theoretical value of the Rydberg constant using the formula
+From CODATA recommended values \cite{nist_constants},
 \[
-R_\infty
-=
-\left( \frac{1}{4\pi\varepsilon_0} \right)^2
-\frac{m_e e^4}{4\pi c \hbar^3}
-=\boxed{10974000 \ \mathrm{m}^{-1}}.
+R_\infty = 1.0973732\times 10^{7}\ \si{m^{-1}},
+\qquad
+R_H = 1.0967758\times 10^{7}\ \si{m^{-1}}.
 \]
-The Rydberg constant for hydrogen is given by
-\[
-R_{\mathrm{H}}
-=
-\left( \frac{1}{4\pi\varepsilon_0} \right)^2
-\frac{e^4}{4\pi c \hbar^3}
-\frac{m_e m_p}{m_e + m_p}
-=\boxed{10968000 \ \mathrm{m}^{-1}}.
-\]
+Our measured $R$ is higher than $R_H$ by approximately $0.14\%$ and higher than $R_\infty$ by approximately $0.082\%$, suggesting a net systematic bias.
+
 
 
 \subsection{Result comparisons}
 
-From sections 4.2 and 4.3, we can see that the experimental value of the Rydberg constant is in excellent agreement with theoretical predictions. However, the experimental value is slightly higher ($\sim 0.08\%$) than the theoretical $R_{\mathrm{H}}$, making it appear closer to $R_\infty$. We suggest that this small discrepancy  is predominantly driven by systematic errors in the experiment.
+The experimental value of the Rydberg constant is in excellent overall agreement with theoretical predictions. However, our result is slightly higher ($\approx 0.13\%$) than the theoretical $R_{\mathrm{H}}$. This small discrepancy is predominantly driven by systematic errors in the experiment, rather than statistical variance.
 
-Take a constant $\Delta z = +0.04 \text{ mm}$ error in the micrometer reading as an example. If all micrometer readings are overestimated by $\Delta z$, reconsidering the calculation of $R$ we could find the new wavelengths of the hydrogen lines, and then the new Rydberg constant. The results are shown in table \ref{rydberg_corrected_04}. This gives a new weighted mean of $R=1.09665 \times 10^7 \text{ m}^{-1}$, which is much closer to the theoretical $R_{\mathrm{H}}$. 
-
+To illustrate this, consider a constant zero-offset error of $\Delta z = +0.02 \text{ mm}$ in the micrometer reading due to source replacement. Re-evaluating the wavelengths and resulting $R$ values under this uniform shift yields the adjusted values shown in Table \ref{rydberg_corrected}.
 
 \begin{table}[htbp]
 \centering
-\caption{Recalculated Rydberg constant assuming a systematic shift of $\Delta z = +0.04$ mm. }
+\caption{Recalculated Rydberg constant assuming a systematic shift of $\Delta z = +0.02\text{ mm}$. }
 \begin{tabular}{c c c c c c}
 \hline\hline
 Line & $n$ & $z + \Delta z$ (mm) & $\lambda'$ (\AA) 
-& $R$ ($10^{-3}$\,\AA$^{-1}$) 
-& $\sigma_R$ ($10^{-7}$\,\AA$^{-1}$) \\
+& $R$ ($10^7$\,m$^{-1}$) 
+& $\sigma_R$ ($10^3$\,m$^{-1}$) \\
 \hline\hline
-$H_\alpha$ & 3 & 33.53(1) & $6568(2)$ & 1.09622 & 3.34 \\
-$H_\beta$  & 4 & 24.60(1) & $4860(2)$ & 1.09739 & 4.52 \\
-$H_\gamma$ & 5 & 21.94(1) & $4346(2)$ & 1.09570 & 5.04 \\
-$H_\delta$ & 6 & 20.68(1) & $4101(2)$ & 1.09729 & 5.35 \\
+$H_\alpha$ & 3 & 33.51(1) & $6564(2)$ & 1.09689 & 3.34 \\
+$H_\beta$  & 4 & 24.58(1) & $4856(2)$ & 1.09829 & 4.52 \\
+$H_\gamma$ & 5 & 21.92(1) & $4342(2)$ & 1.09670 & 5.04 \\
+$H_\delta$ & 6 & 20.66(1) & $4097(2)$ & 1.09836 & 5.35 \\
 \hline\hline
 \end{tabular}
-\label{rydberg_corrected_04}
+\label{rydberg_corrected}
 \end{table}
 
+This conservative systematic shift yields a new weighted mean of $R \approx \boxed{1.09780 \times 10^7 \text{ m}^{-1}}$, demonstrating how sensitive the calculated constant is to minor mechanical offsets in the scale.
 
 
 \section{Conclusion}
@@ -241,7 +216,8 @@ These systematic discrepancies are highly likely driven by a micrometer zero-off
 
 
 \begin{thebibliography}{9}
-\bibitem{op13} OP13: The grating monochromator
+\bibitem{op13} \emph{OP13: The grating monochromator}, First Year Physics Laboratory Manual, University of Oxford.
+\bibitem{nist_constants} NIST, \emph{Fundamental Physical Constants (CODATA 2022 recommended values)}, \url{https://physics.nist.gov/cuu/Constants/} (accessed 12 Mar 2026).
 \end{thebibliography}
 
 \section{Appendix}
